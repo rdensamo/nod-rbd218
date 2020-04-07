@@ -79,10 +79,12 @@ def resolve_single_domains(domain):
 
 def get_age(domain):
     #age of domain
-    age = domain[4]/3.154e+7
+    age = domain[4]/3.154e+7  # number of seconds in a year
     #print(domain[0] + ": is " + str(age) + " years old.")
 
     #NOTE: this will double hit an unresolved domain
+    # Evil magic number division, if the age / mn <.5
+    # If age < half a year, add one
     if age < .5:
         domain[5] += 1
 
@@ -110,6 +112,7 @@ def length_check(domain):
     #check length of domain
     prefix = domain[0].split('.', 1)[0]
     postfix = domain[0].split('.', 1)[1]
+    # [www. lehigh, edu]
     if len(prefix) > 10:
         #print(domain[0] + ": has a prefix, " + prefix +  ", greater than 10.")
         domain[5] += 1
@@ -130,7 +133,11 @@ Nod = parse_query()
 score_list =[];
 
 for domain in Nod:
+
     #check multiple domains
+
+
+    # If the domains resolve they are scored lower than non-resolving domains -fbc
     if ',' in domain[3]:
         check_mult_domains(domain)
     
@@ -140,8 +147,10 @@ for domain in Nod:
         
     if resolves is True:
         #age
+        # If the age is < half a year, add 1
         get_age(domain)
         #subdomain
+        # if the subdomain exists is not www, add 1
         get_subdomain(domain)
         
 
@@ -149,15 +158,21 @@ for domain in Nod:
             whois_info = whois.query(domain[0])
         except:
             whois_info = None
-            
+
+        # If there is whois info, check the registrar against a list
+        # if they're not in the list, add 1
+
+        # If the length of the subdomain is > 10, add 1
+        # If the length of the domain is > 15, add 1
         if whois_info != None:
             check_for_bad_registrar(domain)
             length_check(domain)
-        
+
+        # If there is no whois info, add 1
         else:
             #print(domain[0] + ": has no registrar.")
             domain[5] += 1
-            
+
     #score
     print(domain[0] + ": has a score of " + str(domain[5]))
     score_list.append(domain[0] + ": has a score of " + str(domain[5]))
