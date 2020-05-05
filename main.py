@@ -19,11 +19,12 @@ import csv
 def known_bad_domains():
     #  initialized an empty dictionary of bad domains
     # mal_domain_dict = {}
+    # dict of dicts
     mal_domains_dict = dict()
     process_mal_domains(mal_domains_dict)
     process_phi_tank(mal_domains_dict)
-    print(mal_domains_dict)
-    # print(len(mal_domains_dict))
+    # print(mal_domains_dict)
+    print(len(mal_domains_dict))
     return mal_domains_dict
 
 
@@ -69,13 +70,19 @@ def process_phi_tank(mal_domains_dict):
                 mal_domains_dict[row['url']] = phi_entry
             # print(row)
             line_count += 1
-        print(len(mal_domains_dict))
+        print(line_count)
     return mal_domains_dict
 
 
-def main():
-    domains = list()
+'''
+Don't we want to query and do the lookup (bad domain list, who-is etc..) at the same time 
+so we don't loop multiple times 
+'''
 
+
+def query_elastic(mal_domains_dict):
+    domains = list()
+    queried_entry = dict()
     # Create elasticsearch object,
     es = Elasticsearch([ES_SOCKET])
 
@@ -93,13 +100,29 @@ def main():
     # Get results from ES one at a time, parse into Domain objects, add objects
     # to domains.
     for hit in res.scan():
+        queried_entry['dom_name'] = getattr(hit, "query", None)
         domains.append(Domain(getattr(hit, "query", None),
                               getattr(hit, 'registrar', None),
                               getattr(hit, "age", None)))
-    # Dump domains list to stdout
-    pprint(domains)
+        if queried_entry['dom_name'] in mal_domains_dict:
+            # TODO: set score to max
+            print("found in mal_domains_dict")
+        else:
+            # TODO: Function for whether domain resolves and update score
+            # TODO: Function that breaks it into sub-domains and update score
+            # TODO: Function for who-is lookup and update score
+            # TODO: Function check trusted registrar list and update score
+            # TODO: Function(s) for age, GTLD, and other checks
+            print(getattr(hit, "query", None))
+
+            # Dump domains list to stdout
+    # print(domains)
+
+
+def main():
+    mal_domains_dict = known_bad_domains()
+    query_elastic(mal_domains_dict)
 
 
 if __name__ == "__main__":
-    known_bad_domains()
-    # main()
+    main()
