@@ -13,6 +13,64 @@ do some importlib work to get them both in.
 """
 from config import ES_SOCKET
 from Domain import Domain
+import csv
+
+
+def known_bad_domains():
+    #  initialized an empty dictionary of bad domains
+    # mal_domain_dict = {}
+    mal_domains_dict = dict()
+    process_mal_domains(mal_domains_dict)
+    process_phi_tank(mal_domains_dict)
+    print(mal_domains_dict)
+    # print(len(mal_domains_dict))
+    return mal_domains_dict
+
+
+def process_mal_domains(mal_domains_dict):
+    mal_entry = dict()
+    # Malware Domains:
+    # read in the bad domains into the dictionary
+    f = open("mal_domains/justdomains.txt", "r")
+    for row in f:
+        row = row.rstrip()
+        mal_entry['dom_name'] = row
+        mal_entry["length"] = len(row)
+        mal_entry["source"] = "malwaredomains"
+        # TODO: implement appending the sub-domains and other fields?
+        # mal_entry['sub_dom'] = len(x)
+        # https://www.geeksforgeeks.org/python-test-if-dictionary-contains-unique-keys-and-values/
+        if mal_entry['dom_name'] not in mal_domains_dict:
+            mal_domains_dict[row] = mal_entry  # works because domain name is unique
+            # print(mal_entry)
+    # why not fetch phish tank automatically ? because it will be the most updated - will make
+    # it less work for us later on ? Forgot the reason
+    # Having a dict of dict's makes sense because we want different keys or additional
+    # keys depending on the library source of known bad
+    print(len(mal_domains_dict))
+    return mal_domains_dict
+
+
+def process_phi_tank(mal_domains_dict):
+    phi_entry = dict()
+    with open('mal_domains/verified_online.csv', encoding="utf8", mode='r') as csv_file:
+        csv_reader = csv.DictReader(csv_file)
+        line_count = 0
+        for row in csv_reader:
+            # other attributes in file we may want:
+            # phish_id,url,phish_detail_url,submission_time,verified,verification_time,online,target
+            phi_entry['dom_name'] = row['url']
+            phi_entry["length"] = len(row)
+            phi_entry['source'] = "phishtank"
+            # TODO: get the domain with out the http stuff
+            if line_count == 0:
+                line_count += 1
+            if phi_entry['dom_name'] not in mal_domains_dict:
+                mal_domains_dict[row['url']] = phi_entry
+            # print(row)
+            line_count += 1
+        print(len(mal_domains_dict))
+    return mal_domains_dict
 
 
 def main():
@@ -43,4 +101,5 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    known_bad_domains()
+    # main()
