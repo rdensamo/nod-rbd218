@@ -7,8 +7,9 @@ class Domain:
         self.registrar = registrar
         self.age = age
         self.score = None
+        self.subscores = dict()
 
-    def __str__(self):
+    def __repr__(self):
         return "Domain({}, {}, {})".format(self.domain, self.registrar, self.age)
 
     def get_domain(self):
@@ -23,3 +24,5 @@ class Domain:
     def get_score(self):
         return self.score
 
+    def set_subscore(self, source, subscore):
+        self.subscores[source] = subscore

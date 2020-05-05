@@ -13,6 +13,7 @@ do some importlib work to get them both in.
 """
 from config import ES_SOCKET
 from Domain import Domain
+from MalwareDomains import MalwareDomains
 import csv
 
 
@@ -80,9 +81,12 @@ so we don't loop multiple times
 '''
 
 
-def query_elastic(mal_domains_dict):
+def query_elastic():
     domains = list()
     queried_entry = dict()
+
+    malware_domains = MalwareDomains("mal_domains/justdomains.txt")
+
     # Create elasticsearch object,
     es = Elasticsearch([ES_SOCKET])
 
@@ -101,9 +105,11 @@ def query_elastic(mal_domains_dict):
     # to domains.
     for hit in res.scan():
         queried_entry['dom_name'] = getattr(hit, "query", None)
-        domains.append(Domain(getattr(hit, "query", None),
-                              getattr(hit, 'registrar', None),
-                              getattr(hit, "age", None)))
+        current_domain = Domain(getattr(hit, "query", None),
+                                getattr(hit, 'registrar', None),
+                                getattr(hit, "age", None))
+
+        """
         if queried_entry['dom_name'] in mal_domains_dict:
             # TODO: set score to max
             print("found in mal_domains_dict")
@@ -117,11 +123,17 @@ def query_elastic(mal_domains_dict):
 
             # Dump domains list to stdout
     # print(domains)
+    """
+
+        malware_domains.score(current_domain)
+        # TODO: phishtank.score(current_domain)
+        # TODO: registrar.score(current_domain)
+        domains.append(current_domain)
 
 
 def main():
-    mal_domains_dict = known_bad_domains()
-    query_elastic(mal_domains_dict)
+    # mal_domains_dict = known_bad_domains()
+    query_elastic()
 
 
 if __name__ == "__main__":
