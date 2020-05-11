@@ -1,9 +1,22 @@
+import tldextract
+
+
 class Domain:
     """
 
     """
     def __init__(self, query, registrar, age):
         self.domain = query
+
+        self.tld = None
+        self.subdomain = None
+        self.name = None
+
+        parsed = tldextract.extract(self.domain)
+        self.tld = parsed.suffix
+        self.name = parsed.domain
+        self.subdomain = parsed.subdomain
+
         self.registrar = registrar
         self.age = age
         self.score = None
