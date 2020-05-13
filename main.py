@@ -10,8 +10,9 @@ do some importlib work to get them both in.
 `python-whois` `whois` from pypy
 """
 from config import ES_SOCKET
-from Domain import Domain
+from classes.Domain import Domain
 from classes.MalwareDomains import MalwareDomains
+from classes.Phishtank import Phishtank
 import csv
 
 
@@ -84,6 +85,7 @@ def query_elastic():
     queried_entry = dict()
 
     malware_domains = MalwareDomains("mal_domains/justdomains.txt")
+    phishtank = Phishtank("./mal_domains/verified_online.csv")
 
     # Create elasticsearch object,
     es = Elasticsearch([ES_SOCKET])
@@ -124,7 +126,7 @@ def query_elastic():
     """
 
         malware_domains.score(current_domain)
-        # TODO: phishtank.score(current_domain)
+        phishtank.score(current_domain)
         # TODO: registrar.score(current_domain)
         domains.append(current_domain)
 
