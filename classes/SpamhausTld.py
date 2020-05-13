@@ -1,5 +1,6 @@
 from csv import DictReader
 
+
 class SpamhausTld:
     def __init__(self, path):
         self.__spamhaus_tlds = dict()

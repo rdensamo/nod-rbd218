@@ -1,5 +1,3 @@
-from pprint import pprint
-
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search, Q
 
@@ -13,7 +11,7 @@ do some importlib work to get them both in.
 """
 from config import ES_SOCKET
 from Domain import Domain
-from MalwareDomains import MalwareDomains
+from classes.MalwareDomains import MalwareDomains
 import csv
 
 

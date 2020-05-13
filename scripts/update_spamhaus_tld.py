@@ -18,7 +18,7 @@ tlds = filter(lambda val: val != "",
                   )
               )
 
-with open('./datasets/spamhaus_tlds.csv', 'w', newline='') as csvfile:
+with open('../datasets/spamhaus_tlds.csv', 'w', newline='') as csvfile:
     writer = writer(csvfile)
     writer.writerow(['tld', 'badness_percent', 'score'])
     for tld in tlds:
