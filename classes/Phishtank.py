@@ -7,7 +7,7 @@ class Phishtank:
         self.__pt_domains_dict = dict()
         # TODO: Get this remotely from a malwaredomains mirror
 
-        with open(path, "r") as f:
+        with open(path, "r", encoding='utf-8') as f:
 
             reader = DictReader(f)
 
