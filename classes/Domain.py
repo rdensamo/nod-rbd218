@@ -31,6 +31,9 @@ class Domain:
     def get_registrar(self):
         return self.registrar
 
+    def get_tld(self):
+        return self.tld
+
     def get_age(self):
         return self.age
 
@@ -39,3 +42,5 @@ class Domain:
 
     def set_subscore(self, source, subscore):
         self.subscores[source] = subscore
+
+
