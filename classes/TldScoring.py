@@ -67,7 +67,7 @@ class TldScoring:
         domain.set_subscore("zoneTLDs",
                             {"score": entry,
                              "tld": domain.tld})
-        # forgot how this line worked
+
         # TODO: Need to make sure tld getter gets tld in same format
 
 

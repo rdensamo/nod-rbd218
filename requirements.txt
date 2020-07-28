@@ -31,3 +31,7 @@ tldextract==2.2.2
 urllib3==1.25.9
 webencodings==0.5.1
 whois==0.9.7
+
+setuptools~=41.2.0
+zxcvbn~=4.4.28
+numpy~=1.19.0

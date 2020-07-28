@@ -37,5 +37,5 @@ class KnujOn:
 
 
 
-knu = KnujOn("../datasets/KnujOn.html")
+# knu = KnujOn("../datasets/KnujOn.html")
 # reg = Registrarprices("../TLD_PRICING/TLD_PRICES_AVGBYREG.csv")
