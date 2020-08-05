@@ -1,9 +1,9 @@
 import tldextract
-
+from copy import deepcopy
 
 class Domain:
     """
-
+    Representation of an individual domain name.
     """
     def __init__(self, query, registrar, age):
         self.domain = query
@@ -18,28 +18,45 @@ class Domain:
         self.subdomain = parsed.subdomain
 
         self.registrar = registrar
+        # Seconds since creation date
         self.age = age
         self.score = None
         self.subscores = dict()
 
+        if self.domain[0:4] == "xn--":
+            self.set_subscore("punycode", {"score:": True})
+
     def __repr__(self):
-        return "Domain({}, {}, {})".format(self.domain, self.registrar, self.age)
+        return f"Domain({self.domain}, {self.registrar}, {self.age})"
 
-    def get_domain(self):
+    @property
+    def domain(self):
         return self.domain
+    
+    @domain.setter
+    def domain(self, d):
+        self.domain = d
 
-    def get_registrar(self):
+    @property
+    def registrar(self):
         return self.registrar
 
-    def get_tld(self):
-        return self.tld
+    @registrar.setter
+    def registrar(self, r):
+        self.registrar = r
 
-    def get_age(self):
+    @property
+    def age(self):
         return self.age
 
-    def get_score(self):
-        return self.score
+    @age.setter
+    def age(self, a):
+        self.age = a
 
+    def subscores(self):
+        return deepcopy(self.subscores)
+
+    # TODO: should probably be add_subscore, currently a breaking change
     def set_subscore(self, source, subscore):
         self.subscores[source] = subscore
 
