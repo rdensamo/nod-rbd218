@@ -74,10 +74,12 @@ class RedCanaryEntropy:
                 domain = Domain(row, "registrarexample.com", 0)
                 # TODO: Should registrars and age be optional in the Domain class causes error otherwise
                 zonefile_maldomains[row] = self.score(domain)
+
                 key += 1
-                if key == 2000:
+                if key == 10000:
                     break
 
+        key = 0
         # good domains
         alexastopdomains = dict()
         with open(good_doms, "r") as f:
@@ -90,6 +92,9 @@ class RedCanaryEntropy:
                 else:
                     domain = Domain(alexa_domain, "registrarexample.com", 0)
                     alexastopdomains[domain] = self.score(domain)
+                key += 1
+                if key == 10000:
+                    break
 
         x = np.array(np.array(list(zonefile_maldomains.values())).astype(float))
         y = np.array(np.array(list(alexastopdomains.values())).astype(float))
@@ -104,7 +109,35 @@ class RedCanaryEntropy:
 
 
 # TESTING CODE BELOW:
+
+'''
 path1 = "../datasets/zonefile_domains_full.txt"
 path2 = "../datasets/alexa_top_2k.csv"
+'''
+
+'''
+# path1 = "../datasets/zonefile_domains_full.txt"
+path1 = "../mal_domains/justdomains.txt"
+path2 = "../datasets/alexa_top_1m.csv"
+
 red = RedCanaryEntropy()
 red.testScore(path1, path2)
+
+
+
+red = RedCanaryEntropy()
+score = red.score(Domain("qq.com", "exampleregistrar.com", 0))
+print(score)
+score = red.score(Domain("deutschland.de/en", "dexampleregistrar.com", 0))
+print(score)
+'''
+
+# Seems to suffer from high false negatives still
+# Alexa top domains contains foreign domains as well the lower down this list we read the
+# more similar it is to malicious domain names
+# TODO: we can also use the Country TLD to determine if it is from another country
+
+# TODO: entropy scores above 100 for both bad domains suspicious
+# TODO: Observe / Be careful of the scale on the graph - increases with more data points
+# TODO: Seems like data is bad when it is good and the scale just changed
+# TODO: next need to test this on foreigin good and bad domains
