@@ -35,6 +35,7 @@ class AlexaTop:
             domain.set_subscore("alexa", {"score": False,
                                           "note": "Domain in alexa toplist"})
         else:
+            # TODO: Make sure this is optimized
             if filter(lambda top_name: top_name in domain.domain,
                       self.__names_only):
                 domain.set_subscore("alexa", {"score": True,

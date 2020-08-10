@@ -17,6 +17,7 @@ class DomainToolsRegistrars:
     def score(self, domain):
         # Try to get an entry from the domaintools hashmap using
         # domain as the key.
+        # TODO: Return actual score instead of just checking for presence
         entry = self.__dom_tools_regs.get(domain.registrar, None)
         '''
         # For Testing 

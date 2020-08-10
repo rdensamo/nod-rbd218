@@ -6,7 +6,7 @@ class Domain:
     Representation of an individual domain name.
     """
     def __init__(self, query, registrar, age):
-        self.domain = query
+        self._domain = query
 
         self.tld = None
         self.subdomain = None
@@ -17,9 +17,13 @@ class Domain:
         self.name = parsed.domain
         self.subdomain = parsed.subdomain
 
-        self.registrar = registrar
+        if registrar is not None:
+            self._registrar = registrar
+        else:
+            self._registrar = ""
+
         # Seconds since creation date
-        self.age = age
+        self._age = age
         self.score = None
         self.subscores = dict()
 
@@ -31,27 +35,27 @@ class Domain:
 
     @property
     def domain(self):
-        return self.domain
+        return self._domain
     
     @domain.setter
     def domain(self, d):
-        self.domain = d
+        self._domain = d
 
     @property
     def registrar(self):
-        return self.registrar
+        return self._registrar
 
     @registrar.setter
     def registrar(self, r):
-        self.registrar = r
+        self._registrar = r
 
     @property
     def age(self):
-        return self.age
+        return self._age
 
     @age.setter
     def age(self, a):
-        self.age = a
+        self._age = a
 
     def subscores(self):
         return deepcopy(self.subscores)

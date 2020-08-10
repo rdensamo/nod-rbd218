@@ -71,4 +71,4 @@ class TldScoring:
         # TODO: Need to make sure tld getter gets tld in same format
 
 
-tlds = TldScoring("../datasets/ZoneFilesTLDs.html")
+#tlds = TldScoring("../datasets/ZoneFilesTLDs.html")

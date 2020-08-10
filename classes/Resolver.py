@@ -1,7 +1,7 @@
 from bisect import bisect_left
 
 from dns.resolver import query
-from dns.resolver import NXDOMAIN
+from dns.resolver import NXDOMAIN, Timeout
 from netaddr import IPNetwork, IPAddress
 from netaddr.core import AddrFormatError
 from requests import get
@@ -78,5 +78,6 @@ class Resolver:
                 if not found_bogon:
                     domain.set_subscore("bogon", {"score": False})
 
-        except NXDOMAIN:
-            domain.set_subscore("resolves", {"score": False})
+        except Exception as e:
+            domain.set_subscore("resolves", {"score": False,
+                                             "note:": e})

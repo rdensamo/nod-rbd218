@@ -39,15 +39,16 @@ class Registrarprices:
         real_reg = None
 
         for registrar in self.avg_prices.keys():
-            if registrar.lower() in domain.registrar.lower():
-                real_reg = registrar
-                break
+            if domain.registrar is not None:
+                if registrar.lower() in domain.registrar.lower():
+                    real_reg = registrar
+                    break
 
-        print(self.avg_prices[real_reg])
+        # print(self.avg_prices[real_reg])
         if real_reg is None:
             domain.set_subscore("prices", {"score": 0.6, "note": "Registrar price info not found"})
             return
-        domain.set_subscore("prices", {"score": self.avg_prices[real_reg]["scaled_prices"],
+        domain.set_subscore("prices", {"score": self.avg_prices[real_reg]["scaled_price"],
                                        "note": "scoring with scaled registrar prices"})
 
 # TODO: Coverage using counter to see how many domains scored

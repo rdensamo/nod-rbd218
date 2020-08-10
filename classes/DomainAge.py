@@ -16,7 +16,9 @@ class DomainAge:
             domain.set_subscore("age", {"score": 4.0})
         else:
             # Otherwise defer to the domaintools research
+            # FIXME: This is totally wrong, should look up the offset and get its value, instead it's
+            # looking up the value based on age in months, which will always be larger than all values in
+            # the table.
             months = domain.age / 43800
-            score = (len(DomainAge.intervals_mo_lookup)
-                     - DomainAge.intervals_mo_lookup[bisect_left(DomainAge.intervals_mo, months)])
+            score = DomainAge.intervals_mo_lookup[bisect_left(DomainAge.intervals_mo, months)]
             domain.set_subscore("age", {"score": score})

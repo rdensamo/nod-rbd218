@@ -1,7 +1,7 @@
 import math
-import numpy as np
+# import numpy as np
 import tldextract
-import matplotlib.pyplot as plt
+# import matplotlib.pyplot as plt
 from csv import DictReader
 
 from classes.Domain import Domain

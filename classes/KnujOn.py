@@ -3,7 +3,7 @@ import requests
 
 
 class KnujOn:
-    def __init__(self, path):
+    def __init__(self, path=None):
         self.__knuj_domains_dict = dict()
 
         # If we would rather read it from a flat file:
@@ -30,6 +30,7 @@ class KnujOn:
             # print(reg_score)
 
     def score(self, domain):
+        # TODO: Make sure the strings in our knujon data are what we expect to see from the registrar field in a domain
         entry = self.__knuj_domains_dict.get(domain.registrar, None)
         domain.set_subscore("knujOn",
                             {"score": entry,
