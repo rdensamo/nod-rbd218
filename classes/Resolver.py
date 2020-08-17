@@ -11,8 +11,6 @@ class Resolver:
 
     ttl_intervals = (0, 1, 10, 100, 300, 900)
 
-    # This is a non-comprehensive fallback.
-
     def __init__(self):
 
         try:
@@ -45,6 +43,22 @@ class Resolver:
                 IPNetwork("224.0.0.0/3"),
             )
 
+    def _bogon_binsearch(self, ip, low, high):
+        if high >= low:
+            m = (low + high) // 2
+
+            if ip in self.bogon_networks[m]:
+                return True
+            elif ip < self.bogon_networks[m]:
+                return self._bogon_binsearch(ip, low, m)
+            else:
+                return self._bogon_binsearch(ip, m, high)
+        else:
+            return False
+
+    def is_bogon(self, ip):
+        return self._bogon_binsearch(ip, 0, len(self.bogon_networks))
+
     def score(self, domain):
         try:
             # Query domain
@@ -68,15 +82,7 @@ class Resolver:
                     # guard against potential non-IP records (e.g. TXT)
                     ip = None
 
-                found_bogon = False
-                # FIXME: Binary search this, the array of bogon CIDRs is huge and already sorted.
-                for cidr in self.bogon_networks:
-                    if ip in cidr:
-                        domain.set_subscore("bogon", {"score": True})
-                        found_bogon = True
-                        break
-                if not found_bogon:
-                    domain.set_subscore("bogon", {"score": False})
+                domain.set_subscore("bogon", {"score": self.is_bogon(ip)})
 
         except Exception as e:
             domain.set_subscore("resolves", {"score": False,
