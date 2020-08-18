@@ -40,6 +40,8 @@ class Registrarprices:
 
         for registrar in self.avg_prices.keys():
             if domain.registrar is not None:
+                # for each registrar in our collection checks if it is a substring of the registrar we
+                # are scoring currently
                 if registrar.lower() in domain.registrar.lower():
                     real_reg = registrar
                     break

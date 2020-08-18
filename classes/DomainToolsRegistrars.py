@@ -13,20 +13,25 @@ class DomainToolsRegistrars:
             for row in reader:
                 self.__dom_tools_regs[row['Registrar']] = row['Percent']
 
-
     def score(self, domain):
-        # Try to get an entry from the domaintools hashmap using
-        # domain as the key.
-        # TODO: Return actual score instead of just checking for presence
-        entry = self.__dom_tools_regs.get(domain.registrar, None)
-        '''
-        # For Testing 
-        value = "domaintoolsregistrars",
-        {"score": (entry is not None)}
-        print(entry)
-        '''
-        domain.set_subscore("domaintoolsregistrars",
-                            {"score": (entry is not None)})
+        # Check if registrar is in our list
+        real_reg = None
+
+        for registrar in self.__dom_tools_regs.keys():
+            if domain.registrar is not None:
+                # for each registrar in our collection checks if it is a substring of the registrar we
+                # are scoring currently
+                if registrar.lower() in domain.registrar.lower():
+                    real_reg = registrar
+                    break
+
+        if real_reg is None:
+            domain.set_subscore("domaintoolsregistrars", {"score": None, "note": "Registrar price info not found"})
+            return
+
+        domain.set_subscore("domaintoolsregistrars", {"score": self.__dom_tools_regs[real_reg]})
+        # print("value is ", self.__dom_tools_regs[real_reg])
+
 
 
 
@@ -37,3 +42,4 @@ domain = Domain("exampledomain.com", "GoDaddy.com, LLC", 0)
 domtools = DomainToolsRegistrars(path)
 domtools.score(domain)
 '''
+

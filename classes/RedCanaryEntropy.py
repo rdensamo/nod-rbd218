@@ -39,9 +39,7 @@ class RedCanaryEntropy:
 
     def score(self, domain):
         entropy_score = dict()
-        # Using python library to extract the domain without the tld
-        parsed = tldextract.extract(domain.name)
-        simplified_domain = parsed.domain
+        simplified_domain = domain.domain
         qi = dict()
         pi = dict()
         DLK_lg = dict()
