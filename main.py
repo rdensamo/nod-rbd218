@@ -22,6 +22,8 @@ from classes.Resolver import Resolver
 from classes.SpamhausReg import SpamhausReg
 from classes.SpamhausTld import SpamhausTld
 from classes.TldScoring import TldScoring
+from classes.LehighTypoSquat import LehighTypoSquat
+
 
 
 def main():
@@ -38,18 +40,17 @@ def main():
     spamhaus_reg = SpamhausReg()
     spamhaus_tld = SpamhausTld("./datasets/spamhaus_tlds.csv")
     zonefiles_tlc = TldScoring("./datasets/ZoneFilesTLDs.html")
-
+    lehigh_typo_squat = LehighTypoSquat("./datasets/lehigh-typostrings.txt")
 
     # Create elasticsearch object,
     es = Elasticsearch([ES_SOCKET])
 
     # Build query using lucene query string
     query = Q("query_string",
-              # TODO: _exists_:age may not be trustworthy
               query="brotype:dns-tracker AND _exists_:age")
 
     # Only get domains from the 2020.04.29 BRO index
-    search = Search(using=es, index="bro-2020.04.29")
+    search = Search(using=es, index="bro-*")
 
     # Execute the query
     res = search.query(query)
@@ -76,6 +77,7 @@ def main():
         spamhaus_reg.score(current_domain)
         spamhaus_tld.score(current_domain)
         zonefiles_tlc.score(current_domain)
+        lehigh_typo_squat.score(current_domain)
 
         print(current_domain)
         i+= 1

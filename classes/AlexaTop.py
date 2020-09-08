@@ -1,46 +1,20 @@
-from csv import DictReader
-import tldextract
-
+from csv import reader
 
 class AlexaTop:
 
-    def __init__(self, path):
-        self.__alexa_toplist = dict()
-        self.__names_only = list()
+    def __init__(self, alexa_toplist_path):
+        self.alexa_toplist = set()
+        with open(alexa_toplist_path, "r") as f:
+            r = reader(f)
 
-        with open(path, "r") as f:
+            for entry in r:
+                self.alexa_toplist.add(entry[1])
 
-            reader = DictReader(f)
-
-            for row in reader:
-                domain = row.get("domain", None)
-
-                if domain is None:
-                    continue
-                else:
-                    entry = dict()
-                    entry["domain"] = domain
-
-                    parsed = tldextract.extract(domain)
-
-                    entry["tld"] = parsed.suffix
-                    entry["name"] = parsed.domain
-                    entry["subdomain"] = parsed.subdomain
-
-                    self.__names_only.append(parsed.domain)
-                    self.__alexa_toplist[domain] = entry
 
     def score(self, domain):
-        if self.__alexa_toplist.get(domain.name + "." + domain.tld, False):
-            domain.set_subscore("alexa", {"score": False,
-                                          "note": "Domain in alexa toplist"})
+        if domain.name + "." + domain.tld in self.alexa_toplist:
+            domain.set_subscore("alexatop", {"score": True,
+                                "note": "Scored domain in alexa top 1m."})
         else:
-            # TODO: Make sure this is optimized
-            if filter(lambda top_name: top_name in domain.domain,
-                      self.__names_only):
-                domain.set_subscore("alexa", {"score": True,
-                                              "note": "Possible domain squatting/impersonation"})
-            else:
-                domain.set_subscore("alexa", {"score": False,
-                                              "note": "Domain not alexa toplist and does not appear to be impersonation"})
-
+            domain.set_subscore("alexatop", {"score": False,
+                                "note": "Scored domain not in alexa top 1m."})
