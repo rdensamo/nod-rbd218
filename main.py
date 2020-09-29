@@ -25,7 +25,6 @@ from classes.TldScoring import TldScoring
 from classes.LehighTypoSquat import LehighTypoSquat
 
 
-
 def main():
     domains = list()
     queried_entry = dict()
@@ -33,7 +32,7 @@ def main():
     malware_domains = MalwareDomains("mal_domains/justdomains.txt")
     phishtank = Phishtank("./mal_domains/verified_online.csv")
     domaintools_reg = DomainToolsRegistrars("./datasets/domaintools_registrars.csv")
-    knujon = KnujOn()
+    knujon = KnujOn("./datasets/KnujOn.html")
     entropy = RedCanaryEntropy()
     registrar_prices = Registrarprices("./TLD_PRICING/TLD_PRICES_AVGBYREG.csv")
     resolver = Resolver()
@@ -66,7 +65,6 @@ def main():
                                 getattr(hit, "age", None))
 
         domains.append(current_domain)
-
         malware_domains.score(current_domain)
         phishtank.score(current_domain)
         domaintools_reg.score(current_domain)
@@ -80,7 +78,7 @@ def main():
         lehigh_typo_squat.score(current_domain)
 
         print(current_domain)
-        i+= 1
+        i += 1
         if i > 10:
             break
 
