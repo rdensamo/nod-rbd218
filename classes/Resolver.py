@@ -50,9 +50,9 @@ class Resolver:
             if ip in self.bogon_networks[m]:
                 return True
             elif ip < self.bogon_networks[m]:
-                return self._bogon_binsearch(ip, low, m)
+                return self._bogon_binsearch(ip, low, m - 1)
             else:
-                return self._bogon_binsearch(ip, m, high)
+                return self._bogon_binsearch(ip, m + 1, high)
         else:
             return False
 
