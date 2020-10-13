@@ -30,7 +30,7 @@ for hit in res.scan():
                                    getattr(hit, "age", None))
     documents.append(current_domain.__dict__)
 
-with open("hits_9_28.json", "w") as f:
+with open("domains928.json", "w") as f:
     f.write(json.dumps(documents))
 
 

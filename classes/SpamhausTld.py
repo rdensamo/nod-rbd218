@@ -15,7 +15,10 @@ class SpamhausTld:
 
         try:
             score["score"] = entry.get("score", None)
+            result = entry.get("score", None)
         except AttributeError as e:
             score["score"] = None
+            result = False
 
         domain.set_subscore("SpamhausTld", score)
+        return result

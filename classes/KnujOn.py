@@ -2,6 +2,7 @@ from bs4 import BeautifulSoup
 import requests
 from classes.Domain import Domain
 
+
 class KnujOn:
     def __init__(self, path=None):
         self.__knuj_domains_dict = dict()
@@ -38,8 +39,8 @@ class KnujOn:
                     break
 
         if real_reg is None:
-            domain.set_subscore("knujOn", {"score": None, "note": "Registrar score not found"})
-            return
+            domain.set_subscore("knujOn", {"score": False, "note": "Registrar score not found"})
+            return False
 
         # print("value is ", self.__knuj_domains_dict[real_reg])
 
@@ -50,10 +51,11 @@ class KnujOn:
         domain.set_subscore("knujOn",
                             {"score": self.__knuj_domains_dict[real_reg],
                              "registrar": domain.registrar})
+        return self.__knuj_domains_dict[real_reg]
+
 
 # Testing Code
 '''
 knu = KnujOn("../datasets/KnujOn.html")
 score = knu.score(Domain("qq.com", "Everyones Internet Ltd. dba SoftLayer", 0))
 '''
-
