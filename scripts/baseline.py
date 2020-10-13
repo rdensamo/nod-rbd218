@@ -28,7 +28,7 @@ queried_entry = dict()
 data = None
 documents = list()
 
-with open("hits_9_28.json", "r") as f:
+with open("domains928.json", "r") as f:
     # parses json string and get dictionary
     data = json.loads(f.read())
 
@@ -103,7 +103,7 @@ for hit in data:
     # trying to filter out the domains that cause RecursionError('maximum recursion depth exceeded')
     # when calling resolves
     if "Error" not in current_domain.subscores:
-        print(current_domain.subscores)
+       # print(current_domain.subscores)
         current_domain.set_subscore('DomainName', current_domain.domain)
         current_domain.set_simplescore('DomainName', current_domain.domain)
         print(current_domain.simplescores)
@@ -112,6 +112,6 @@ for hit in data:
 
 
 # TODO: after validating output write these to a file
-with open("928_domainscores.json", "w") as f:
+with open("domainscores929.json", "w") as f:
     f.write(json.dumps(documents))
 

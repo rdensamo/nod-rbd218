@@ -56,17 +56,14 @@ class TldScoring:
         return
 
     def score(self, domain):
-        entry = domain.tld in self.brand_tlds
-        if entry:
-            domain.set_subscore("brandtld",
+        entry = self.__Tld_Scoring.get(domain.tld, None)
+        domain.set_subscore("ZoneFileBrandTld",
                                 {"score": entry,
                                  "tld": domain.tld})
-        return
-
-        entry = self.__Tld_Scoring.get(domain.tld, None)
-        domain.set_subscore("zoneTLDs",
-                            {"score": entry,
-                             "tld": domain.tld})
+        if entry is not None:
+            return entry
+        else:
+            return False
 
         # TODO: Need to make sure tld getter gets tld in same format
 

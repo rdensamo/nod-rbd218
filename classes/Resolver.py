@@ -8,7 +8,6 @@ from requests import get
 
 
 class Resolver:
-
     ttl_intervals = (0, 1, 10, 100, 300, 900)
 
     def __init__(self):
@@ -60,11 +59,12 @@ class Resolver:
         return self._bogon_binsearch(ip, 0, len(self.bogon_networks))
 
     def score(self, domain):
+        result = False
         try:
             # Query domain
             answer = query(domain.domain)
             domain.set_subscore("resolves", {"score": True})
-
+            result = True
             # Score TTL
             # Bisect returns the offset in an iterable at which a value should
             # be inserted to keep the list sorted. In this case, it'll return
@@ -78,12 +78,17 @@ class Resolver:
             for record in answer.rrset.items:
                 try:
                     ip = IPAddress(record.address)
+                    result = True
                 except AddrFormatError:
                     # guard against potential non-IP records (e.g. TXT)
                     ip = None
-
+                    result = False
                 domain.set_subscore("bogon", {"score": self.is_bogon(ip)})
 
+
         except Exception as e:
+            result = False
             domain.set_subscore("resolves", {"score": False,
                                              "note:": e})
+
+        return result

@@ -11,12 +11,15 @@ class DomainAge:
 
     @staticmethod
     def score(domain):
+        '''
         if domain.age < 2.074e+6:
             # First 24 days of life are most suspicious
             domain.set_subscore("age", {"score": 4.0})
-        else:
-            # Otherwise defer to the domaintools research
-            months = domain.age / 2.628e+6
-            offset = bisect_left(DomainAge.intervals_mo, months)
-            score = DomainAge.intervals_mo_lookup[offset]
-            domain.set_subscore("age", {"score": score})
+        '''
+
+        # Otherwise defer to the domaintools research
+        months = domain.age / 2.628e+6
+        offset = bisect_left(DomainAge.intervals_mo, months)
+        score = DomainAge.intervals_mo_lookup[offset]
+        domain.set_subscore("age", {"score": score})
+        return score

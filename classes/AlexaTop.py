@@ -13,8 +13,12 @@ class AlexaTop:
 
     def score(self, domain):
         if domain.name + "." + domain.tld in self.alexa_toplist:
-            domain.set_subscore("alexatop", {"score": True,
+            result = True
+            domain.set_subscore("alexatop", {"score": result,
                                 "note": "Scored domain in alexa top 1m."})
         else:
-            domain.set_subscore("alexatop", {"score": False,
+            result = False
+            domain.set_subscore("alexatop", {"score": result,
                                 "note": "Scored domain not in alexa top 1m."})
+        return result
+

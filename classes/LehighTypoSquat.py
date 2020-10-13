@@ -15,6 +15,8 @@ class LehighTypoSquat:
         if found_typo:
             domain.set_subscore("lehigh-typosquat", {"score": True,
                                                      "note": "Scored domain contains 'lehigh' or a possible typo."})
+            return True
         else:
             domain.set_subscore("lehigh-typosquat", {"score": False,
                                 "note": "Scored domain does not contain 'lehigh' or a lehigh typo."})
+            return False

@@ -36,3 +36,6 @@ class Phishtank:
         domain.set_subscore("phishtank",
                             {"score": (entry is not None),
                              "url": phish_url})
+        result = entry is not None
+        return result
+
