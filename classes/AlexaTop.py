@@ -1,7 +1,7 @@
 from csv import reader
 
 class AlexaTop:
-
+    # Score is a boolean value
     def __init__(self, alexa_toplist_path):
         self.alexa_toplist = set()
         with open(alexa_toplist_path, "r") as f:

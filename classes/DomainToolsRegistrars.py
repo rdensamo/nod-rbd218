@@ -7,11 +7,13 @@ class DomainToolsRegistrars:
 
     def __init__(self, path):
         self.__dom_tools_regs = dict()
+        # TODO: Do something with False Bool scores.
+        self.MAX_DOMTOOL_SCORE = 8.94
 
         with open(path, "r") as f:
             reader = DictReader(f)
             for row in reader:
-                self.__dom_tools_regs[row['Registrar']] = row['Percent']
+                self.__dom_tools_regs[row['Registrar']] = float(row['Percent'])
 
     def score(self, domain):
         # Check if registrar is in our list
@@ -31,7 +33,9 @@ class DomainToolsRegistrars:
 
         domain.set_subscore("domaintoolsregistrars", {"score": self.__dom_tools_regs[real_reg]})
         # print("value is ", self.__dom_tools_regs[real_reg])
-        return self.__dom_tools_regs[real_reg]
+
+        # returns a normalized score for domain tools
+        return self.__dom_tools_regs[real_reg] / self.MAX_DOMTOOL_SCORE
 
 
 

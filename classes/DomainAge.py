@@ -1,7 +1,11 @@
 from bisect import bisect_left
 
 
+
+
 class DomainAge:
+    # Max score possible already in table
+    MAX_AGE_SCORE = 3.85
     # Approximated from the charts on page 4 and 5 of
     # https://www.domaintools.com/content/The_DmainTools_Report_Distribution_Malicious_Domain.pdf
     intervals_mo = range(0, 81, 3)
@@ -22,4 +26,5 @@ class DomainAge:
         offset = bisect_left(DomainAge.intervals_mo, months)
         score = DomainAge.intervals_mo_lookup[offset]
         domain.set_subscore("age", {"score": score})
-        return score
+        # returns a normalized score for age
+        return score / DomainAge.MAX_AGE_SCORE

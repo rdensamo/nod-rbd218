@@ -8,6 +8,7 @@ from requests import get
 
 
 class Resolver:
+    # Score is a boolean value
     ttl_intervals = (0, 1, 10, 100, 300, 900)
 
     def __init__(self):

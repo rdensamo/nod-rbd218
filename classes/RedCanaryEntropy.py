@@ -60,7 +60,7 @@ class RedCanaryEntropy:
         # print("domain:", domain, "simplified_domain:", simplified_domain, "entropy: ", entropy_score)
         domain.set_subscore("domain name entropy", {"score": entropy_score,
                                                     "note": "scoring wih exact calculated entropy"})
-        return entropy_score
+        return -1 * entropy_score
 
     # TESTING FUNCTION FOR CODE BELOW:
     def testScore(self, bad_doms, good_doms):

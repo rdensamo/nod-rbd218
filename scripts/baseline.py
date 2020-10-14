@@ -81,14 +81,13 @@ for hit in data:
     current_domain.set_simplescore('entropy', entropy.score(current_domain))
     current_domain.set_simplescore('registrar_prices', registrar_prices.score(current_domain))
     current_domain.set_simplescore('resolver', resolver.score(current_domain))
-    # TODO: need to include bogon scoring
     current_domain.set_simplescore('spamhaus_reg', spamhaus_reg.score(current_domain))
     current_domain.set_simplescore('spamhaus_tld', spamhaus_tld.score(current_domain))
     current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
-
     current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
     current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
-    # TODO: need to include Alexatop scoring Forest pushed 9/8/2020
+    # Adding score that was missing
+    current_domain.set_simplescore('knujon', knujon.score(current_domain))
 
 
     # print(current_domain.subscores)
@@ -102,8 +101,9 @@ for hit in data:
     # print(current_domain.subscores)
     # trying to filter out the domains that cause RecursionError('maximum recursion depth exceeded')
     # when calling resolves
+    # TODO: Do not think this is needed since resolver error was fixed
     if "Error" not in current_domain.subscores:
-       # print(current_domain.subscores)
+        # print(current_domain.subscores)
         current_domain.set_subscore('DomainName', current_domain.domain)
         current_domain.set_simplescore('DomainName', current_domain.domain)
         print(current_domain.simplescores)
@@ -112,6 +112,6 @@ for hit in data:
 
 
 # TODO: after validating output write these to a file
-with open("domainscores929.json", "w") as f:
+with open("domainscores1013_12.48.json", "w") as f:
     f.write(json.dumps(documents))
 
