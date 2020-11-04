@@ -10,13 +10,14 @@ path_alexa1m = '../datasets/alexa_top_1m.csv'
 
 
 def getPhishRegs():
+    print("\nwho is for phish domain registrars\n")
     with open(path_phish, "r", encoding='utf-8') as f:
         for domain_name in f:
             file = open('who_is_bulk_results_phish.txt', 'a')
             # print(domain_name.strip('\n'))
             try:
                 res = whois.whois(domain_name.strip('\n'))
-                reg = res.registrar
+                reg = res.registrar.split(',')[0]
                 file.write(reg + "," + domain_name)
                 print(reg)
                 # TODO: get creation_date and figure out how to parse it
@@ -28,13 +29,14 @@ def getPhishRegs():
 
 
 def getMalRegs():
+    print("\nwho is for mal domain registrars\n")
     with open(path_maldoms, "r", encoding='utf-8') as f:
         for domain_name in f:
             file = open('who_is_bulk_results_mal.txt', 'a')
             # print(domain_name.strip('\n'))
             try:
                 res = whois.whois(domain_name.strip('\n'))
-                reg = res.registrar
+                reg = res.registrar.split(',')[0]
                 file.write(reg + "," + domain_name)
                 print(reg)
                 # TODO: get creation_date and figure out how to parse it
@@ -46,13 +48,14 @@ def getMalRegs():
 
 
 def getZoneRegs():
+    print("\nwho is for zone domain registrars\n")
     with open(path_zone, "r", encoding='utf-8') as f:
         for domain_name in f:
             file = open('who_is_bulk_results_zone.txt', 'a')
             # print(domain_name.strip('\n'))
             try:
                 res = whois.whois(domain_name.strip('\n'))
-                reg = res.registrar
+                reg = res.registrar.split(',')[0]
                 file.write(reg + "," + domain_name)
                 print(reg)
                 # TODO: get creation_date and figure out how to parse it
@@ -64,6 +67,7 @@ def getZoneRegs():
 
 
 def getAlexaRegs():
+    print("\nwho is for alexa domain registrars\n")
     with open(path_alexa2k, "r", encoding='utf-8') as f:
         r = reader(f)
 
@@ -72,7 +76,7 @@ def getAlexaRegs():
             # print(domain_name[1])
             try:
                 res = whois.whois(domain_name[1])
-                reg = res.registrar
+                reg = res.registrar.split(',')[0]
                 file.write(reg + "," + domain_name[1] + '\n')
                 print(reg)
                 # TODO: get creation_date and figure out how to parse it
@@ -83,7 +87,7 @@ def getAlexaRegs():
     file.close()
 
 
-getPhishRegs()
+# getPhishRegs()
 getMalRegs()
-getZoneRegs()
-getAlexaRegs()
+# getZoneRegs()
+# getAlexaRegs()

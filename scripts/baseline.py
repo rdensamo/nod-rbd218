@@ -139,7 +139,7 @@ for hit in data:
         # documents.clear()
     '''
 
-with open("../script_results/domainscores1027.json", "w") as f:
+with open("../script_results/domainscores1027_norm.json", "w") as f:
     f.write(json.dumps(documents))
 # f.close()
 
