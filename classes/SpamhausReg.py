@@ -21,5 +21,8 @@ class SpamhausReg:
         for reg in self.__spamhaus_reg.keys():
             if reg is not None:
                 if reg in domain.registrar:
-                    domain.set_subscore("spamhausreg", {"score": self.__spamhaus_reg[reg].get("badnessIndex", 0)})
-        return self.__spamhaus_reg[reg].get("badnessIndex", 0)
+                    domain.set_subscore("spamhausreg", {"score:": True,
+                                                        "note": self.__spamhaus_reg[reg].get("badnessIndex", 0)})
+                    return self.__spamhaus_reg[reg].get("badnessIndex", 0)
+        domain.set_subscore("spamhausreg", {"score": False})
+        return None
