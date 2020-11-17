@@ -1,0 +1,2001 @@
+registrar,domain
+MarkMonitor,google.com
+MarkMonitor Inc.,youtube.com
+Alibaba Cloud Computing (Beijing) Co.,tmall.com
+MarkMonitor Inc.,qq.com
+MarkMonitor Inc.,baidu.com
+MarkMonitor Inc.,sohu.com
+RegistrarSafe,facebook.com
+Alibaba Cloud Computing (Beijing) Co.,login.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,taobao.com
+False,360.cn
+MarkMonitor,jd.com
+MarkMonitor Inc.,yahoo.com
+MarkMonitor Inc.,wikipedia.org
+MarkMonitor Inc.,amazon.com
+Alibaba Cloud Computing (Beijing) Co.,pages.tmall.com
+GoDaddy.com,zoom.us
+Xiamen 35.Com Technology Co.,weibo.com
+False,sina.com.cn
+CSC CORPORATE DOMAINS,live.com
+MarkMonitor Inc.,reddit.com
+MarkMonitor Inc.,netflix.com
+Regional Network Information Center,vk.com
+Beijing Guoxu Network Technology Co. LTD,xinhuanet.com
+MarkMonitor Inc.,microsoft.com
+GoDaddy.com,okezone.com
+MarkMonitor Inc.,office.com
+Alibaba Cloud Computing (Beijing) Co.,alipay.com
+Alibaba Cloud Computing (Beijing) Co.,csdn.net
+RegistrarSafe,instagram.com
+MarkMonitor Inc.,blogspot.com
+False,yahoo.co.jp
+MarkMonitor Inc.,myshopify.com
+MarkMonitor Inc.,twitch.tv
+MarkMonitor Inc.,microsoftonline.com
+MARKMONITOR INC.,google.com.hk
+Name.com,stackoverflow.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,tribunnews.com
+Gabia,naver.com
+Alibaba Cloud Computing (Beijing) Co.,babytree.com
+MarkMonitor Inc.,bing.com
+Eurodns S.A.,livejasmin.com
+NAMECHEAP INC,bongacams.com
+Alibaba Cloud Computing (Beijing) Co.,aliexpress.com
+Xin Net Technology Corporation,zhanqi.tv
+ENOM,panda.tv
+False,tianya.cn
+False,amazon.co.jp
+MarkMonitor Inc.,ebay.com
+False,china.com.cn
+MarkMonitor Inc.,google.co.in
+Cloudflare,chaturbate.com
+CSC CORPORATE DOMAINS,apple.com
+NOM-IQ Ltd dba Com Laude,adobe.com
+RU-CENTER-RU,mail.ru
+MarkMonitor Inc.,sogou.com
+MarkMonitor Inc.,salesforce.com
+CSC CORPORATE DOMAINS,twitter.com
+MarkMonitor Inc.,amazon.in
+False,mama.cn
+MarkMonitor Inc.,msn.com
+RU-CENTER-RU,ok.ru
+MarkMonitor Inc.,wordpress.com
+RU-CENTER-RU,yandex.ru
+MarkMonitor Inc.,linkedin.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,aparat.com
+Eurodns S.A.,pornhub.com
+MarkMonitor Inc.,dropbox.com
+Alibaba Cloud Computing (Beijing) Co.,yy.com
+False,google.co.jp
+False,google.com.br
+PDR Ltd. d/b/a PublicDomainRegistry.com,sindonews.com
+NAMECHEAP INC,imgur.com
+Amazon Registrar,medium.com
+RegistrarSafe,whatsapp.com
+MarkMonitor Inc.,imdb.com
+Name.com,trello.com
+DNSPod,huanqiu.com
+Alibaba Cloud Computing (Beijing) Co.,detail.tmall.com
+MarkMonitor Inc.,amazonaws.com
+Kilat Domain,grid.id
+Network Solutions,detik.com
+Xiamen Chinasource Internet Service Co.,17ok.com
+1&1 IONOS SE,freepik.com
+False,jrj.com.cn
+Alibaba Cloud Computing (Beijing) Co.,1688.com
+PortsGroup AB,spotify.com
+False,google.cn
+Tucows Domains Inc.,fandom.com
+Safenames Ltd,udemy.com
+Tucows Domains Inc.,bbc.com
+MarkMonitor Inc.,roblox.com
+Alibaba Cloud Computing (Beijing) Co.,bilibili.com
+Net-Chinese Co.,ettoday.net
+False,amazon.de
+CSC CORPORATE DOMAINS,cnn.com
+False,google.de
+GoDaddy.com,worldometers.info
+Amazon.com,amazon.co.uk
+Cloudflare,zoho.com
+Gransy,xvideos.com
+Tucows Domains Inc.,kompas.com
+Net-Chinese Co.,pixnet.net
+False,google.es
+False,rakuten.co.jp
+MarkMonitor Inc.,github.com
+MarkMonitor International Limited,google.it
+RU-CENTER-RU,google.ru
+NAMECHEAP INC,instructure.com
+British Broadcasting Corporation [Tag = BBC],bbc.co.uk
+NAMECHEAP INC,discord.com
+MARKMONITOR Inc.,google.fr
+MarkMonitor Inc.,nytimes.com
+MarkMonitor Inc.,hao123.com
+MarkMonitor Inc.,etsy.com
+GANDI SAS,soundcloud.com
+MarkMonitor Inc.,epicgames.com
+MarkMonitor Inc.,paypal.com
+MarkMonitor Inc.,myway.com
+CSC CORPORATE DOMAINS,walmart.com
+Tucows Domains Inc.,indiatimes.com
+Name.com,stackexchange.com
+MarkMonitor Inc.,tumblr.com
+Xiamen 35.Com Technology Co.,cnblogs.com
+GoDaddy.com,flipkart.com
+Key-Systems GmbH,wetransfer.com
+Alibaba Cloud Computing (Beijing) Co.,yao.tmall.com
+GANDI SAS,canva.com
+1API GmbH,globo.com
+MarkMonitor Inc.,primevideo.com
+False,nih.gov
+False,mercadolivre.com.br
+NAMECHEAP INC,xhamster.com
+GoDaddy.com,thestartmagazine.com
+False,6.cn
+RU-CENTER-RU,gosuslugi.ru
+GoDaddy.com,youm7.com
+False,uol.com.br
+Markmonitor,google.com.tw
+Register.com,onlinesbi.com
+GANDI SAS,padlet.com
+GANDI SAS,pixabay.com
+GoDaddy.com,savefrom.net
+MarkMonitor,google.com.mx
+eName Technology Co.,so.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,digikala.com
+Megazone Corp.,daum.net
+GoDaddy.com,theguardian.com
+MarkMonitor Inc.,okta.com
+Alibaba Cloud Computing (Beijing) Co.,3c.tmall.com
+MarkMonitor Inc.,cnet.com
+MARKMONITOR INC,google.com.sg
+123-Reg Limited,ladbible.com
+MarkMonitor Inc.,pinterest.com
+False,gome.com.cn
+MarkMonitor Inc.,slideshare.net
+GoDaddy.com,grammarly.com
+Amazon Registrar,liputan6.com
+GoDaddy.com,zillow.com
+CSC CORPORATE DOMAINS,speedtest.net
+TIERRANET INC. DBA DOMAINDISCOVER,tradingview.com
+MarkMonitor Inc.,vimeo.com
+False,google.com.tr
+GoDaddy.com,quizlet.com
+Alibaba Cloud Computing (Beijing) Co.,aliyun.com
+DNSPod,zhihu.com
+MESH DIGITAL LIMITED,researchgate.net
+GoDaddy.com,suara.com
+easyDNS Technologies,archive.org
+GoDaddy.com,metropoles.com
+NAMECHEAP INC,mediafire.com
+False,rednet.cn
+GoDaddy.com,wix.com
+GoDaddy.com,tokopedia.com
+Markmonitor Inc. t/a MarkMonitor Inc. [Tag = MARKMONITOR],google.co.uk
+ENOM,unsplash.com
+GoDaddy.com,iqoption.com
+MarkMonitor Inc.,bestbuy.com
+MarkMonitor Inc.,craigslist.org
+MarkMonitor Inc.,office365.com
+MarkMonitor Inc.,forbes.com
+RU-CENTER-RU,avito.ru
+GoDaddy.com,investing.com
+Network Solutions,wikihow.com
+MarkMonitor Inc.,chase.com
+MarkMonitor Inc.,163.com
+GoDaddy.com,ilovepdf.com
+Gandi SAS,tiktok.com
+Tucows Domains Inc.,gamepedia.com
+MarkMonitor Inc.,skype.com
+MarkMonitor Inc.,webex.com
+MarkMonitor Inc.,indeed.com
+MarkMonitor International Canada Ltd.,amazon.ca
+MarkMonitor Inc.,soso.com
+Name.com,jianshu.com
+False,nicovideo.jp
+GoDaddy.com,brilio.net
+GoDaddy.com,setn.com
+Network Solutions,w3schools.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,manoramaonline.com
+False,google.com.eg
+CV. Jogjacamp,bukalapak.com
+Amazon Registrar,healthline.com
+GoDaddy.com,merdeka.com
+CSC CORPORATE DOMAINS,ikea.com
+MarkMonitor International Canada Ltd.,google.ca
+False,google.com.sa
+False,newstrend.news
+CSC CORPORATE DOMAINS,ups.com
+NAMECHEAP INC,duckduckgo.com
+PCHOME,ltn.com.tw
+Xiamen 35.Com Technology Co.,eastday.com
+GoDaddy.com,godaddy.com
+Alibaba Cloud Computing (Beijing) Co.,iqiyi.com
+HINET,momoshop.com.tw
+CSC CORPORATE DOMAINS,homedepot.com
+URL SOLUTIONS INC.,itnuzleafan.com
+Hogan Lovells (Paris) LLP,amazon.it
+CSL Computer Service Langenbach GmbH d/b/a joker.com,namnak.com
+Megazone Corp.,tistory.com
+Alibaba Cloud Computing (Beijing) Co.,nvzhuang.tmall.com
+MarkMonitor Inc.,mozilla.org
+MarkMonitor Inc.,booking.com
+GoDaddy.com,coursera.org
+GoDaddy.com,kumparan.com
+False,ebay.de
+GoDaddy.com,telegram.org
+nicar,google.com.ar
+Alibaba Cloud Computing (Beijing) Co.,subject.tmall.com
+DYNADOT,smallpdf.com
+JIANGSU BANGNING SCIENCE & TECHNOLOGY CO. LTD,51sole.com
+Gandi SAS,reverso.net
+False,chouftv.ma
+Alibaba Cloud Computing (Beijing) Co.,nianhuo.tmall.com
+CSC CORPORATE DOMAINS,fedex.com
+CSC CORPORATE DOMAINS,espn.com
+False,protothema.gr
+MarkMonitor Inc.,blogger.com
+NET-CHINESE,ebc.net.tw
+Cloudflare,zerodha.com
+Moniker Online Services LLC,patch.com
+Alibaba Cloud Computing (Beijing) Co.,food.tmall.com
+MARKMONITOR INC,lazada.sg
+Alibaba Cloud Computing (Beijing) Co.,err.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,list.tmall.com
+MarkMonitor Inc.,googlevideo.com
+HOGAN LOVELLS (PARIS) LLP,amazon.fr
+Alibaba Cloud Computing (Beijing) Co.,uniqlo.tmall.com
+GoDaddy.com,breitbart.com
+CSC CORPORATE DOMAINS,hulu.com
+MarkMonitor Inc.,force.com
+MarkMonitor International Limited,redd.it
+CSC CORPORATE DOMAINS,quora.com
+GoDaddy.com,businessinsider.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,hdfcbank.com
+T.H.NIC Co.,google.co.th
+Nameshield SAS,dailymotion.com
+RegistrarSafe,messenger.com
+NIC Chile,biobiochile.cl
+NOM-IQ Ltd dba Com Laude,behance.net
+CSC Corporate Domains,t.co
+Network Solutions,steamcommunity.com
+MarkMonitor Inc.,ask.com
+NIC-VE,patria.org.ve
+MarkMonitor Inc.,slack.com
+CSC CORPORATE DOMAINS,washingtonpost.com
+NAMECHEAP INC,y2mate.com
+URL SOLUTIONS INC.,itpatratr.com
+GoDaddy.com,kapanlagi.com
+MarkMonitor Inc.,shutterstock.com
+Genious Communications SARL/AU,hespress.com
+CSC CORPORATE DOMAINS,target.com
+MarkMonitor Inc.,cnbc.com
+Digital Registra,google.co.id
+CSC CORPORATE DOMAINS,thesaurus.com
+Safenames Ltd,weebly.com
+NAMECHEAP INC,telewebion.com
+PT Ardh Global Indonesia,idntimes.com
+False,op.gg
+Safenames Ltd,get-express-vpn.com
+False,shaparak.ir
+Network Solutions,abs-cbn.com
+Key-Systems GmbH,deepl.com
+Alibaba Cloud Computing (Beijing) Co.,alibaba.com
+Moniker Online Services LLC,dostor.org
+Safenames Ltd,sciencedirect.com
+False,google.pl
+Network Solutions,ndtv.com
+False,amazon.cn
+MarkMonitor Inc.,foxnews.com
+MarkMonitor Inc.,box.com
+Network Solutions,heavy.com
+False,amazon.es
+MarkMonitor Inc.,line.me
+GoDaddy.com,albawabhnews.com
+CSC CORPORATE DOMAINS,asos.com
+MarkMonitor,mercadolibre.com.mx
+RU-CENTER-RU,sberbank.ru
+Corporation Service Company,allegro.pl
+False,gmw.cn
+PSI-USA,bet9ja.com
+NAMECHEAP INC,aminoapps.com
+1&1 IONOS SE,flaticon.com
+MarkMonitor Inc.,mercari.com
+Gandi SAS,scribd.com
+Gandi SAS,xnxx.com
+Key-Systems GmbH,51.la
+Net 4 India Limited,irctc.co.in
+GoDaddy.com,t.me
+Nom-IQ Limited t/a Com Laude [Tag = NOMIQ],dailymail.co.uk
+Network Solutions,icicibank.com
+BigRock Solutions Ltd.,hotstar.com
+False,ca.gov
+GoDaddy.com,wixsite.com
+MarkMonitor Inc.,wikimedia.org
+RU-CENTER-RU,aliexpress.ru
+MarkMonitor Inc.,hp.com
+Network Solutions,sahibinden.com
+False,academia.edu
+CSC CORPORATE DOMAINS,capitalone.com
+nicar,mercadolibre.com.ar
+False,cnnic.cn
+GoDaddy.com,trendyol.com
+Whois Corp.,samsung.com
+MarkMonitor Inc.,hotmart.com
+IHS Telekom,n11.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,geeksforgeeks.org
+Network Solutions,softonic.com
+NAMECHEAP INC,fiaharam.net
+False,alwafd.news
+PDR Ltd. d/b/a PublicDomainRegistry.com,moneycontrol.com
+MarkMonitor Inc.,cloudfront.net
+Alibaba Cloud Computing (Beijing) Co.,miao.tmall.com
+Megazone Corp.,kakao.com
+NameWeb BVBA,trustpilot.com
+Whois Corp.(http://whois.co.kr),google.co.kr
+Safenames Ltd,dell.com
+MarkMonitor Inc.,goodreads.com
+CSC CORPORATE DOMAINS,gotowebinar.com
+Name.com,9gag.com
+Gandi SAS,yts.mx
+ENOM,sbc7wfnaakau.com
+eName Technology Co.,chinaz.com
+Tucows Domains Inc.,fc2.com
+Alibaba Cloud Computing (Beijing) Co.,neiyi.tmall.com
+URL SOLUTIONS INC.,ofgogoatan.com
+MarkMonitor Inc.,gstatic.com
+MarkMonitor Inc.,wayfair.com
+RU-CENTER-RU,rambler.ru
+CSC CORPORATE DOMAINS,weather.com
+Alibaba Cloud Computing (Beijing) Co.,spao.tmall.com
+Network Solutions,inquirer.net
+NAMESHIELD,leboncoin.fr
+False,mit.edu
+MarkMonitor Inc.,investopedia.com
+False,caixa.gov.br
+ENOM,z3dmbpl6309s.com
+easyDNS Technologies,thepiratebay.org
+False,chinadaily.com.cn
+ENOM,freelancer.com
+NAMECHEAP INC,wordreference.com
+Network Solutions,hepsiburada.com
+GoDaddy.com,hootsuite.com
+Network Solutions,steampowered.com
+GoDaddy.com,edmodo.com
+RU-CENTER-RU,wildberries.ru
+Alibaba Cloud Computing (Beijing) Co.,douban.com
+Alibaba Cloud Computing (Beijing) Co.,gap.tmall.com
+MarkMonitor Corporate Services Inc,google.com.au
+MarkMonitor Inc.,zendesk.com
+CV. Rumahweb Indonesia,jpnn.com
+MarkMonitor Inc.,pinimg.com
+RU-CENTER-RU,kinopoisk.ru
+MarkMonitor Inc.,rockstargames.com
+False,otvfoco.com.br
+Onlinenic Inc,beytoote.com
+MarkMonitor Inc.,airbnb.com
+123-Reg Limited,sportbible.com
+ENOM,bbom2b434493.com
+CSC Corporate Domains,cambridge.org
+Alibaba Cloud Computing (Beijing) Co.,lee.tmall.com
+Dynadot LLC,namu.wiki
+CSC CORPORATE DOMAINS,cnnindonesia.com
+MarkMonitor Inc.,nike.com
+RU-CENTER-RU,uchi.ru
+Markmonitor Inc. t/a MarkMonitor Inc. [Tag = MARKMONITOR],ebay.co.uk
+False,google.com.vn
+MarkMonitor Inc.,fast.com
+GoDaddy.com,chess.com
+IHS Telekom,ensonhaber.com
+False,in.gr
+Alibaba Cloud Computing (Beijing) Co.,myhome.tmall.com
+False,google.gr
+False,hurriyet.com.tr
+ENOM,au79nt5wic4x.com
+CSC CORPORATE DOMAINS,marketwatch.com
+GoDaddy.com,utorrent.com
+CSC CORPORATE DOMAINS,disneyplus.com
+False,cdstm.cn
+DREAMSCAPE NETWORKS INTERNATIONAL PTE LTD,qoo10.sg
+Network Solutions,indiamart.com
+MarkMonitor Inc.,tencent.com
+Japan Registry Services Co.,nikkei.com
+False,divar.ir
+CSC CORPORATE DOMAINS,twimg.com
+MarkMonitor Inc.,docusign.com
+Alibaba Cloud Computing (Beijing) Co.,crabsecret.tmall.com
+CSC CORPORATE DOMAINS,gotomeeting.com
+Safenames Ltd.,collegeboard.org
+MarkMonitor Inc.,surveymonkey.com
+MarkMonitor Inc.,google.com.ua
+Tucows Domains Inc.,zippyshare.com
+False,1337x.to
+CSC CORPORATE DOMAINS,blackboard.com
+False,ebay-kleinanzeigen.de
+False,amazon.com.br
+MarkMonitor Inc.,squarespace.com
+False,americanas.com.br
+GoDaddy.com,tutorialspoint.com
+GANDI SAS,dcard.tw
+Amazon Registrar,loom.com
+MarkMonitor Inc.,arcgis.com
+False,kundelik.kz
+MarkMonitor Corporate Services Inc,ebay.com.au
+CSC CORPORATE DOMAINS INC,dbs.com.sg
+PDR Ltd. d/b/a PublicDomainRegistry.com,mathrubhumi.com
+Alibaba Cloud Computing (Beijing) Co.,huaban.com
+Interdominios,uptodown.com
+PSI-USA,gmx.net
+CSC CORPORATE DOMAINS,xfinity.com
+MarkMonitor Inc.,souq.com
+False,81.cn
+RU-CENTER-RU,gismeteo.ru
+False,who.int
+False,elbalad.news
+False,irs.gov
+MarkMonitor Inc.,patreon.com
+Amazon Registrar,duolingo.com
+GoDaddy Online Services Cayman Islands LTD,prothomalo.com
+GoDaddy.com,khanacademy.org
+MarkMonitor Inc.,aol.com
+False,cdc.gov
+GoDaddy.com,fiverr.com
+Amazon Registrar,ecosia.org
+NIC-VE,google.co.ve
+GoDaddy.com,viber.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,filimo.com
+MarkMonitor Inc.,webmd.com
+NAMECHEAP INC,spankbang.com
+MarkMonitor Inc.,google.ro
+Dynadot LLC,properatersch.fun
+Name.com,deviantart.com
+Register.com,realtor.com
+Regional Network Information Center,rt.com
+CSC Corporate Domains,shopee.tw
+GANDI SAS,104.com.tw
+CSC CORPORATE DOMAINS,td.com
+MarkMonitor,oracle.com
+NameSecure L.L.C.,genius.com
+Name.com,alnaharegypt.com
+Xin Net Technology Corporation,17track.net
+ENOM,namasha.com
+GoDaddy.com,pulzo.com
+OVH,ouedkniss.com
+Network Solutions,naukri.com
+Alibaba Cloud Computing (Beijing) Co.,dyson.tmall.com
+MPS Infotecnics Limited,intoday.in
+MarkMonitor,bet365.com
+False,bp.blogspot.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,pikiran-rakyat.com
+Digital Registra,shopee.co.id
+MarkMonitor,norton.com
+Alibaba Cloud Computing (Beijing) Co.,spzs.com
+Alibaba Cloud Computing (Beijing) Co.,youdao.com
+Alibaba Cloud Computing (Beijing) Co.,aimer.tmall.com
+GoDaddy.com,taboola.com
+MarkMonitor,doubleclick.net
+GoDaddy.com,giphy.com
+Network Solutions,schoology.com
+MarkMonitor Inc.,wish.com
+Authentic Web Inc.,canada.ca
+MarkMonitor Inc.,adp.com
+MarkMonitor Inc.,reuters.com
+MarkMonitor Inc.,buzzfeed.com
+RU-CENTER-RU,yaklass.ru
+GoDaddy.com,sourceforge.net
+Tucows Domains Inc.,banvenez.com
+GoDaddy.com,eksisozluk.com
+Register.com,vnexpress.net
+Amazon Registrar,issuu.com
+GANDI SAS,list-manage.com
+MarkMonitor,azure.com
+False,efu.com.cn
+Google LLC,covid19india.org
+MarkMonitor,infobae.com
+Alibaba Cloud Computing (Beijing) Co.,nike.tmall.com
+GoDaddy.com,fun48.com
+Xiamen 35.Com Technology Co.,sonhoo.com
+CSC CORPORATE DOMAINS,istockphoto.com
+False,web.de
+NAMECHEAP INC,discordapp.com
+MarkMonitor Inc.,google.com.pe
+MarkMonitor,nypost.com
+Network Solutions,rediff.com
+False,turkiye.gov.tr
+Alibaba Cloud Computing (Beijing) Co.,pngtree.com
+CSC CORPORATE DOMAINS,bbcollab.com
+CSC CORPORATE DOMAINS,lowes.com
+Network Solutions,udn.com
+URL SOLUTIONS INC.,uselnk.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,gsmarena.com
+GoDaddy.com,mgid.com
+Onlinenic Inc,hamariweb.com
+False,reclameaqui.com.br
+GoDaddy.com,wattpad.com
+MarkMonitor,chegg.com
+False,lifo.gr
+Google LLC,gfycat.com
+Gandi SAS,seesaw.me
+MarkMonitor,ameritrade.com
+False,impress.co.jp
+Alibaba Cloud Computing (Beijing) Co.,shein.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,saednews.com
+GoDaddy.com,varzesh3.com
+Network Solutions,outbrain.com
+RU-CENTER-RU,ria.ru
+Xin Net Technology Corporation,yixiin.com
+Regional Network Information Center,livejournal.com
+Chengdu west dimension digital technology Co.,haofang.net
+Gabia,11st.co.kr
+MarkMonitor,files.wordpress.com
+False,google.az
+eName Technology Co.,58.com
+Eurodns S.A.,youporn.com
+False,dmm.co.jp
+False,bankmellat.ir
+Amazon Registrar,typeform.com
+CSC CORPORATE DOMAINS,att.com
+GoDaddy.com,theepochtimes.com
+Ascio Technologies,elpais.com
+Xin Net Technology Corporation,banggood.com
+CSC CORPORATE DOMAINS,costco.com
+False,youth.cn
+GMO INTERNET,kakaku.com
+GoDaddy.com,alodokter.com
+GoDaddy.com,spanishdict.com
+GoDaddy.com,segmentfault.com
+REG-MOJEID,seznam.cz
+False,borna.news
+RU-CENTER-RU,lenta.ru
+Register.com,slickdeals.net
+CSC CORPORATE DOMAINS,britannica.com
+False,ih5.cn
+False,wp.pl
+MarkMonitor,constantcontact.com
+CSC CORPORATE DOMAINS,citi.com
+False,livedoor.jp
+False,ameblo.jp
+MarkMonitor Inc.,google.cl
+Eurodns S.A.,springer.com
+MarkMonitor,docusign.net
+MarkMonitor Inc.,usatoday.com
+CSC CORPORATE DOMAINS,bankofamerica.com
+MarkMonitor Inc.,wellsfargo.com
+False,librus.pl
+NAMECHEAP INC,figma.com
+False,google.dz
+1API GmbH,agah.com
+GoDaddy.com,tahiamasr.com
+GoDaddy.com,eatthis.com
+Xiamen 35.Com Technology Co.,wondershare.com
+1API GmbH,ninisite.com
+RU-CENTER-RU,ivi.ru
+False,olx.com.br
+False,onet.pl
+Safenames Ltd,tandfonline.com
+Gabia,coupang.com
+Alibaba Cloud Computing (Beijing) Co.,wt.tmall.com
+False,nhk.or.jp
+GoDaddy.com,evernote.com
+Register S.p.a.,gds.it
+Name.com,cnbcindonesia.com
+ORANGE,orange.fr
+False,google.com.pk
+GoDaddy.com,indianexpress.com
+Alibaba Cloud Computing (Beijing) Co.,gainreel.tmall.com
+NOM-IQ Ltd dba Com Laude,hm.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,donya-e-eqtesad.com
+Network Solutions,ultimate-guitar.com
+ITnet s.r.l.,libero.it
+RegistrarSafe,cdninstagram.com
+URL SOLUTIONS INC.,ytmp3.cc
+Alibaba Cloud Computing (Beijing) Co.,360doc.com
+MarkMonitor,google.com.co
+Onlinenic Inc,mfisp.com
+CSC CORPORATE DOMAINS,ign.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,asriran.com
+Alibaba Cloud Computing (Beijing) Co.,iyiou.com
+REGRU-RU,sdamgia.ru
+MarkMonitor,myworkday.com
+Network Solutions,usps.com
+Alibaba Cloud Computing (Beijing) Co.,shouji.tmall.com
+1API GmbH,emofid.com
+NAMECHEAP INC,freshdesk.com
+GoDaddy.com,ouo.io
+GoDaddy.com,emol.com
+False,socialblade.com
+False,memurlar.net
+Safenames Ltd,elsevier.com
+Soluciones Corporativas IP,mileroticos.com
+ARDIS-RU,kissanime.ru
+Key-Systems GmbH,dhl.com
+False,correios.com.br
+1API GmbH,playstation.com
+False,trendingnow.video
+Alibaba Cloud Computing (Beijing) Co.,runoob.com
+MarkMonitor,intuit.com
+GoDaddy.com,digitaltrends.com
+MarkMonitor Inc.,lenovo.com
+united-domains AG,storm.mg
+Tucows Domains Inc.,jamnews.com
+Lexsynergy Limited,techradar.com
+CSC CORPORATE DOMAINS,tripadvisor.com
+NAMECHEAP INC,kickstarter.com
+Pair Domains,timeanddate.com
+Network Solutions,msi.com
+GoDaddy.com,quizizz.com
+GoDaddy.com,strava.com
+RegistryGate GmbH,dw.com
+MarkMonitor Inc.,focus.cn
+Net-Chinese Co.,asus.com
+False,milliyet.com.tr
+False,sozcu.com.tr
+False,shimo.im
+CSC CORPORATE DOMAINS,bhphotovideo.com
+Xiamen 35.Com Technology Co.,gusuwang.com
+Alibaba Cloud Computing (Beijing) Co.,nanzhuang.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,langsha.tmall.com
+Register.com,lun.com
+eName Technology Co.,liansuo.com
+Network Solutions,elcomercio.com
+RU-CENTER-RU,consultant.ru
+MarkMonitor,wiktionary.org
+NAMECHEAP INC,popads.net
+Amazon Registrar,crunchyroll.com
+Alibaba Cloud Computing (Beijing) Co.,ku.tmall.com
+CSC CORPORATE DOMAINS,ibm.com
+False,ny.gov
+Alibaba Cloud Computing (Beijing) Co.,marksandspencer.tmall.com
+PCHOME,pchome.com.tw
+MarkMonitor,gamespot.com
+GANDI SAS,edx.org
+GoDaddy.com,mawdoo3.com
+Alibaba Cloud Computing (Beijing) Co.,ibicn.com
+MarkMonitor,livedoor.com
+eName Technology Co.,ceconline.com
+RU-CENTER-RU,mos.ru
+Alibaba Cloud Computing (Beijing) Co.,new3c.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,book.tmall.com
+CSC CORPORATE DOMAINS,chron.com
+RU-CENTER-RU,cyberleninka.ru
+GANDI SAS,dafont.com
+MarkMonitor,wpengine.com
+Aruba s.p.a.,laleggepertutti.it
+False,olx.ua
+False,shopee.vn
+GoDaddy.com,jb51.net
+Eurodns S.A.,qualtrics.com
+Alibaba Cloud Computing (Beijing) Co.,sports.tmall.com
+MarkMonitor,wordpress.org
+Aruba s.p.a.,proiezionidiborsa.it
+False,bmi.ir
+Alibaba Cloud Computing (Beijing) Co.,tonlion.tmall.com
+Safenames Ltd,xe.com
+False,goo.ne.jp
+False,google.be
+GoDaddy.com,study.com
+False,dikaiologitika.gr
+Amazon Registrar,medicalnewstoday.com
+Alibaba Cloud Computing (Beijing) Co.,gucn.tmall.com
+Register.com,mbc.net
+CSC CORPORATE DOMAINS,merriam-webster.com
+Internet Domain Service BS Corp.,rutracker.org
+MarkMonitor International Limited,ebay.it
+Alibaba Cloud Computing (Beijing) Co.,alicdn.com
+NAMECHEAP INC,laroza.tv
+Network Solutions,gmanetwork.com
+Alibaba Cloud Computing (Beijing) Co.,watch.tmall.com
+False,google.co.za
+Alibaba Cloud Computing (Beijing) Co.,nanxie.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,imis.tmall.com
+PSI-USA,online-convert.com
+eName Technology Co.,toutiao.com
+Alibaba Cloud Computing (Beijing) Co.,semir.tmall.com
+NOM-IQ Ltd dba Com Laude,zara.com
+Network Solutions,dawn.com
+Instra Corporation (www.instra.com),mega.nz
+BRANDSIGHT,royalbank.com
+Amazon Registrar,prezi.com
+False,shopee.com.my
+NAMECHEAP INC,wowkeren.com
+Alibaba Cloud Computing (Beijing) Co.,esprit.tmall.com
+GANDI SAS,feedly.com
+CSC CORPORATE DOMAINS,wiley.com
+GoDaddy.com,entrepreneur.com
+False,skroutz.gr
+Alibaba Cloud Computing (Beijing) Co.,scofield.tmall.com
+GoDaddy.com,dailycaller.com
+Alibaba Cloud Computing (Beijing) Co.,mseav.com
+False,olx.pl
+GoDaddy.com,sabq.org
+Network Solutions,npr.org
+NOM-IQ Ltd dba Com Laude,powerbi.com
+GoDaddy.com,wegotthiscovered.com
+False,amazon.com.au
+RegistryGate GmbH,teamviewer.com
+CBN Registrar,republika.co.id
+Network Solutions,farfetch.com
+False,nur.kz
+GoDaddy.com,emotionvideo-tv.com
+CSC CORPORATE DOMAINS,etrade.com
+Amazon Registrar,redbubble.com
+Amazon Registrar,jw.org
+Instra Corporation Pty Ltd,linktr.ee
+GoDaddy.com,elwatannews.com
+MarkMonitor,atlassian.net
+BigRock Solutions Ltd.,nseindia.com
+Xin Net Technology Corporation,cnki.net
+Alibaba Cloud Computing (Beijing) Co.,fairwhale.tmall.com
+Ascio Technologies,as.com
+CSC CORPORATE DOMAINS,intel.com
+False,resh.edu.ru
+GoDaddy.com,aofex.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,news18.com
+Alibaba Cloud Computing (Beijing) Co.,baike.com
+NAMECHEAP INC,hoodsite.com
+Amazon Registrar,nicsorts-accarade.com
+Markmonitor Inc. t/a MarkMonitor Inc. [Tag = MARKMONITOR],pinterest.co.uk
+CSC CORPORATE DOMAINS,go.com
+False,harvard.edu
+Alibaba Cloud Computing (Beijing) Co.,jiameng.com
+Alibaba Cloud Computing (Beijing) Co.,honeys.tmall.com
+Eurodns S.A.,marca.com
+ENOM,gyazo.com
+CSC Corporate Domains,payu.in
+ENOM,westernjournal.com
+Google LLC,howtogeek.com
+Alibaba Cloud Computing (Beijing) Co.,51cto.com
+GoDaddy.com,coursehero.com
+CSC CORPORATE DOMAINS,dictionary.com
+Gandi SAS,repubblica.it
+Alibaba Cloud Computing (Beijing) Co.,forever21.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,kolonsport.tmall.com
+GoDaddy.com,convertio.co
+1API GmbH,mofidonline.com
+Alibaba Cloud Computing (Beijing) Co.,maniform.tmall.com
+eName Technology Co.,360.com
+GoDaddy.com,editor.wix.com
+Amazon Registrar,wowhead.com
+MarkMonitor,nbcnews.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,urdupoint.com
+RU-CENTER-RU,rbc.ru
+MarkMonitor Inc.,shopify.com
+Network Solutions,newegg.com
+Domain.com,kompas.tv
+Gabia,donga.com
+NameCheap,getpocket.com
+MarkMonitor,verizon.com
+Atak Domain,tejaratnews.com
+MarkMonitor,accuweather.com
+MarkMonitor Inc.,hubspot.com
+EuroDNS SA,kahoot.it
+Alibaba Cloud Computing (Beijing) Co.,nvxie.tmall.com
+Registrar of domain names REG.RU LLC,vseigru.net
+MarkMonitor,biblegateway.com
+False,europa.eu
+Alibaba Cloud Computing (Beijing) Co.,oschina.net
+CSC CORPORATE DOMAINS,pearson.com
+Alibaba Cloud Computing (Beijing) Co.,dickies.tmall.com
+Whois Corp.(http://whois.co.kr),gmarket.co.kr
+False,eba.gov.tr
+Alibaba Cloud Computing (Beijing) Co.,banma.com
+Infonova REGISTRIRAJ.si DOMAINS.si,jit.si
+CSC CORPORATE DOMAINS,xero.com
+NameCheap,pixlr.com
+GoDaddy.com,bitly.com
+Alibaba Cloud Computing (Beijing) Co.,gongkong.com
+Eurodns S.A.,redtube.com
+REGISTER S.P.A.,dagospia.com
+Google LLC,thefreedictionary.com
+Xin Net Technology Corporation,xianjichina.com
+NAMECHEAP INC,classinviredy.club
+MARKMONITOR Inc.,ebay.fr
+False,zhiding.cn
+Key-Systems GmbH,pixiv.net
+TWNIC,gamer.com.tw
+Alibaba Cloud Computing (Beijing) Co.,jackjones.tmall.com
+MESH DIGITAL LIMITED,classdojo.com
+GoDaddy.com,css-tricks.com
+Alibaba Cloud Computing (Beijing) Co.,chinachugui.com
+RU-CENTER-RU,hh.ru
+NAMECHEAP INC,123rf.com
+Alibaba Cloud Computing (Beijing) Co.,lachapelle.tmall.com
+Network Solutions,yourdictionary.com
+Alibaba Cloud Computing (Beijing) Co.,it168.com
+eName Technology Co.,9384.com
+Alibaba Cloud Computing (Beijing) Co.,it.tmall.com
+Xin Net Technology Corporation,zhaopin.com
+Network Solutions,mi.com
+MarkMonitor,huffpost.com
+GoDaddy.com,webinarjam.com
+NAMECHEAP INC,filehorse.com
+Alibaba Cloud Computing (Beijing) Co.,urfs.tmall.com
+Network Solutions,dmm.com
+GoDaddy.com,service-now.com
+CSC CORPORATE DOMAINS,autodesk.com
+Network Solutions,ptt.cc
+Alibaba Cloud Computing (Beijing) Co.,epwk.com
+MarkMonitor International Canada Ltd.,kijiji.ca
+False,cpic.com.cn
+Alibaba Cloud Computing (Beijing) Co.,hollisterco.tmall.com
+MarkMonitor,android.com
+GoDaddy.com,onlyfans.com
+CSC CORPORATE DOMAINS,ea.com
+GoDaddy.com,telugu360.com
+Tucows Domains Inc.,custhelp.com
+Alibaba Cloud Computing (Beijing) Co.,jeanswest.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,lining.tmall.com
+Network Solutions,smartsheet.com
+MarkMonitor,upwork.com
+Onlinenic Inc,dalfak.com
+RU-CENTER-RU,ozon.ru
+TFN,newtalk.tw
+NameSilo,realsrv.com
+Amazon Registrar,seekingalpha.com
+Tucows Domains Inc.,bancodevenezuela.com
+False,www.gov.cn
+Net 4 India Limited,livemint.com
+False,noticias.uol.com.br
+Alibaba Cloud Computing (Beijing) Co.,triumph.tmall.com
+False,babyschool.com.cn
+Alibaba Cloud Computing (Beijing) Co.,lafuma.tmall.com
+False,t-online.de
+GoDaddy.com,douyu.com
+False,google.com.my
+NAMECHEAP INC,friv.com
+GoDaddy.com,teacherspayteachers.com
+Name.com,superuser.com
+Beijing Innovative Linkage Technology Ltd.,vvvdj.com
+MarkMonitor,cisco.com
+Tucows Domains Inc.,taleo.net
+Fastweb s.p.a.,inps.it
+Xiamen 35.Com Technology Co.,cnbeta.com
+TodayNic.com,sci-hub.tw
+Alibaba Cloud Computing (Beijing) Co.,threegun.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,basichouse.tmall.com
+RU-CENTER-RU,mosreg.ru
+False,storage.googleapis.com
+MarkMonitor,wp.com
+False,w3school.com.cn
+Cloudflare,plurk.com
+GoDaddy.com,yournewtab.com
+Network Solutions,mynet.com
+HINET,cmoney.tw
+https://www.101domain.com/,transferwise.com
+MarkMonitor,iherb.com
+Domain.com,kompasiana.com
+Moniker Online Services LLC,depositphotos.com
+Alibaba Cloud Computing (Beijing) Co.,jia.tmall.com
+GoDaddy.com,symbolab.com
+False,fazenda.gov.br
+False,freepik.es
+Xiamen 35.Com Technology Co.,chaduo.com
+Alibaba Cloud Computing (Beijing) Co.,discoveryexpedition.tmall.com
+CSC CORPORATE DOMAINS,cdiscount.com
+CBN Registrar,kaskus.co.id
+False,chinafloor.cn
+Alibaba Cloud Computing (Beijing) Co.,car.tmall.com
+Todaynic.com,rezka.ag
+False,vtv.vn
+False,smm.cn
+Alibaba Cloud Computing (Beijing) Co.,chinayigui.com
+False,iweihai.cn
+Whois Networks Co.,joins.com
+GoDaddy.com,srvtrck.com
+False,google.at
+Tucows Domains Inc.,tsetmc.com
+False,yeniakit.com.tr
+Network Solutions,mailchimp.com
+Network Solutions,jagran.com
+Instra Corporation Pty Ltd.,brainly.lat
+DANESCO TRADING LTD,topflownews.com
+False,folha.uol.com.br
+Alibaba Cloud Computing (Beijing) Co.,to8to.com
+MarkMonitor,themeforest.net
+CSC CORPORATE DOMAINS,discover.com
+Akamai Technologies,akamaized.net
+Alibaba Cloud Computing (Beijing) Co.,newbalance.tmall.com
+Network Solutions,banesconline.com
+Name.com,shahid4u.net
+False,magazineluiza.com.br
+GoDaddy.com,bastillepost.com
+S.G.S. Technologie Pvt Ltd dba Netandhost.com,axisbank.co.in
+False,emalls.ir
+Alibaba Cloud Computing (Beijing) Co.,baby.tmall.com
+RU-CENTER-RU,nalog.ru
+False,rarbg.to
+CSC CORPORATE DOMAINS,fidelity.com
+GANDI SAS,edh.tw
+Alibaba Cloud Computing (Beijing) Co.,earthmusic.tmall.com
+Network Solutions,kitco.com
+Alibaba Cloud Computing (Beijing) Co.,bershka.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,septwolves.tmall.com
+False,interia.pl
+eName Technology Co.,aizhan.com
+GoDaddy.com,paytm.com
+False,techtudo.com.br
+Alibaba Cloud Computing (Beijing) Co.,chinaweiyu.com
+R01-RU,drom.ru
+Alibaba Cloud Computing (Beijing) Co.,anta.tmall.com
+Network Solutions,usnews.com
+Alibaba Cloud Computing (Beijing) Co.,bag.tmall.com
+DomainSite,nairaland.com
+ENOM,thehindu.com
+GoDaddy.com,argaam.com
+Alibaba Cloud Computing (Beijing) Co.,calvinklein.tmall.com
+Register.com,nownews.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,bhaskar.com
+Network Solutions,aweber.com
+GoDaddy.com,gridoto.com
+Atak Domain,torob.com
+CSC Corporate Domains,mayoclinic.org
+Alibaba Cloud Computing (Beijing) Co.,19888.tv
+TIERRANET INC. DBA DOMAINDISCOVER,creditonebank.com
+Alibaba Cloud Computing (Beijing) Co.,peacebird.tmall.com
+SCALEWAY,free.fr
+RU-CENTER-RU,hi.ru
+False,sbisec.co.jp
+DNC Holdings,eluniverso.com
+REGTIME-RU,seasonvar.ru
+Amazon Registrar,code.org
+DomainTheNet.com,etoro.com
+eNom,zalo.me
+Name.com,neobux.com
+False,nasa.gov
+GoDaddy.com,dreamstime.com
+MarkMonitor,flickr.com
+PT Registrasi Nama Domain,uzone.id
+Alibaba Cloud Computing (Beijing) Co.,eland.tmall.com
+Network Solutions,aastocks.com
+False,morningpost.com.cn
+Alibaba Cloud Computing (Beijing) Co.,haoyer.com
+GoDaddy.com,search-converter.com
+False,maybank2u.com.my
+united domains AG,yumpu.com
+Network Solutions,turnitin.com
+BEELINE-RU,sbrf.ru
+eName Technology Co.,bzw315.com
+GoDaddy.com,rsalcau.com
+PT INDOSAT MEGA MEDIA,viva.co.id
+RU-CENTER-RU,kp.ru
+eNom,ampugi334f.com
+False,jhu.edu
+DreamHost,mobafire.com
+NAMECHEAP INC,apache.org
+CSC CORPORATE DOMAINS,mheducation.com
+Tucows Domains Inc.,futbin.com
+GoDaddy.com,aftership.com
+False,google.ch
+Bizcn.com,house365.com
+Domain.com,crhoy.com
+NAMECHEAP INC,xhamsterlive.com
+False,laodong.vn
+GANDI SAS,narvar.com
+GoDaddy.com,znanija.com
+Alibaba Cloud Computing (Beijing) Co.,imooc.com
+Alibaba Cloud Computing (Beijing) Co.,iliangcang.com
+Alibaba Cloud Computing (Beijing) Co.,gearbest.com
+False,chip.de
+PDR Ltd. d/b/a PublicDomainRegistry.com,filmix.co
+Alibaba Cloud Computing (Beijing) Co.,umeng.com
+MARKMONITOR INC.,hsbc.com.hk
+NIC-VE,mercadolibre.com.ve
+DANESCO TRADING LTD,medianetto.com
+False,legit.ng
+GoDaddy.com,exoclick.com
+NAMECHEAP INC,pexels.com
+GoDaddy.com,thewhizmarketing.com
+Register.com,haberturk.com
+GoDaddy.com,kinokrad.co
+GoDaddy.com,sehatq.com
+Tucows Domains Inc.,boredpanda.com
+MarkMonitor,pandora.com
+False,abc.net.au
+Amazon Registrar,discogs.com
+Gabia,edunet.net
+GoDaddy.com,cu6.io
+CSL Computer Service Langenbach GmbH d/b/a joker.com,rokna.net
+Alibaba Cloud Computing (Beijing) Co.,dai.tmall.com
+Xiamen Chinasource Internet Service Co.,kq36.com
+GoDaddy.com,hk01.com
+Tucows Domains Inc.,jotform.com
+T.H.NIC Co.,shopee.co.th
+NAMECHEAP INC,drudgereport.com
+GoDaddy.com,trontv.com
+Amazon Registrar,doordash.com
+National Informatics Centre,epfindia.gov.in
+GoDaddy.com,elmogaz.com
+URL SOLUTIONS INC.,postlnk.com
+Alibaba Cloud Computing (Beijing) Co.,chinanetrank.com
+Ascio Technologies,hltv.org
+PDR Ltd. d/b/a PublicDomainRegistry.com,khtahmar.com
+Alibaba Cloud Computing (Beijing) Co.,cabbeen.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,zhcw.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,newstracklive.com
+NAMECHEAP INC,biosc.xyz
+False,kuronekoyamato.co.jp
+Markmonitor Inc. t/a MarkMonitor Inc. [Tag = MARKMONITOR],telegraph.co.uk
+Alibaba Cloud Computing (Beijing) Co.,eastmoney.com
+MarkMonitor,gap.com
+WEST263 INTERNATIONAL LIMITED,ipo.hk
+Tucows Domains Inc.,csdiran.com
+ENOM,apkpure.com
+MarkMonitor,protonmail.com
+Network Solutions,macys.com
+Tucows Domains Inc.,mercantilbanco.com
+GoDaddy.com,myanimelist.net
+MarkMonitor Inc.,tinder.com
+Alibaba Cloud Computing (Beijing) Co.,world.tmall.com
+DNSPod,sf-express.com
+ENOM,sitepoint.com
+Network Solutions,eenadu.net
+Name.com,mydramalist.com
+MarkMonitor,rottentomatoes.com
+1&1 IONOS SE,lnkam.com
+Amazon Registrar,gumroad.com
+MarkMonitor Inc.,overstock.com
+CSC CORPORATE DOMAINS,americanexpress.com
+eName Technology Co.,4399.com
+False,xjtu.edu.cn
+False,google.ae
+False,rakuten-card.co.jp
+False,wowkorea.jp
+PCHOME,businessweekly.com.tw
+Gabia,ruliweb.com
+Network Solutions,jstor.org
+Tucows Domains Inc.,minecraft.net
+MarkMonitor,huawei.com
+GANDI SAS,vidio.com
+Alibaba Cloud Computing (Beijing) Co.,3dmgame.com
+Amazon Registrar,instacart.com
+Network Solutions,battle.net
+eName Technology Co.,xabbs.com
+Hong Kong Domain Name Registration Company Limited,discuss.com.hk
+REGRU-RU,studopedia.ru
+Domain.com,bolasport.com
+GoDaddy.com,hawaaworld.com
+Tucows Domains Inc.,subscene.com
+OVH,mosaiquefm.net
+Alibaba Cloud Computing (Beijing) Co.,jia400.com
+GoDaddy.com,rappler.com
+NAMECHEAP INC,urbandictionary.com
+Network Solutions,ringcentral.com
+Alibaba Cloud Computing (Beijing) Co.,qiannaimei.tmall.com
+GoDaddy.com,sfwaa.com
+Network Solutions,cookpad.com
+False,zougla.gr
+MarkMonitor,ytimg.com
+False,vulcan.net.pl
+INWX GmbH & Co. KG,forgeofempires.com
+Name.com,file-upload.com
+Google LLC,redgifs.com
+GoDaddy.com,gofundme.com
+MarkMonitor,azureedge.net
+CSC CORPORATE DOMAINS,humblebundle.com
+False,sabah.com.tr
+Japan Registry Services Co.,asahi.com
+False,soft98.ir
+APT,popdaily.com.tw
+Network Solutions,un.org
+GoDaddy.com,edupage.org
+Register.com,sakshi.com
+Alibaba Cloud Computing (Beijing) Co.,huim.com
+GoDaddy.com,informer.com
+False,creditchina.gov.cn
+GoDaddy.com,manyvids.com
+False,enimerotiko.gr
+Instra Corporation Pty Ltd.,selfridges.com
+Alibaba Cloud Computing (Beijing) Co.,91jm.com
+CSC CORPORATE DOMAINS INC.,lemonde.fr
+ENOM,pantip.com
+MarkMonitor,allrecipes.com
+MarkMonitor Inc.,google.nl
+Asadal,ebssw.kr
+False,stanford.edu
+DYNADOT,sdownload.net
+False,bild.de
+Cloudflare,v2ex.com
+MarkMonitor,126.com
+Namecheap,wwmiox.xyz
+Todaynic.com,gongchang.com
+eName Technology Co.,258.com
+eName Technology Co.,cofeed.com
+Network Solutions,kohls.com
+False,itmedia.co.jp
+MarkMonitor,usbank.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,shomanews.com
+GoDaddy.com,trulia.com
+Network Solutions,ukr.net
+CSC CORPORATE DOMAINS,nature.com
+False,dreamjob.ma
+Amazon Registrar,creativemarket.com
+False,elmundo.es
+domene.si,nyaa.si
+Domain The Net Technologies Ltd,ynet.co.il
+Network Solutions,alarabiya.net
+Corporation Service Company (Aust) Pty Ltd,commbank.com.au
+Network Solutions,blizzard.com
+False,spiegel.de
+Cloudflare,gjirafa.com
+False,pinterest.es
+Safenames Ltd,nvidia.com
+GoDaddy.com,motor1.com
+MarkMonitor,verizonwireless.com
+False,realestate.com.au
+Network Solutions,vectorstock.com
+False,sapo.pt
+RU-CENTER-RU,mirconnect.ru
+Hostinger,pirate-bay.net
+GoDaddy.com,myntra.com
+CSC CORPORATE DOMAINS,viu.com
+CSC CORPORATE DOMAINS,icloud.com
+Alibaba Cloud Computing (Beijing) Co.,eee114.com
+MarkMonitor,mercadolibre.com
+Alibaba Cloud Computing (Beijing) Co.,topshop.tmall.com
+Alibaba Cloud Computing (Beijing) Co.,winshang.com
+Cloudflare,lotterypost.com
+Akky (Una division de NIC Mexico),www.gob.mx
+Regional Network Information Center,sputniknews.com
+GoDaddy.com,adoptapet.com
+Whois Corp.,dcinside.com
+Alibaba Cloud Computing (Beijing) Co.,home77.com
+GoDaddy.com,kizlarsoruyor.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,javatpoint.com
+Atak Domain,zarinpal.com
+Wild West Domains,secureserver.net
+False,pcbaby.com.cn
+NAMECHEAP INC,inquisitr.com
+False,about.google
+ORANGE,impots.gouv.fr
+GoDaddy.com,users.wix.com
+Authentic Web Inc.,cbc.ca
+GoDaddy.com,thewhizproducts.com
+MarkMonitor,ssl-images-amazon.com
+BigRock Solutions Ltd.,sarkariresult.com
+GANDI SAS,python.org
+Network Solutions,clarin.com
+False,yjc.ir
+TIERRANET INC. DBA DOMAINDISCOVER,beeg.com
+nicar,afip.gob.ar
+CSC CORPORATE DOMAINS,live.net
+Tucows Domains Inc.,addthis.com
+NAMECHEAP INC,sharestzytef.club
+PCHOME,businesstoday.com.tw
+URL SOLUTIONS INC.,grooksom.com
+False,thethao247.vn
+Name.com,ted.com
+GoDaddy.com,ojooo.com
+GoDaddy.com,justdial.com
+Register.com,tempo.co
+Reliable Software,kinogo.by
+eName Technology Co.,znds.com
+TurnCommerce,manganelo.com
+MarkMonitor,myworkdayjobs.com
+ENOM,getadblock.com
+Internet Domain Service BS Corp.,uptobox.com
+MarkMonitor,yelp.com
+SHANGHAI MEICHENG TECHNOLOGY INFORMATION DEVELOPMENT CO.,gangde.net
+NAMECHEAP INC,getintopc.com
+CSC CORPORATE DOMAINS,rei.com
+Network Solutions,lapatilla.com
+False,news.com.au
+nicar,lanacion.com.ar
+GoDaddy.com,protagonista.com.co
+Alibaba Cloud Computing (Beijing) Co.,youku.com
+False,nation.co.ke
+NetEarth One,docin.com
+Amazon Registrar,poki.com
+False,tci.ir
+Google LLC,tweaktown.com
+Google LLC,cybozu.com
+NAMECHEAP INC,stripchat.com
+CSC CORPORATE DOMAINS,wsj.com
+False,zingnews.vn
+False,ed.gov
+GoDaddy.com,flightradar24.com
+False,brainly.com.br
+REGRU-RU,pikabu.ru
+BRANDSIGHT,rbcroyalbank.com
+RU-CENTER-RU,gazeta.ru
+CSC Corporate Domains,olx.in
+Google LLC,epochtimes.com
+Libyan Spider Network (int),adf.ly
+Xiamen 35.Com Technology Co.,99114.com
+GoDaddy.com,elyamnelaraby.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,oneindia.com
+MarkMonitor,jpmorganchase.com
+MarkMonitor Inc.,apartments.com
+MarkMonitor Inc.,collinsdictionary.com
+CSC CORPORATE DOMAINS,bloomberg.com
+False,blog.ir
+GoDaddy.com,alarab.com
+Nom-IQ Limited t/a Com Laude [Tag = NOMIQ],independent.co.uk
+TWNIC,1111.com.tw
+MarkMonitor,skrill.com
+Alibaba Cloud Computing (Beijing) Co.,doc88.com
+GoDaddy.com,hugedomains.com
+False,samanese.ir
+False,aa.com.tr
+Name SRS AB,cint.com
+Eurodns S.A.,crentgate.com
+T.H.NIC Co.,lazada.co.th
+Central Comercializadora de Internet S.A.S,las2orillas.co
+GoDaddy.com,jooble.org
+GoDaddy.com,finviz.com
+MarkMonitor,riotgames.com
+TIERRANET INC. DBA DOMAINDISCOVER,bandcamp.com
+MarkMonitor Inc.,auth0.com
+Alibaba Cloud Computing (Beijing) Co.,chinamenwang.com
+Name.com,neoldu.com
+Tucows Domains Inc.,blackhatworld.com
+GoDaddy.com,aarth.net
+MarkMonitor,ccleaner.com
+GoDaddy.com,onlinekhabar.com
+Network Solutions,forexfactory.com
+Name.com,semanticscholar.org
+False,avaz.ba
+False,acesso.gov.br
+Network Solutions,getresponse.com
+DreamHost,warcraftlogs.com
+Onlinenic Inc,elbilad.net
+GoDaddy.com,fbdown.net
+MarkMonitor,windows.net
+Network Solutions,listindiario.com
+CSC CORPORATE DOMAINS,ft.com
+TLD Registrar Solutions Ltd.,baskino.me
+Name.com,pelisplus.me
+Internic.ca Inc.,canadapost.ca
+MarkMonitor,tdameritrade.com
+Tucows Domains Inc.,blogfa.com
+False,boc.cn
+PDR Ltd. d/b/a PublicDomainRegistry.com,parlgate.com
+False,google.hu
+False,hostgator.com.br
+Amazon Registrar,piliapp.com
+WEBCC,yektanet.com
+Xin Net Technology Corporation,ifeng.com
+URL SOLUTIONS INC.,viewlnk.com
+Network Solutions,greatandhra.com
+Cloudflare,4chan.org
+MarkMonitor,amazon.com.mx
+ENOM,jkforum.net
+Whois Corp.(http://whois.co.kr),auction.co.kr
+NameSilo,sxyprn.com
+Cloudflare,4channel.org
+False,japanpost.jp
+False,abc.es
+Eurodns S.A.,pornhubpremium.com
+GoDaddy.com,onelogin.com
+GANDI,allocine.fr
+False,bb.com.br
+GoDaddy.com,yenisafak.com
+Alibaba Cloud Computing (Beijing) Co.,720vt.com
+GoDaddy.com,artstation.com
+Alibaba Cloud Computing (Beijing) Co.,36kr.com
+GoDaddy.com,zhibo8.cc
+MarkMonitor,avast.com
+ERANET INTERNATIONAL LIMITED,b-ok.cc
+Alibaba Cloud Computing (Beijing) Co.,rencaijob.com
+NAMECHEAP INC,adbtc.top
+NameCheap,etherscan.io
+Reliable Software,tut.by
+False,people.com.cn
+False,lazada.com.my
+False,terra.com.br
+NAMECHEAP INC,waveapps.com
+GoDaddy.com,bluestacks.com
+Hetzner Online GmbH,anydesk.com
+22NET,weixinyunduan.com
+INDOREG,dream.co.id
+False,business.site
+Tucows Domains Inc.,mehrnews.com
+NAMECHEAP INC,akwam.net
+CV. Jogjacamp,jagodangdut.com
+Net 4 India Limited,airtel.in
+Tucows Domains Inc.,khabarpu.com
+False,google.pt
+REGTIME-RU,multiurok.ru
+CSC CORPORATE DOMAINS,abcnews.go.com
+GoDaddy.com,disqus.com
+MarkMonitor,windowsazure.com
+GANDI SAS,ubisoft.com
+WEBCC,akurat.co
+NAMECHEAP INC,yijiadh.com
+GoDaddy.com,bestlifeonline.com
+Alibaba Cloud Computing (Beijing) Co.,lieyunwang.com
+MarkMonitor,schwab.com
+GoDaddy.com,plex.tv
+False,te.eg
+MarkMonitor Inc.,scotiabank.com
+Name.com,cima4u.io
+Gabia,yna.co.kr
+NAMECHEAP INC,4solo.biz
+NAMESHIELD,pole-emploi.fr
+GoDaddy.com,takealot.com
+NAMECHEAP INC,brstej.com
+Amazon Registrar,vice.com
+False,prom.ua
+GoDaddy.com,thinkific.com
+MarkMonitor,ancestry.com
+False,backlog.jp
+NAMECHEAP INC,codecademy.com
+Name.com,askubuntu.com
+NOM-IQ Ltd dba Com Laude,insider.com
+NOM-IQ Ltd dba Com Laude,microsoftstream.com
+REGISTER.IT s.p.a. t/a Register.it [Tag = REGISTER-IT],sworld.co.uk
+Amazon Registrar,asana.com
+Xin Net Technology Corporation,made-in-china.com
+Network Solutions,on24.com
+PSI-USA,mindmeister.com
+NameCheap,nhentai.net
+False,rakuten-sec.co.jp
+GoDaddy.com,ahlmasrnews.com
+GoDaddy.com,joinhoney.com
+Domain.com,vecteezy.com
+Key-Systems GmbH,linguee.com
+False,jnu.edu.cn
+GoDaddy.com,alsbbora.info
+APT,biggo.com.tw
+Koreacenter co.,clien.net
+Entorno Digital,lavanguardia.com
+False,idealo.de
+Epik,5ch.net
+Alibaba Cloud Computing (Beijing) Co.,cnzz.com
+REGTIME LTD.,videouroki.net
+Network Solutions,internetdownloadmanager.com
+GoDaddy.com,indosport.com
+Name.com,monografias.com
+MarkMonitor,lifewire.com
+Domain The Net Technologies Ltd,google.co.il
+GoDaddy.com,cointelegraph.com
+False,google.com.ph
+Key-Systems GmbH,3sk.io
+MarkMonitor,people.com
+Amazon Registrar,miro.com
+GoDaddy.com,haberzamani.com
+GoDaddy.com,4shared.com
+Alibaba Cloud Computing (Beijing) Co.,chaoxing.com
+False,chsi.com.cn
+MarkMonitor,glassdoor.com
+TWNIC,books.com.tw
+False,tiki.vn
+RU-CENTER-RU,rg.ru
+Amazon Registrar,instamojo.com
+GoDaddy.com,redfin.com
+Network Solutions,jetbrains.com
+ENOM,gtmetrix.com
+False,express.pk
+Gabia,nexon.com
+GoDaddy.com,stocktwits.com
+eNom,y8.com
+MarkMonitor Inc,google.se
+RegistrarSafe,fbsbx.com
+False,lazada.com.ph
+Register.com,politico.com
+Lexsynergy Limited,pcgamer.com
+MarkMonitor,udacity.com
+GoDaddy.com,jagranjosh.com
+GANDI SAS,liquipedia.net
+False,sakura.ne.jp
+1API GmbH,sonyentertainmentnetwork.com
+NAMESHIELD,laposte.fr
+Network Solutions,sap.com
+False,mobile.de
+Alibaba Cloud Computing (Beijing) Co.,cyol.com
+Arq Group Limited doing business as Melbourne IT,billdesk.com
+GoDaddy.com,akhbarelyom.com
+False,cra-arc.gc.ca
+NAMECHEAP INC,uploaded.net
+OVH,glosbe.com
+False,zoomit.ir
+CSC CORPORATE DOMAINS,autotrader.com
+No registrar listed.  This domain is directly registered with Nominet.,www.gov.uk
+False,cryptobrowser.site
+Eurodns S.A.,clips4sale.com
+GoDaddy.com,byjus.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,eghtesadonline.com
+GoDaddy.com,getfvid.com
+GANDI SAS,deezer.com
+False,zcool.com.cn
+GoDaddy.com,wordhippo.com
+GoDaddy.com,g2a.com
+Name.com,sporx.com
+Register.com,diariolibre.com
+False,szu.edu.cn
+Gandi SAS,criteo.com
+Network Solutions,ieee.org
+Name.com,alwakeelnews.com
+REGRU-RU,eljur.ru
+GoDaddy.com,cargurus.com
+GoDaddy.com,andhrajyothy.com
+False,oxu.az
+GoDaddy.com,narcity.com
+False,abril.com.br
+PDR Ltd. d/b/a PublicDomainRegistry.com,motorplus-online.com
+NAMECHEAP INC,mxc.com
+RU-CENTER-RU,drive2.ru
+False,makeleio.gr
+eName Technology Co.,dianping.com
+MarkMonitor,binance.com
+MarkMonitor Inc.,engadget.com
+GoDaddy.com,psychologytoday.com
+NameCheap,todoist.com
+Tucows Domains Inc.,boohoo.com
+eName Technology Co.,meituan.com
+Network Solutions,elsalvador.com
+MarkMonitor,envato.com
+OVH sas,brainly.in
+False,dailypost.ng
+GANDI SAS,wrike.com
+MarkMonitor,thoughtco.com
+False,privatbank.ua
+RU-CENTER-RU,worldoftanks.ru
+Whois Corp.,chosun.com
+Xin Net Technology Corporation,newsmth.net
+1API GmbH,faradars.org
+CSC CORPORATE DOMAINS,wired.com
+GoDaddy.com,mxplayer.in
+False,idnes.cz
+EPAG domainservices GmbH,123movies.la
+Key-Systems GmbH,donanimhaber.com
+Network Solutions,theatlantic.com
+GoDaddy.com,gazetaexpress.com
+Tuonome Registrar S.r.l.,corriere.it
+CSC CORPORATE DOMAINS,nintendo.com
+MarkMonitor,mercadolivre.com
+CSC CORPORATE DOMAINS,dickssportinggoods.com
+Xin Net Technology Corporation,anjuke.com
+Internet Domain Service BS Corp.,rapidgator.net
+Amazon Registrar,appledaily.com
+Alibaba Cloud Computing (Beijing) Co.,cfsbcn.com
+GoDaddy.com,alsolta.net
+MarkMonitor International Canada Ltd.,ebay.ca
+False,mabanque.bnpparibas
+WEBCC,chinatimes.com
+MarkMonitor,usaa.com
+Gandi SAS,vivo.sx
+Tucows Domains Inc.,elconfidencial.com
+False,enamad.ir
+CSC CORPORATE DOMAINS,xbox.com
+CSC CORPORATE DOMAINS,rollingstone.com
+Name.com,opensooq.com
+Safenames Ltd,ziprecruiter.com
+Google LLC,streamyard.com
+Name.com,khaberni.com
+DNSPod,ijiandao.com
+EPAG Domainservices GmbH,kissasian.sh
+Network Solutions,kidsa-z.com
+Amazon Registrar,crazygames.com
+Cloudflare,cloudflare.com
+Alibaba Cloud Computing (Beijing) Co.,renren.com
+Ascio Technologies,nationalgeographic.com
+MarkMonitor International Canada Ltd.,walmart.ca
+GoDaddy.com,towardsdatascience.com
+GoDaddy.com,e-hentai.org
+Atak Domain,rtl-theme.com
+Network Solutions,oup.com
+MarkMonitor,filehippo.com
+PSI-USA,copts-united.com
+False,blog.jp
+GoDaddy.com,makeuseof.com
+False,express.dhl
+Network Solutions,klikbca.com
+NAMECHEAP INC,cuevana3.io
+Gandi SAS,tasnimnews.com
+MESH DIGITAL LIMITED,xm.com
+TWNIC,cna.com.tw
+GoDaddy.com,rapidtables.com
+Gandi SAS,jeuxvideo.com
+MarkMonitor International Limited,google.sk
+GoDaddy.com,leetcode.com
+ENOM,windy.com
+URL Solutions,unreshiramor.com
+NAMESHIELD,lefigaro.fr
+False,spaggiari.eu
+False,52pojie.cn
+National Informatics Centre,uidai.gov.in
+MarkMonitor,zappos.com
+Digital Registra,duniagames.co.id
+CSC CORPORATE DOMAINS,marriott.com
+MarkMonitor Inc.,avg.com
+HINET,walkerland.com.tw
+GoDaddy.com,guru99.com
+Deutsche Telekom AG,t-mobile.com
+Corporation Service Company (Aust) Pty Ltd,auspost.com.au
+CSC CORPORATE DOMAINS,accenture.com
+GoDaddy.com,soy502.com
+GoDaddy.com,yes206.com
+GoDaddy.com,indiegogo.com
+RU-CENTER-RU,mk.ru
+Name.com,serverfault.com
+False,biglobe.ne.jp
+False,dantri.com.vn
+CSC CORPORATE DOMAINS,gettyimages.com
+Tucows Domains Inc.,dndbeyond.com
+RU-CENTER-RU,ucoz.ru
+MarkMonitor,yammer.com
+DANESCO TRADING LTD,daftsex.com
+Alibaba Cloud Computing (Beijing) Co.,zaful.com
+GoDaddy.com,bicentenariobu.com
+False,novinky.cz
+Moniker Online Services LLC,haberler.com
+False,chinabm.cn
+False,juntadeandalucia.es
+False,weblio.jp
+CSC CORPORATE DOMAINS,sfgate.com
+False,shopee.ph
+ENOM,bollywoodshaadis.com
+Hong Kong Domain Name Registration Company Limited,etnet.com.hk
+PCHOME,ruten.com.tw
+GoDaddy.com,poshmark.com
+GoDaddy.com,fullhdfilmizlesene.com
+GoDaddy.com,searchmulty.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,cutestat.com
+GoDaddy.com,bibox.com
+Amazon Registrar,okex.com
+False,itau.com.br
+GoDaddy.com,presslogic.com
+False,google.kz
+False,wa.gov
+Bizcn.com,cnwnews.com
+CSC CORPORATE DOMAINS,wunderground.com
+eName Technology Co.,duba.com
+False,aksam.com.tr
+False,google.cz
+GANDI SAS,over-blog.com
+NAMECHEAP INC,720pizle.org
+CSC CORPORATE DOMAINS,sony.com
+MarkMonitor,vanguard.com
+False,chinadd.cn
+Amazon Registrar,robinhood.com
+Hetzner Online GmbH,alwatanvoice.com
+Amazon Registrar,thealterforce.com
+https://www.101domain.com/,zomato.com
+False,okaz.com.sa
+MarkMonitor,visualstudio.com
+Gabia,webtoons.com
+Gandi SAS,8movierulz.ms
+MarkMonitor,pinterest.com.mx
+GoDaddy.com,alaraby.co.uk
+GoDaddy.com,timesnownews.com
+123-Reg Limited,arabi21.com
+ENOM,checking-your-browser.com
+Network Solutions,icicidirect.com
+False,monbin.site
+GoDaddy.com,slader.com
+REGRU-RU,fb.ru
+NameCheap,gogoanime.io
+Xin Net Technology Corporation,tsichuan.com
+GoDaddy.com,calculator.net
+CSL Computer Service Langenbach GmbH d/b/a joker.com,fararu.com
+False,fnb.co.za
+ENOM,hostgator.com
+CSC CORPORATE DOMAINS,att.net
+RU-CENTER-RU,allbest.ru
+CSC CORPORATE DOMAINS,pnc.com
+MarkMonitor,cvs.com
+False,ems.com.cn
+Name.com,clever.com
+MarkMonitor,office.net
+PDR Ltd. d/b/a PublicDomainRegistry.com,bytefence.com
+Alibaba Cloud Computing (Beijing) Co.,chinaunix.net
+US Locality,state.tx.us
+MarkMonitor,atlassian.com
+MarkMonitor Inc.,coinmarketcap.com
+NAMECHEAP INC,pastebin.com
+Domain.com,bluehost.com
+MarkMonitor,shutterfly.com
+Network Solutions,sdpnoticias.com
+NameWeb BVBA,opera.com
+False,google.lk
+Moniker Online Services LLC,bleacherreport.com
+GoDaddy.com,popbela.com
+Amazon Registrar,nerdwallet.com
+Network Solutions,codeproject.com
+Tucows Domains Inc.,beauty321.com
+GoDaddy.com,myfitnesspal.com
+GoDaddy.com,haber7.com
+home.pl S.A.,gazeta.pl
+False,submarino.com.br
+Gandi SAS,powerapp.download
+1API GmbH,bashgah.com
+NAMECHEAP INC,y2mate.guru
+GoDaddy.com,sudannews365.org
+False,turbo.az
+False,tamin.ir
+NIC .PE,bonouniversalfamiliar.pe
+MarkMonitor,nordstrom.com
+DREAMHOST,archdaily.com
+GoDaddy.com,instructables.com
+False,9978.cn
+NAMECHEAP INC,thingiverse.com
+False,24h.com.vn
+GoDaddy.com,screencast-o-matic.com
+AVENIR TELEMATIQUE,parcoursup.fr
+Aruba s.p.a.,axioscloud.it
+False,google.com.bd
+MarkMonitor,ggpht.com
+MarkMonitor Inc.,thebalancecareers.com
+CSC CORPORATE DOMAINS,gizmodo.com
+False,campograndenews.com.br
+Kementerian Komunikasi dan Informatika,kemdikbud.go.id
+Network Solutions,bedbathandbeyond.com
+Moniker Online Services LLC,streamlabs.com
+Beijing Innovative Linkage Technology Ltd.,9lianmeng.com
+NetEarth One,minuto30.com
+False,9r.cn
+Whois Corp.(http://whois.co.kr),ppomppu.co.kr
+RD-RU,kino-teatr.ru
+False,rozetka.com.ua
+NAMECHEAP INC,tgju.org
+REGRU-RU,gdz.ru
+NAMECHEAP INC,picuki.com
+LiveDns Ltd,panet.co.il
+Telecom Italia s.p.a.,tim.it
+False,mainichi.jp
+MarkMonitor,cars.com
+CSC CORPORATE DOMAINS,samsclub.com
+GoDaddy.com,fehobmasr.com
+Gandi SAS,docker.com
+Safenames Ltd,yandex.net
+GoDaddy.com,marinetraffic.com
+RU-CENTER-RU,getcourse.ru
+GoDaddy Online Services Cayman Islands LTD,note.com
+CSC CORPORATE DOMAINS,sketchup.com
+GoDaddy.com,datacamp.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,parsfootball.com
+Name.com,themeisle.com
+Network Solutions,enstage-sas.com
+Eurodns S.A.,kahoot.com
+False,wiocha.pl
+False,isna.ir
+Entorno Digital,gencat.cat
+CSL Computer Service Langenbach GmbH d/b/a joker.com,rasadvarzeshi.com
+GoDaddy.com,lentainform.com
+CSC CORPORATE DOMAINS,vmware.com
+Network Solutions,yemek.com
+Internet Domain Service BS Corp.,habr.com
+PDR Ltd. d/b/a PublicDomainRegistry.com,elamwal.com
+MarkMonitor,badoo.com
+Lexsynergy Limited,tomsguide.com
+Tucows Domains Inc.,provincial.com
+ONLINE SAS,1fichier.com
+RD-RU,labirint.ru
+False,xgo.com.cn
+False,fudan.edu.cn
+Tucows Domains Inc.,rahavard365.com
+MarkMonitor,aljazeera.com
+False,jumia.com.ng
+INWX GmbH & Co. KG,justwatch.com
+Alibaba Cloud Computing (Beijing) Co.,gamersky.com
+Cloudflare,pcpartpicker.com
+Wild West Domains,dzone.com
+Whois Corp.,afreecatv.com
+RU-CENTER-RU,garant.ru
+False,qafqazinfo.az
+Libyan Spider Network (int),google.com.ly
+MarkMonitor,rakuten.com
+Amazon Registrar,jimdofree.com
+Gabia,nate.com
+MarkMonitor,leagueoflegends.com
+Network Solutions,ixl.com
+Alibaba Cloud Computing (Beijing) Co.,66cruises.com
+False,chinagate.cn
+CSC CORPORATE DOMAINS,theverge.com
+False,dramacool.movie
+False,farsnews.ir
+Google LLC,wordwall.net
+MarkMonitor,hbr.org
+CSC CORPORATE DOMAINS,polygon.com
+RU-CENTER-RU,2gis.ru
+NAMECHEAP INC,fosta-tv.com
+RU-CENTER-RU,leroymerlin.ru
+GoDaddy.com,matamata.com
+PT Registrasi Nama Domain,kontan.co.id
+False,jumia.ma
+CSC Corporate Domains,olx.ro
+easyDNS Technologies Inc.,zerohedge.com
+GoDaddy.com,wikiwand.com
+False,google.co.ma
+eName Technology Co.,mydrivers.com
+MarkMonitor,vrbo.com
+False,daraz.pk
+CSC Corporate Domains,pbs.org
+False,torrentz2.eu
+Akky (Una division de NIC Mexico),sat.gob.mx
+False,colorado.edu
+False,irna.ir
+False,yr.no
+GoDaddy.com,abplive.com
+RU-CENTER-RU,tatar.ru
+Moniker Online Services LLC,myfreecams.com
+Name.com,sheypoor.com
+GoDaddy.com,farfeshplus.com
+False,yomiuri.co.jp
+Whois Corp.,lg.com
+MarkMonitor,java.com
+Corporation Service Company (Aust) Pty Ltd,seek.com.au
+Network Solutions,movieweb.com
+NIC .PE,registronacionaldehogares.pe
+GoDaddy.com,snapdeal.com
+CSC CORPORATE DOMAINS,arcot.com
+GoDaddy.com,lankasri.com
+GoDaddy.com,coinsbit.io
+GoDaddy.com,edim.co
+NOM-IQ Ltd dba Com Laude,hotels.com
+False,zdf.de
+MarkMonitor,unrealengine.com
+False,nbg.gr
+False,meb.gov.tr
+CSC Corporate Domains,express.co.uk
+GoDaddy,feebee.com.tw
+Pair Domains,calculatorsoup.com
+MarkMonitor International Canada Ltd.,bestbuy.ca
+MarkMonitor,lucidchart.com
+GoDaddy.com,search-hd.com
+Soluciones Corporativas IP,malavida.com
+MarkMonitor Inc.,westernunion.com
+Xin Net Technology Corporation,onlinedown.net
+Wild West Domains,weschool.com
+CSC CORPORATE DOMAINS,goodhousekeeping.com
+GoDaddy.com,pdffiller.com
+MarkMonitor,swagbucks.com
+RegistryGate GmbH,adidas.com
+GoDaddy.com,ghanaweb.com
+GoDaddy.com,motorsport.com
+GoDaddy.com,bd-pratidin.com
+GoDaddy.com,xmtrading.com
+Network Solutions,watchit.com
+CSC CORPORATE DOMAINS,eventbrite.com
+False,winbank.gr
+Network Solutions,arxiv.org
+Tucows Domains Inc.,gaana.com
+False,myflixer.to
+False,tap.az
+CSC CORPORATE DOMAINS INC,shopee.sg
+GoDaddy.com,arabseed.net
+CSC CORPORATE DOMAINS,dummies.com
+Xin Net Technology Corporation,topfo.com
+NAMECHEAP INC,azlyrics.com
+SafeNames Ltd,caliente.mx
+False,noaa.gov
+Network Solutions,yoox.com
+GoDaddy.com,simpleflying.com
+False,amazon.jobs
+ITnet s.r.l.,virgilio.it
+GANDI SAS,perfectmoney.com
+GoDaddy.com,dytt8.net
+Alibaba Cloud Computing (Beijing) Co.,vmall.com
+False,kenh14.vn
+MarkMonitor,mathworks.com
+Dominiando S.r.l.,poste.it
+False,313.cn
+RU-CENTER-RU,narod.ru
+Network Solutions,startpage.com
+False,gsis.gr
+CSC CORPORATE DOMAINS,walgreens.com
+CSC CORPORATE DOMAINS,vox.com
+False,nat.gov.tw
+NAMECHEAP INC,mybuzz.fun
+Alibaba Cloud Computing (Beijing) Co.,jc35.com
+False,sejam.ir
+False,abv.bg
+False,otto.de
+Xin Net Technology Corporation,chuandong.com
+REGRU-RU,vashurok.ru
+GoDaddy.com,gayboystube.com
+Digital Transformation Agency,ato.gov.au
+False,estadao.com.br
+False,le360.ma
+Network Solutions,sanook.com
+dattatec.com SRL,ellitoral.com
+Name.com,prnt.sc
+False,weather.gov
+False,state.gov
+False,lazada.vn
+Bizcn.com,lhy999.com
+MarkMonitor,ig.com
+False,almubasher.com.sa
+Gabia,tmon.co.kr
+Alibaba Cloud Computing (Beijing) Co.,wangdaidongfang.com
+Network Solutions,sagepub.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,setare.com
+Tucows Domains Inc.,doramy.club
+ENOM,howstuffworks.com
+GoDaddy.com,casetify.com
+MarkMonitor,unity3d.com
+eNOM,gigafile.nu
+Cloudflare,kapwing.com
+False,olx.com.pk
+Sarek,yggtorrent.se
+False,clear.com.br
+RU-CENTER-RU,echo.msk.ru
+Digital Registra,brainly.co.id
+RU-CENTER-RU,pochta.ru
+RU-CENTER-RU,kommersant.ru
+False,forms.gle
+False,e-taxes.gov.az
+Register.com,tagged.com
+Alibaba Cloud Computing (Beijing) Co.,bbwhf.com
+NAMECHEAP INC,antaranews.com
+Alibaba Cloud Computing (Beijing) Co.,hh010.com
+Xin Net Technology Corporation,tp-link.com
+Afilias Australia Pty Ltd,nsw.gov.au
+False,weibo.cn
+False,tower.im
+CSC CORPORATE DOMAINS,audible.com
+CSC CORPORATE DOMAINS,dynamics.com
+MarkMonitor,zazzle.com
+False,olx.com.eg
+Google LLC,punchng.com
+GoDaddy.com,grubhub.com
+GoDaddy.com,toppr.com
+Amazon Registrar,postermywall.com
+MarkMonitor Corporate Services Inc,gumtree.com.au
+Network Solutions,ck12.org
+False,my.gov.au
+ENOM,masrawy.com
+Registrar of domain names REG.RU LLC,batds.net
+eName Technology Co.,hao245.com
+Akky (Una division de NIC Mexico),unam.mx
+False,n-tv.de
+RU-CENTER-RU,cian.ru
+CSC CORPORATE DOMAINS,dstv.com
+CSC CORPORATE DOMAINS,royalmail.com
+NameCheap,popcash.net
+GoDaddy.com,mathsisfun.com
+GMO INTERNET,valuecommerce.com
+NAMECHEAP INC,articlix.com
+CSC CORPORATE DOMAINS,mcafee.com
+False,zeit.de
+Network Solutions,indiaglitz.com
+Eurodns S.A.,tube8.com
+MarkMonitor,amd.com
+NAMECHEAP INC,binomoworld.com
+GoDaddy.com,unacademy.com
+ENOM,eyny.com
+CSC CORPORATE DOMAINS,99designs.com
+GoDaddy.com,jio.com
+GoDaddy.com,efukt.com
+GoDaddy.com,scmp.com
+GoDaddy.com,fotor.com
+Name.com,xhamster3.desi
+eName Technology Co.,ithome.com
+Alibaba Cloud Computing (Beijing) Co.,18183.com
+Tucows Domains Inc.,ultimatix.net
+Key-Systems GmbH,imagefap.com
+Markmonitor Inc. t/a MarkMonitor Inc. [Tag = MARKMONITOR],thesun.co.uk
+CSC CORPORATE DOMAINS,cibc.com
+False,1377x.to
+False,caixabank.es
+Network Solutions,answers.com
+GoDaddy.com,brainly.com
+Network Solutions,cmbchina.com
+GoDaddy.com,kalerkantho.com
+False,nic.ir
+GoDaddy.com,eshkol.io
+MarkMonitor,foodnetwork.com
+False,time.ir
+Alibaba Cloud Computing (Beijing) Co.,tmtpost.com
+Alibaba Cloud Computing (Beijing) Co.,jxmall.com
+Alibaba Cloud Computing (Beijing) Co.,lamabang.com
+1API GmbH,zhaket.com
+Network Solutions,hindustantimes.com
+GoDaddy.com,telugustop.com
+False,familydoctor.com.cn
+nicar,anses.gob.ar
+Beijing Innovative Linkage Technology Ltd.,5acbd.com
+Network Solutions,thehill.com
+False,infomoney.com.br
+NAMECHEAP INC,nexusmods.com
+ENOM,theconversation.com
+GoDaddy.com,bola.net
+WEBCC,chetor.com
+NINET Company d.o.o.,google.rs
+GoDaddy.com,nessma.tv
+GoDaddy.com,zhixing123.cn
+False,unext.jp
+GoDaddy.com,fobshanghai.com
+GoDaddy.com,wangzhuanz.com
+False,sina.cn
+INDOREG,sonora.id
+GoDaddy.com,brightside.me
+ENOM,variety.com
+NICENIC INTERNATIONAL GROUP CO.,flvto.biz
+NAMECHEAP INC,searchmes.xyz
+Digital Registra,inews.id
+GANDI SAS,wistia.com
+NAMECHEAP INC,meaww.com
+GoDaddy.com,fool.com
+ENOM,photo-ac.com
+1&1 IONOS SE,zamzar.com
+False,pinterest.de
+eName Technology Co.,wkzf.com
+MarkMonitor,garmin.com
+MarkMonitor Inc.,curseforge.com
+OVH,odoo.com
+Gabia,navercorp.com
+NameSilo,cleanpng.com
+EPAG Domainservices GmbH,win-rar.com
+ORANGE,caf.fr
+NAMECHEAP INC,wuxiaworld.com
+REGRU-RU,1plus1tv.ru
+Lexsynergy Limited,livescience.com
+DOMAIN NAME NETWORK PTY LTD,ip138.com
+GoDaddy.com,getepic.com
+Alibaba Cloud Computing (Beijing) Co.,easeus.com
+Network Solutions,laprensagrafica.com
+GoDaddy.com,smallseotools.com
+WEBCC,intipseleb.com
+MarkMonitor,reactjs.org
+WEBCC,bisnis.com
+CSC CORPORATE DOMAINS,hangseng.com
+False,alanba.com.kw
+New Frontier,luisaviaroma.com
+False,firefoxchina.cn
+RU-CENTER-RU,academic.ru
+False,zol.com.cn
+GoDaddy.com,gulfnews.com
+Tucows Domains Inc.,gadgetsnow.com
+Name.com,onedio.com
+MarkMonitor,tesla.com
+CSC CORPORATE DOMAINS,letgo.com
+Name.com,gog.com
+OVH,ennaharonline.com
+False,orf.at
+False,post.ir
+False,bpi.ir
+False,absher.sa
+Xin Net Technology Corporation,oeeee.com
+NAMECHEAP INC,netteller.com
+Xiamen 35.Com Technology Co.,chinaswitch.com
+False,welt.de
+CSC CORPORATE DOMAINS,gamestop.com
+False,namava.ir
+CSC CORPORATE DOMAINS,houzz.com
+Alibaba Cloud Computing (Beijing) Co.,ebrun.com
+False,nrk.no
+Key-Systems GmbH,bitrix24.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,iranserver.com
+False,gva.es
+IDC Frontier Inc.,jiji.com
+Eurodns S.A.,youjizz.com
+Tucows Domains Inc.,bmo.com
+False,psu.edu
+Amazon Registrar,teachable.com
+Deutsche Telekom AG,telekom.com
+REGRU-RU,mvideo.ru
+False,chinajsq.cn
+BEIJING SANFRONT INFORMATION TECHNOLOGY CO.,eqxiu.com
+GoDaddy.com,crictracker.com
+CSL Computer Service Langenbach GmbH d/b/a joker.com,rasadeghtesadi.com
+Name.com,digiato.com
+PT Registrasi Nama Domain,pojoksatu.id
+Gabia,inven.co.kr
+GoDaddy,buy123.com.tw
+GoDaddy.com,pdfdrive.com
+RU-CENTER-RU,tass.ru
+False,sch.gr
+Network Solutions,myspace.com
+Tucows Domains Inc.,tarafdari.com
+REGTIME LTD.,otzovik.com
+MarkMonitor,eltiempo.com
+Alibaba Cloud Computing (Beijing) Co.,xiami.com
+Network Solutions,ultipro.com
+False,kabum.com.br
+TurnCommerce,mangakakalot.com
+GoDaddy.com,upstox.com
+ENOM,syosetu.com
+False,cqhot.cn
+False,cinecalidad.to
+Pair Domains,archiveofourown.org
+RU-CENTER-RU,iz.ru
+False,privat24.ua
+Network Solutions,cardinalcommerce.com
+NAMECHEAP INC,ibb.co
+NameCheap,fresherslive.com
+GoDaddy.com,workable.com
+ICI - Registrar,emag.ro
+False,inep.gov.br
+False,mizuhobank.co.jp

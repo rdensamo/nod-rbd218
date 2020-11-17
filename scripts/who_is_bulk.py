@@ -13,7 +13,7 @@ def getPhishRegs():
     print("\nwho is for phish domain registrars\n")
     with open(path_phish, "r", encoding='utf-8') as f:
         for domain_name in f:
-            file = open('who_is_bulk_results_phish.txt', 'a')
+            file = open('who_is_bulk_results_phish_all.txt', 'a')
             # print(domain_name.strip('\n'))
             try:
                 res = whois.whois(domain_name.strip('\n'))
@@ -32,7 +32,7 @@ def getMalRegs():
     print("\nwho is for mal domain registrars\n")
     with open(path_maldoms, "r", encoding='utf-8') as f:
         for domain_name in f:
-            file = open('who_is_bulk_results_mal.txt', 'a')
+            file = open('who_is_bulk_results_mal_all.txt', 'a')
             # print(domain_name.strip('\n'))
             try:
                 res = whois.whois(domain_name.strip('\n'))
@@ -72,14 +72,14 @@ def getAlexaRegs():
         r = reader(f)
 
         for domain_name in r:
-            file = open('who_is_bulk_results_alexa.txt', 'a')
+            file = open('who_is_bulk_results_alexa_all.txt', 'a')
             # print(domain_name[1])
             try:
                 res = whois.whois(domain_name[1])
                 reg = res.registrar.split(',')[0]
                 file.write(reg + "," + domain_name[1] + '\n')
                 print(reg)
-                # TODO: get creation_date and figure out how to parse it
+                # TODO: get creation_date and figure out howmo to parse it
             except:
                 file.write("False" + "," + domain_name[1] + '\n')
                 pass
@@ -88,6 +88,6 @@ def getAlexaRegs():
 
 
 # getPhishRegs()
-getMalRegs()
+# getMalRegs()
 # getZoneRegs()
 # getAlexaRegs()

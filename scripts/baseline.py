@@ -11,6 +11,7 @@ from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars
 from classes.KnujOn import KnujOn
 from classes.MalwareDomains import MalwareDomains
+from classes.ZonefileDomains import ZonefileDomains
 from classes.Phishtank import Phishtank
 from classes.RedCanaryEntropy import RedCanaryEntropy
 from classes.Registrarprices import Registrarprices
@@ -36,6 +37,7 @@ with open("../script_results/All_ES_domains_1026.json", "r") as f:
     data = json.loads(f.read())
 
 malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
+zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
 phishtank = Phishtank("../mal_domains/verified_online.csv")
 domaintools_reg = DomainToolsRegistrars("../datasets/domaintools_registrars.csv")
 knujon = KnujOn("../datasets/KnujOn.html")
@@ -54,12 +56,7 @@ lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
 
 
 i = 0
-dom_tool_mean = 0
-knujon_mean = 0
-entropy_mean = 0
-prices_mean = 0
-ttl_mean = 0
-spam_tld_mean = 0
+
 
 scored = 0
 for hit in data:
@@ -73,6 +70,7 @@ for hit in data:
                             hit['_age'])
     #t0 = time.time() * 1000
     current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
+    current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
     #t1 = time.time() * 1000
     #score_times['mal_time'] = t1 - t0
     current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
@@ -110,11 +108,6 @@ for hit in data:
     #t12 = time.time() * 1000
     #score_times['domage_time'] = t12 - t11
     current_domain.set_simplescore('lehigh_typo', lehigh_typo.score(current_domain))
-    '''
-     for feature in score_times:
-        print(feature + " took ", score_times[feature])
-    break
-    '''
 
     # print(current_domain.subscores)
     # if found in malwaredomains list or phishtank or does not resolve give the domain the max score
@@ -129,24 +122,7 @@ for hit in data:
     print(current_domain.simplescores)
     documents.append(current_domain.simplescores)
 
-    ''' 
-    scored += 1
-    if scored % 500 == 0:
-        print("scored=", scored)
-        with open("", "w") as f:
-            f.write(json.dumps(documents))
-        # f.close()
-        # documents.clear()
-    '''
 
-with open("../script_results/domainscores1027_norm.json", "w") as f:
+with open("../script_results/domainscores1109_norm.json", "w") as f:
     f.write(json.dumps(documents))
 # f.close()
-
-
-
-'''
-# TODO: after validating output write these to a file
-with open("domainscores1022.json", "w") as f:
-    f.write(json.dumps(documents))
-'''
