@@ -6,6 +6,7 @@ from classes.Domain import Domain
 class KnujOn:
     def __init__(self, path=None):
         self.__knuj_domains_dict = dict()
+        self.MAX_KNUJ_SCORE = -1
 
         # Prefer to read it from a flat file because flat file has been hand-modified for more
         # accurate registrar lookups for the first few registrars:
@@ -23,9 +24,16 @@ class KnujOn:
             entry = reg.text
             reg_name = entry.split(':')[0]
             reg_score = entry.split(':')[1]
-            self.__knuj_domains_dict[reg_name] = reg_score
             # print(reg_name)
             # print(reg_score)
+            # TODO: use regular expressions for cleaning strings rather than functions --faster
+            reg_score = reg_score.lstrip().rstrip().replace(",", "")
+            try:
+                self.__knuj_domains_dict[reg_name] = float(reg_score)
+            except:
+                continue
+                # probably wasn't a number
+        self.MAX_KNUJ_SCORE = max(self.__knuj_domains_dict.values())
 
     def score(self, domain):
         real_reg = None
@@ -39,8 +47,10 @@ class KnujOn:
                     break
 
         if real_reg is None:
-            domain.set_subscore("knujOn", {"score": False, "note": "Registrar score not found"})
-            return False
+            # replaced this line from False to .6
+            # TODO: find a better solution to missing values
+            domain.set_subscore("knujon", {"score": 0.6, "note": "Registrar score not found"})
+            return 0.6
 
         # print("value is ", self.__knuj_domains_dict[real_reg])
 
@@ -48,10 +58,10 @@ class KnujOn:
         # Tends to generally match well - changed common registrars anyway so lookups work always
         # because registrar names for the same registrar in dns-tracker are not always consistent
 
-        domain.set_subscore("knujOn",
+        domain.set_subscore("knujon",
                             {"score": self.__knuj_domains_dict[real_reg],
                              "registrar": domain.registrar})
-        return self.__knuj_domains_dict[real_reg]
+        return self.__knuj_domains_dict[real_reg] / self.MAX_KNUJ_SCORE
 
 
 # Testing Code

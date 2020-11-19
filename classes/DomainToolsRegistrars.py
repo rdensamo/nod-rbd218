@@ -28,8 +28,10 @@ class DomainToolsRegistrars:
                     break
 
         if real_reg is None:
-            domain.set_subscore("domaintoolsregistrars", {"score": None, "note": "Registrar price info not found"})
-            return False
+           # replaced this line from False to .6
+           # TODO: find a better solution to missing values
+            domain.set_subscore("domaintoolsregistrars", {"score": 0.6, "note": "Registrar price info not found"})
+            return 0.6
 
         domain.set_subscore("domaintoolsregistrars", {"score": self.__dom_tools_regs[real_reg]})
         # print("value is ", self.__dom_tools_regs[real_reg])

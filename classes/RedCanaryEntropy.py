@@ -1,7 +1,7 @@
 import math
-# import numpy as np
+import numpy as np
 import tldextract
-# import matplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 from csv import DictReader
 
 from classes.Domain import Domain
@@ -26,6 +26,8 @@ class RedCanaryEntropy:
                                 'r': 0.06460084667060655, 's': 0.07214640647425614, 't': 0.06447722311338391,
                                 'u': 0.034792493336388744, 'v': 0.011637198026847418, 'w': 0.013318176884203925,
                                 'x': 0.003170491961453572, 'y': 0.016381628936354975, 'z': 0.004715786426736459}
+        # Getting this max entropy score from Spark analysis on data
+        self.MAX_ENTROPY_SCORE = 472.674
 
     # Simplify domain names: e.g.  “en.www.wikipedia.org” would be reduced to “enwikipedia”
     # TODO: Make sure domain names are coming in the format we expect them to
@@ -58,24 +60,29 @@ class RedCanaryEntropy:
                 # DLK_lg[n] = pi[n] * math.log10(pi[n] / qi[n])
         entropy_score = sum(DLK_lg.values())
         # print("domain:", domain, "simplified_domain:", simplified_domain, "entropy: ", entropy_score)
-        domain.set_subscore("domain name entropy", {"score": entropy_score,
+        domain.set_subscore("DomainNameEntropy", {"score": entropy_score,
                                                     "note": "scoring wih exact calculated entropy"})
-        return -1 * entropy_score
+        return (-1 * entropy_score) / self.MAX_ENTROPY_SCORE
+
 
     # TESTING FUNCTION FOR CODE BELOW:
-    def testScore(self, bad_doms, good_doms):
+    def testScore(self, bad_doms, good_doms, dom_size=10000):
         # bad domains
         key = 0
-        zonefile_maldomains = dict()
+        malicious_domains = dict()
         with open(bad_doms, "r") as f:
             for row in f:
                 domain = Domain(row, "registrarexample.com", 0)
                 # TODO: Should registrars and age be optional in the Domain class causes error otherwise
-                zonefile_maldomains[row] = self.score(domain)
+                malicious_domains[row] = self.score(domain)
+
 
                 key += 1
-                if key == 10000:
+                if key == dom_size:
                     break
+        #print(key)
+        # to make sure we are graphing equal number of bad to good domains on the histogram
+        if dom_size > key: dom_size = key
 
         key = 0
         # good domains
@@ -91,16 +98,19 @@ class RedCanaryEntropy:
                     domain = Domain(alexa_domain, "registrarexample.com", 0)
                     alexastopdomains[domain] = self.score(domain)
                 key += 1
-                if key == 10000:
+                if key == dom_size:
                     break
 
-        x = np.array(np.array(list(zonefile_maldomains.values())).astype(float))
+        x = np.array(np.array(list(malicious_domains.values())).astype(float))
         y = np.array(np.array(list(alexastopdomains.values())).astype(float))
-        plt.xlabel('Entropy Value', fontsize=15)
-        plt.ylabel('Frequency', fontsize=15)
-        plt.title('Entropies for Legitimate and Malicious Domains', fontsize=15)
+        plt.xlabel('Entropy Value', fontsize=10)
+        plt.ylabel('Frequency', fontsize=10)
+        plt.title('Entropy for Alexa Top 1 Million and phish Domains top 10000 domains full', fontsize=10)
         plt.hist(x, color="red")
         plt.hist(y, color="green")
+        # plt.xlim(0, 1)
+        path = r'../graphs/Entropy Graphs/Entropy for phish Domains and Alexa Top 1 million Domains w 10000 domains full.png'
+        plt.savefig(path)
         # plt.xlim(-300)
         plt.show()
         return 0
@@ -114,15 +124,21 @@ path2 = "../datasets/alexa_top_2k.csv"
 '''
 
 '''
+# zonefiles
 # path1 = "../datasets/zonefile_domains_full.txt"
-path1 = "../mal_domains/justdomains.txt"
+# malware domains
+# TODO: two malware domain files ?
+# path1 = "../mal_domains/justdomains.txt" #justdomains file has more domains 
+# phishtank
+path1 = "C:/Users/rbd218/PycharmProjects/nod/classes/Phishtank.py"
+# Alexa top 1 Million domains
 path2 = "../datasets/alexa_top_1m.csv"
 
 red = RedCanaryEntropy()
-red.testScore(path1, path2)
+red.testScore(path1, path2, 10000)
+'''
 
-
-
+'''
 red = RedCanaryEntropy()
 score = red.score(Domain("qq.com", "exampleregistrar.com", 0))
 print(score)

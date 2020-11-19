@@ -1,5 +1,6 @@
 from csv import reader
 
+
 class AlexaTop:
     # Score is a boolean value
     def __init__(self, alexa_toplist_path):
@@ -10,15 +11,13 @@ class AlexaTop:
             for entry in r:
                 self.alexa_toplist.add(entry[1])
 
-
     def score(self, domain):
         if domain.name + "." + domain.tld in self.alexa_toplist:
             result = True
             domain.set_subscore("alexatop", {"score": result,
-                                "note": "Scored domain in alexa top 1m."})
+                                             "note": "Scored domain in alexa top 1m."})
         else:
             result = False
             domain.set_subscore("alexatop", {"score": result,
-                                "note": "Scored domain not in alexa top 1m."})
+                                             "note": "Scored domain not in alexa top 1m."})
         return result
-

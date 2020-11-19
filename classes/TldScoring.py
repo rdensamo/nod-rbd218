@@ -31,11 +31,13 @@ class TldScoring:
         for tld in brand_results:
             entry = tld.text
             brand_name = entry.split('Brand TLD -')[0]
+            # print("original", brand_name)
             if "@" in brand_name:
                 return
             if "." in brand_name:
-                # TODO: use regular expressions for cleaning strings rather than functions --faster
+                # Regular expressions better than replace
                 brand_name = re.sub('[^a-zA-Z]+', '', brand_name)
+                # brand_name = brand_name.replace(".", "").replace("\n", "")
                 self.brand_tlds.append(brand_name)
             # print(brand_name)
 
@@ -61,12 +63,13 @@ class TldScoring:
                 dom_count = tld.string
                 tld_found = False
             elif dom_count is not None and tld_name is not None:
+                # TODO: use regular expressions for cleaning strings rather than functions --faster
                 dom_count = dom_count.lstrip().rstrip().replace(",", "")
                 # re.sub('[0-9_]+', '', dom_count.replace(",", ""))
                 try:
                     self.__Tld_Scoring[tld_name] = int(dom_count)
                     # print("---tld name:", tld_name, "dom count:", dom_count)
-                    # print("dom count:", int(dom_count))
+                    print("dom count:", int(dom_count))
                     dom_count = None
                 except:
                     dom_count = None
@@ -80,6 +83,7 @@ class TldScoring:
      returns True if it is a brandtld 
      returns False if it is none of the above 
     '''
+
     def score(self, domain):
         # The method that gets the domain counts for tlds and saves them in dict()
         self.zone_tlds()
@@ -87,6 +91,15 @@ class TldScoring:
         # print(self.__Tld_Scoring.keys())
         # print(self.brand_tlds)
         entry = self.__Tld_Scoring.get(domain.tld, None)
+
+        if entry is None:
+            # replaced this line from False to .6
+            # TODO: find a better solution to missing values
+            domain.set_subscore("ZoneFileBrandTld",
+                                {"score": 0.6,
+                                 "tld": domain.tld})
+            return 0.6
+
         domain.set_subscore("ZoneFileBrandTld",
                             {"score": entry,
                              "tld": domain.tld})
@@ -99,5 +112,7 @@ class TldScoring:
         # TODO: Need to make sure tld getter gets tld in same format
 
 
+'''
 tlds = TldScoring("../datasets/ZoneFilesTLDs.html")
 tlds.zone_tlds()
+'''
