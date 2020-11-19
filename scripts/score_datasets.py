@@ -8,7 +8,7 @@ from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars
 from classes.KnujOn import KnujOn
 from classes.MalwareDomains import MalwareDomains
-from classes.ZonefileDomains import ZonefileDomains
+# from classes.ZonefileDomains import ZonefileDomains
 from classes.Phishtank import Phishtank
 from classes.RedCanaryEntropy import RedCanaryEntropy
 from classes.Registrarprices import Registrarprices
@@ -41,10 +41,10 @@ def parseRegDomFile(file_paths):
             reader = DictReader(f)
             dom_count = 0
             for row in reader:
-                # dom_count+=1
-                # print("dom_count:", dom_count)
-                # if dom_count > 2000:
-                    # break
+                dom_count = dom_count + 1
+                print("dom_count:", dom_count)
+                if dom_count > 20000:
+                    break
 
                 if row["registrar"] in [None, ""]:
                     break
@@ -61,7 +61,7 @@ def parseRegDomFile(file_paths):
                 #  who-is
 
                 malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
-                zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
+                # zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
                 phishtank = Phishtank("../mal_domains/verified_online.csv")
                 domaintools_reg = DomainToolsRegistrars("../datasets/domaintools_registrars.csv")
                 knujon = KnujOn("../datasets/KnujOn.html")
@@ -81,7 +81,7 @@ def parseRegDomFile(file_paths):
 
                 # LABEL FOR THE DATA "LABELED DATA"
                 current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
-                current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
+                # current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
                 current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
                 current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
                 # TODO : Do we check if any are in the zonefile list of bad domains ?
@@ -105,7 +105,7 @@ def parseRegDomFile(file_paths):
                 documents.append(current_domain.simplescores)
 
     # write the scores from all the datsets into one file of scores
-    with open("scored_datasets_1116_ALLDATA.json", "w") as f:
+    with open("scored_datasets_1118_ALLDATA.json", "w") as f:
         f.write(json.dumps(documents))
     f.close()
 
@@ -128,7 +128,9 @@ path2 = 'who_is_bulk_results_alexa_small_test_file.txt'
 path_phish = 'who_is_bulk_results_phish_all.txt'
 path_maldoms = 'who_is_bulk_results_mal_all.txt'
 path_alexa2k = 'who_is_bulk_results_alexa_all.txt'
+path_alexa1m = 'who_is_bulk_results_alexa_all_1m.txt'
+path_alexa20k = 'who_is_bulk_results_alexa_all_20k.txt'
 many_files.append(path_phish)
-many_files.append(path_alexa2k)
+many_files.append(path_alexa20k)
 many_files.append(path_maldoms)
 parseRegDomFile(many_files)

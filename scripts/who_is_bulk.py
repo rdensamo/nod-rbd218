@@ -67,14 +67,16 @@ def getZoneRegs():
 
 
 def getAlexaRegs():
+    count = 0
     print("\nwho is for alexa domain registrars\n")
-    with open(path_alexa2k, "r", encoding='utf-8') as f:
+    with open(path_alexa1m, "r", encoding='utf-8') as f:
         r = reader(f)
 
         for domain_name in r:
-            file = open('who_is_bulk_results_alexa_all.txt', 'a')
+            file = open('who_is_bulk_results_alexa_all_20k.txt', 'a')
             # print(domain_name[1])
             try:
+                count = count + 1
                 res = whois.whois(domain_name[1])
                 reg = res.registrar.split(',')[0]
                 file.write(reg + "," + domain_name[1] + '\n')
@@ -84,10 +86,12 @@ def getAlexaRegs():
                 file.write("False" + "," + domain_name[1] + '\n')
                 pass
                 print("couldn't get registrar for " + domain_name[1])
+            if count == 20000:
+                break
     file.close()
 
 
 # getPhishRegs()
 # getMalRegs()
 # getZoneRegs()
-# getAlexaRegs()
+getAlexaRegs()

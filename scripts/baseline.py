@@ -11,7 +11,7 @@ from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars
 from classes.KnujOn import KnujOn
 from classes.MalwareDomains import MalwareDomains
-from classes.ZonefileDomains import ZonefileDomains
+# from classes.ZonefileDomains import ZonefileDomains
 from classes.Phishtank import Phishtank
 from classes.RedCanaryEntropy import RedCanaryEntropy
 from classes.Registrarprices import Registrarprices
@@ -19,7 +19,6 @@ from classes.Resolver import Resolver
 from classes.SpamhausReg import SpamhausReg
 from classes.SpamhausTld import SpamhausTld
 from classes.TldScoring import TldScoring
-
 from classes.AlexaTop import AlexaTop
 from classes.DomainAge import DomainAge
 # TODO: Hadn't added LehighTypoSquat subscore !
@@ -37,7 +36,7 @@ with open("../script_results/All_ES_domains_1026.json", "r") as f:
     data = json.loads(f.read())
 
 malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
-zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
+# zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
 phishtank = Phishtank("../mal_domains/verified_online.csv")
 domaintools_reg = DomainToolsRegistrars("../datasets/domaintools_registrars.csv")
 knujon = KnujOn("../datasets/KnujOn.html")
@@ -49,7 +48,6 @@ spamhaus_tld = SpamhausTld("../datasets/spamhaus_tlds.csv")
 
 # TODO: Score separately on small number of data - slow
 zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
-
 alexatop = AlexaTop("../datasets/alexa_top_2k.csv")
 domain_age = DomainAge()
 lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
@@ -68,61 +66,39 @@ for hit in data:
     current_domain = Domain(hit['_domain'],
                             hit['_registrar'],
                             hit['_age'])
-    #t0 = time.time() * 1000
+
     current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
-    current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
-    #t1 = time.time() * 1000
-    #score_times['mal_time'] = t1 - t0
+    # current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
     current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
-    #t2 = time.time() * 1000
-    #score_times['phis_time'] = t2 - t1
-    current_domain.set_simplescore('domaintools', domaintools_reg.score(current_domain))
-    #t3 = time.time() * 1000
-    #score_times['domtools_time'] = t3 - t2
+    current_domain.set_simplescore('domaintoolsregistrars', domaintools_reg.score(current_domain))
     current_domain.set_simplescore('knujon', knujon.score(current_domain))
-    #t4 = time.time() * 1000
-    #score_times['knujon_time'] = t4 - t3
-    current_domain.set_simplescore('entropy', entropy.score(current_domain))
-    #t5 = time.time() * 1000
-    #score_times['entropy_time'] = t5 - t4
+    current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
     current_domain.set_simplescore('registrar_prices', registrar_prices.score(current_domain))
-    #t6 = time.time() * 1000
-    #score_times['regprice_time'] = t6 - t5
-    current_domain.set_simplescore('resolver', resolver.score(current_domain))
-    #t7 = time.time() * 1000
-    #score_times['resolver_time'] = t7 - t6
-    current_domain.set_simplescore('spamhaus_reg', spamhaus_reg.score(current_domain))
-    #t8 = time.time() * 1000
-    #score_times['spamreg_time'] = t8 - t7
-    current_domain.set_simplescore('spamhaus_tld', spamhaus_tld.score(current_domain))
-    #t9 = time.time() * 1000
-    #score_times['spamtld_time'] = t9 - t8
+    current_domain.set_simplescore('resolves', resolver.score(current_domain))
+    current_domain.set_simplescore('spamhausreg', spamhaus_reg.score(current_domain))
+    current_domain.set_simplescore('SpamhausTld', spamhaus_tld.score(current_domain))
     # TODO: TOO slow to score right now
     # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
-    #t10 = time.time() * 1000
-    #score_times['zonetld_time'] = t10 - t9
     current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
-    #t11 = time.time() * 1000
-    #score_times['alextop_time'] = t11 - t10
     current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
-    #t12 = time.time() * 1000
-    #score_times['domage_time'] = t12 - t11
-    current_domain.set_simplescore('lehigh_typo', lehigh_typo.score(current_domain))
-
-    # print(current_domain.subscores)
+    current_domain.set_simplescore('lehigh-typosquat', lehigh_typo.score(current_domain))
     # if found in malwaredomains list or phishtank or does not resolve give the domain the max score
-    if current_domain.subscores['malwaredomains']['score'] or current_domain.subscores['phishtank']['score'] \
+    if current_domain.subscores['malware_domain']['score'] or current_domain.subscores['phishtank']['score'] \
             or not current_domain.subscores['resolves']:
         current_domain.score = 10
 
     # 'malwaredomains', 'phishtank', 'domaintoolsregistrars', 'knujOn', 'domain name entropy', 'prices', 'resolves',
     # 'ttl', 'SpamhausTld'
     dom_attribute = current_domain.subscores.keys()
-    current_domain.set_simplescore('DomainName', current_domain.domain)
+    print(dom_attribute)
     print(current_domain.simplescores)
+    print(current_domain.subscores['domaintoolsregistrars']['score'])
+    break
+    current_domain.set_simplescore('DomainName', current_domain.domain)
+    # print(current_domain.simplescores)
     documents.append(current_domain.simplescores)
 
 
-with open("../script_results/domainscores1109_norm.json", "w") as f:
+with open("../script_results/test_domainscores1109_norm.json", "w") as f:
     f.write(json.dumps(documents))
 # f.close()
