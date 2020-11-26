@@ -91,5 +91,5 @@ class Resolver:
             result = False
             domain.set_subscore("resolves", {"score": False,
                                              "note:": e})
-
+        # TODO: Create result dictionary that you can access or python supports mulple returns ?
         return result

@@ -213,7 +213,7 @@ class FinalScore:
 
             print(current_domain.simplescores)
             self.simplecombineScore0(current_domain)
-            return
+            # return
 
             documents.append(current_domain.simplescores)
 
@@ -228,3 +228,5 @@ s = FinalScore(path)
 # print(s.type)
 #print(s.combineScore())
 s.getScore0()
+
+# TODO: should make the raw_final_score list a dict() to see better which feature is producing which value
