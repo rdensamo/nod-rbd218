@@ -119,17 +119,21 @@ path_alexa2k = '../scripts_results/who_is_bulk_results_alexa2k_all.txt'
 path_alexa1m = '../scripts_results/who_is_bulk_results_alexa1m.txt'
 
 many_files = list()
-num_files = 1
-path1 = 'who_is_bulk_results_phish_small_test_file.txt'
-path2 = 'who_is_bulk_results_alexa_small_test_file.txt'
+
+# path1 = 'who_is_bulk_results_phish_small_test_file.txt'
+# path2 = 'who_is_bulk_results_alexa_small_test_file.txt'
 # path3 = 'who_is_bulk_results_mal.txt'
 # path4 = 'who_is_bulk_results_zone.txt'
 
-path_phish = 'who_is_bulk_results_phish_all.txt'
-path_maldoms = 'who_is_bulk_results_mal_all.txt'
-path_alexa2k = 'who_is_bulk_results_alexa_all.txt'
-path_alexa1m = 'who_is_bulk_results_alexa_all_1m.txt'
+# path_phish = 'who_is_bulk_results_phish_all.txt'
+# path_maldoms = 'who_is_bulk_results_mal_all.txt'
+# path_alexa2k = 'who_is_bulk_results_alexa_all.txt'
+# path_alexa1m = 'who_is_bulk_results_alexa_all_1m.txt'
+
 path_alexa20k = 'who_is_bulk_results_alexa_all_20k.txt'
+path_maldoms = 'who_is_bulk_results_mal_all.txt'
+path_phish = 'who_is_bulk_results_phish_all.txt'
+
 many_files.append(path_phish)
 many_files.append(path_alexa20k)
 many_files.append(path_maldoms)
