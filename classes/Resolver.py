@@ -61,6 +61,10 @@ class Resolver:
 
     def score(self, domain):
         result = False
+        ttlRisk = 0  # not risky
+        isBogon = 0  # false
+        isNotResolves = 1  # not resolving, want to consider not resolving more risky
+        isResolving = False
         try:
             # Query domain
             answer = query(domain.domain)
@@ -72,8 +76,15 @@ class Resolver:
             # a value between 0 and len(ttl_intervals) that represents which
             # implicit interval it resides in.
             ttl_risk = len(Resolver.ttl_intervals) - bisect_left(Resolver.ttl_intervals, answer.rrset.ttl)
+            # print("answer.rrset.ttl", answer.rrset.ttl)
+            # print("len(Resolver.ttl_intervals)", len(Resolver.ttl_intervals))
+            # print("bisect_left(Resolver.ttl_intervals, answer.rrset.ttl)", bisect_left(Resolver.ttl_intervals, answer.rrset.ttl))
+
             # ttl_risk lower values are more risky
             domain.set_subscore("ttl", {"score": ttl_risk})
+            ttlRisk = ttl_risk
+            isNotresolves = 0
+            isResolving = True
 
             # Check for bogons
             for record in answer.rrset.items:
@@ -85,11 +96,78 @@ class Resolver:
                     ip = None
                     result = False
                 domain.set_subscore("bogon", {"score": self.is_bogon(ip)})
+                isBogon = self.is_bogon((ip))
 
 
         except Exception as e:
             result = False
             domain.set_subscore("resolves", {"score": False,
                                              "note:": e})
-        # TODO: Create result dictionary that you can access or python supports mulple returns ?
-        return result
+        # TODO: Create result dictionary that you can access or python supports multiple returns ?
+        '''
+        print("isNotResolves: ", isNotresolves)
+        print("isBogon: ", isBogon)
+        print("ttlRisk: ", ttlRisk)
+        '''
+        # TODO: May want to scale this better
+        scaled_ttl_risk = 0
+        if ttlRisk > 4:
+            scaled_ttl_risk = 0
+        if ttlRisk == 4:
+            scaled_ttl_risk = .1
+        if ttlRisk == 3:
+            scaled_ttl_risk = .3
+        if ttlRisk == 2:
+            scaled_ttl_risk = .5
+        if ttlRisk == 1:
+            scaled_ttl_risk = .6
+        if ttlRisk == 0:
+            scaled_ttl_risk = .7
+
+        return isResolving, isBogon, scaled_ttl_risk
+# isNOTResolves = 1 means it resolves
+
+'''
+resolve = Resolver()
+from classes.Domain import Domain
+
+test_domain = Domain("www.google.com", "idk", 0)
+print("\ntest_domain", test_domain)
+result = resolve.score(test_domain)
+print(result)
+print("ttl risk ", result[2])
+
+test_domain = Domain("www.facebook.com", "idk", 0)
+print("\ntest_domain", test_domain)
+result = resolve.score(test_domain)
+print(result)
+print("ttl risk ", result[2])
+
+test_domain = Domain("www.yahoo.com", "idk", 0)
+print("\ntest_domain", test_domain)
+result = resolve.score(test_domain)
+print(result)
+print("ttl risk ", result[2])
+
+test_domain = Domain("www.lehigh.com", "idk", 0)
+print("\ntest_domain", test_domain)
+result = resolve.score(test_domain)
+print(result)
+print("ttl risk ", result[2])
+
+test_domain = Domain("www.lehigh.edu", "idk", 0)
+print("\ntest_domain", test_domain)
+result = resolve.score(test_domain)
+print(result)
+print("ttl risk ", result[2])
+
+# https://www1.lehigh.edu/insidelehigh
+test_domain = Domain("www1.lehigh.edu/insidelehigh", "idk", 0)
+print("\ntest_domain", test_domain)
+result = resolve.score(test_domain)
+print(result)
+print("ttl risk ", result[2])
+
+'''
+
+

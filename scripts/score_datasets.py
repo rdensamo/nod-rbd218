@@ -3,7 +3,7 @@ from csv import DictReader
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search, Q
 import json
-
+'''
 from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars
 from classes.KnujOn import KnujOn
@@ -21,6 +21,25 @@ from classes.AlexaTop import AlexaTop
 from classes.DomainAge import DomainAge
 # TODO: Hadn't added LehighTypoSquat subscore !
 from classes.LehighTypoSquat import LehighTypoSquat
+'''
+
+from classes.Domain import Domain
+from classes.DomainToolsRegistrars import DomainToolsRegistrars
+from classes.KnujOn import KnujOn
+from classes.MalwareDomains import MalwareDomains
+# from classes.ZonefileDomains import ZonefileDomains
+from classes.Phishtank import Phishtank
+from classes.RedCanaryEntropy import RedCanaryEntropy
+from classes.Registrarprices import Registrarprices
+from classes.Resolver import Resolver
+from classes.SpamhausReg import SpamhausReg
+from classes.SpamhausTld import SpamhausTld
+from classes.TldScoring import TldScoring  # ** newly added domains
+from classes.AlexaTop import AlexaTop
+from classes.DomainAge import DomainAge # *** newly added domains
+# TODO: Hadn't added LehighTypoSquat subscore !
+from classes.LehighTypoSquat import LehighTypoSquat
+from classes.AlexaLevenSimilarity import AlexaLevenSimilarity
 
 documents = list()
 
@@ -93,7 +112,8 @@ def parseRegDomFile(file_paths):
                 current_domain.set_simplescore('spamhaus_reg', spamhaus_reg.score(current_domain))
                 current_domain.set_simplescore('spamhaus_tld', spamhaus_tld.score(current_domain))
                 # TODO: TOO slow to score right now
-                # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
+                # current_domain.set_simplescore('zoneTldScoring', TldScoring.score(current_domain))
+
                 current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
                 # TODO: do not have age information right now for these domains
                 # current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
@@ -105,7 +125,7 @@ def parseRegDomFile(file_paths):
                 documents.append(current_domain.simplescores)
 
     # write the scores from all the datsets into one file of scores
-    with open("scored_datasets_1118_ALLDATA.json", "w") as f:
+    with open("scored_datasets_1128_60k.json", "w") as f:
         f.write(json.dumps(documents))
     f.close()
 
@@ -130,7 +150,7 @@ many_files = list()
 # path_alexa2k = 'who_is_bulk_results_alexa_all.txt'
 # path_alexa1m = 'who_is_bulk_results_alexa_all_1m.txt'
 
-path_alexa20k = 'who_is_bulk_results_alexa_all_20k.txt'
+path_alexa20k = 'who_is_bulk_results_alexa_20k.txt'
 path_maldoms = 'who_is_bulk_results_mal_all.txt'
 path_phish = 'who_is_bulk_results_phish_all.txt'
 

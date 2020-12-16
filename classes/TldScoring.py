@@ -69,14 +69,14 @@ class TldScoring:
                 try:
                     self.__Tld_Scoring[tld_name] = int(dom_count)
                     # print("---tld name:", tld_name, "dom count:", dom_count)
-                    print("dom count:", int(dom_count))
+                    # print("dom count:", int(dom_count))
                     dom_count = None
                 except:
                     dom_count = None
                 tld_name = None
         self.MAX_Tld_SCORE = max(self.__Tld_Scoring.values())
         # print(self.MAX_Tld_SCORE)
-        return
+        return self.MAX_Tld_SCORE
 
     '''
      This returns a value from 0 to 1 if the domain tld is found in zonefiles
@@ -87,32 +87,46 @@ class TldScoring:
     def score(self, domain):
         # The method that gets the domain counts for tlds and saves them in dict()
         self.zone_tlds()
+
+        zoneFileScore = 0
+        # isBrandTld = 0
+
         # print("------------", domain.tld)
         # print(self.__Tld_Scoring.keys())
         # print(self.brand_tlds)
-        entry = self.__Tld_Scoring.get(domain.tld, None)
+        zoneFileScore = self.__Tld_Scoring.get(domain.tld, None)
 
-        if entry is None:
+        if zoneFileScore is None:
             # replaced this line from False to .6
             # TODO: find a better solution to missing values
             domain.set_subscore("ZoneFileBrandTld",
                                 {"score": 0.6,
                                  "tld": domain.tld})
-            return 0.6
+            zoneFileScore = 0.6
 
-        domain.set_subscore("ZoneFileBrandTld",
-                            {"score": entry,
-                             "tld": domain.tld})
-        if entry is not None:
-            return entry / self.MAX_Tld_SCORE
+        if zoneFileScore is not None:
+            zoneFileScore = zoneFileScore / self.MAX_Tld_SCORE
         else:
             isBrandTld = domain.tld in self.brand_tlds
-            return isBrandTld
+            if isBrandTld:
+                zoneFileScore = 0
+
+        domain.set_subscore("ZoneFileBrandTld",
+                            {"score": zoneFileScore,
+                             "tld": domain.tld})
+
+        # print("zoneFileScore: ", zoneFileScore)
+        # print("isBrandTld: ", isBrandTld)
+        # print("self.zone_tlds(): ", self.zone_tlds())
+        return zoneFileScore
 
         # TODO: Need to make sure tld getter gets tld in same format
 
 
 '''
 tlds = TldScoring("../datasets/ZoneFilesTLDs.html")
-tlds.zone_tlds()
+from classes.Domain import Domain
+
+test_domain = Domain("www.google.com", "idk", 0)
+print(tlds.score(test_domain))
 '''

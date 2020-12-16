@@ -73,7 +73,7 @@ def getAlexaRegs():
         r = reader(f)
 
         for domain_name in r:
-            file = open('who_is_bulk_results_alexa_all_20k.txt', 'a')
+            file = open('who_is_bulk_results_alexa_100k.txt', 'a')
             # print(domain_name[1])
             try:
                 count = count + 1
@@ -86,7 +86,7 @@ def getAlexaRegs():
                 file.write("False" + "," + domain_name[1] + '\n')
                 pass
                 print("couldn't get registrar for " + domain_name[1])
-            if count == 20000:
+            if count == 100000:
                 break
     file.close()
 

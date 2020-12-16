@@ -30,7 +30,8 @@ queried_entry = dict()
 # to load the file from disk
 data = None
 documents = list()
-
+domCount = 0
+setNumDoms = 100
 with open("../script_results/All_ES_domains_1026.json", "r") as f:
     # parses json string and get dictionary
     data = json.loads(f.read())
@@ -52,9 +53,7 @@ alexatop = AlexaTop("../datasets/alexa_top_2k.csv")
 domain_age = DomainAge()
 lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
 
-
-i = 0
-
+numDomains = 0
 
 scored = 0
 for hit in data:
@@ -74,11 +73,19 @@ for hit in data:
     current_domain.set_simplescore('knujon', knujon.score(current_domain))
     current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
     current_domain.set_simplescore('registrar_prices', registrar_prices.score(current_domain))
-    current_domain.set_simplescore('resolves', resolver.score(current_domain))
+
+    current_domain.set_simplescore('isNotResolves', resolver.score(current_domain)[0])
+    current_domain.set_simplescore('isBogon', resolver.score(current_domain)[1])
+    current_domain.set_simplescore('ttlRisk', resolver.score(current_domain)[2])
+
     current_domain.set_simplescore('spamhausreg', spamhaus_reg.score(current_domain))
     current_domain.set_simplescore('SpamhausTld', spamhaus_tld.score(current_domain))
+
     # TODO: TOO slow to score right now
-    # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
+    current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
+
+
+
     current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
     current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
     current_domain.set_simplescore('lehigh-typosquat', lehigh_typo.score(current_domain))
@@ -91,14 +98,17 @@ for hit in data:
     # 'ttl', 'SpamhausTld'
     dom_attribute = current_domain.subscores.keys()
     print(dom_attribute)
-    print(current_domain.simplescores)
-    print(current_domain.subscores['domaintoolsregistrars']['score'])
-    break
-    current_domain.set_simplescore('DomainName', current_domain.domain)
     # print(current_domain.simplescores)
+    # print(current_domain.subscores['domaintoolsregistrars']['score'])
+
+    current_domain.set_simplescore('DomainName', current_domain.domain)
+    print(current_domain.simplescores)
+
+    if domCount > setNumDoms:
+        break
+
     documents.append(current_domain.simplescores)
 
-
-with open("../script_results/test_domainscores1109_norm.json", "w") as f:
+with open("../script_results/domainscores1207_norm.json", "w") as f:
     f.write(json.dumps(documents))
 # f.close()

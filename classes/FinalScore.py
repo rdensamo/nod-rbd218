@@ -17,6 +17,7 @@ from classes.AlexaTop import AlexaTop
 from classes.DomainAge import DomainAge
 # TODO: Hadn't added LehighTypoSquat subscore !
 from classes.LehighTypoSquat import LehighTypoSquat
+from classes.AlexaLevenSimilarity import AlexaLevenSimilarity 
 
 domains = list()
 queried_entry = dict()
@@ -165,7 +166,7 @@ class FinalScore:
             data = json.loads(f.read())
 
         malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
-        # zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
+        #zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
         phishtank = Phishtank("../mal_domains/verified_online.csv")
         domaintools_reg = DomainToolsRegistrars("../datasets/domaintools_registrars.csv")
         knujon = KnujOn("../datasets/KnujOn.html")
@@ -180,6 +181,8 @@ class FinalScore:
         alexatop = AlexaTop("../datasets/alexa_top_2k.csv")
         domain_age = DomainAge()
         lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
+        alexaLSim = AlexaLevenSimilarity() 
+
 
         i = 0
 
@@ -201,18 +204,26 @@ class FinalScore:
             current_domain.set_simplescore('knujon', knujon.score(current_domain))
             current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
             current_domain.set_simplescore('registrar_prices', registrar_prices.score(current_domain))
-            current_domain.set_simplescore('resolves', resolver.score(current_domain))
+            current_domain.set_simplescore('isNotResolves', resolver.score(current_domain)[0])
+            current_domain.set_simplescore('isBogon', resolver.score(current_domain)[1])
+            current_domain.set_simplescore('ttlRisk', resolver.score(current_domain)[2])
             current_domain.set_simplescore('spamhausreg', spamhaus_reg.score(current_domain))
             current_domain.set_simplescore('SpamhausTld', spamhaus_tld.score(current_domain))
             # TODO: TOO slow to score right now
-            # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
+            current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
+
             current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
             current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
             current_domain.set_simplescore('lehigh-typosquat', lehigh_typo.score(current_domain))
+            current_domain.set_simplescore('AlexaLevSim_score', alexaLSim.score(current_domain)[0])
+            current_domain.set_simplescore('AlexaLevSim_domain', alexaLSim.score(current_domain)[1])
             current_domain.set_simplescore('DomainName', current_domain.domain)
+            
 
+
+            avg_score = self.simplecombineScore0(current_domain)
+            current_domain.set_simplescore('final_score', avg_score)
             print(current_domain.simplescores)
-            self.simplecombineScore0(current_domain)
             # return
 
             documents.append(current_domain.simplescores)
@@ -220,6 +231,7 @@ class FinalScore:
         with open("../script_results/finaldomainscores1118.json", "w") as f:
             f.write(json.dumps(documents))
         f.close()
+        return avg_score
 
 
 path = 'C:/Users/rbd218/PycharmProjects/nod/scripts/domainscores1027_norm.json'

@@ -86,7 +86,8 @@ import plotly.express as px
 
 df = px.data.iris()
 
-with open('C:/Users/rbd218/PycharmProjects/nod/script_results/domainscores1027_norm.json', 'r') as f:
+with open('C:/Users/rbd218/PycharmProjects/nod/scripts/c_9700_scored_datasets_1211_20k_BASELINE.json', 'r') as f:
+    #C:/Users/rbd218/PycharmProjects/nod/scripts/c_9700_scored_datasets_1211_20k_BASELINE.json
     data = json.load(f)
     nod_data = pd.DataFrame(data)
 
@@ -106,26 +107,40 @@ with open('C:/Users/rbd218/PycharmProjects/nod/script_results/domainscores1027_n
 '''
 
 '''
+Index(['malware_domain', 'phishtank', 'alexatop', 'domaintoolsregistrars',
+       'knujon', 'DomainNameEntropy', 'registrar_prices', 'isNotResolves',
+       'isBogon', 'ttlRisk', 'spamhausreg', 'SpamhausTld', 'domain_age',
+       'lehigh-typosquat', 'AlexaLevSim_score', 'AlexaLevSim_domain',
+       'DomainName'],
+      dtype='object')
+      
 Index(['malware_domain', 'phishtank', 'domaintools', 'knujon', 'entropy',
        'registrar_prices', 'resolver', 'spamhaus_reg', 'spamhaus_tld',
        'alexatop', 'domain_age', 'DomainName'],
       dtype='object')
 '''
 features = nod_data.columns
-
-# print(features)
+print(features)
 from plotly.offline import plot
 
 # all_num_data = pd.concat([nod_data.domaintools], [nod_data.knujon])
-domaintools = pd.concat([nod_data.domaintools])
+AlexaLevScore = pd.concat([nod_data.AlexaLevSim_score])
+
+fig1 = px.histogram(AlexaLevScore)
+fig1.show()
+
+'''
+domaintools = pd.concat([nod_data.domaintoolsregistrars])
 knujon = pd.concat([nod_data.knujon])
-entropy = pd.concat([nod_data.entropy])
+entropy = pd.concat([nod_data.DomainNameEntropy])
 registrar_prices = pd.concat([nod_data.registrar_prices])
 resolver = pd.concat([nod_data.resolver])
 # spamhaus_tld = pd.concat([nod_data.spamhaus_tld])
 domain_age = pd.concat([nod_data.spamhaus_tld])
 # fig = go.Figure(data=entropy)
 # fig.show()
+'''
+
 
 
 '''
@@ -136,7 +151,7 @@ fig0.update_traces(opacity=0.75)
 fig0.show()
 '''
 
-
+'''
 fig1 = px.histogram(domaintools)
 fig1.show()
 
@@ -157,3 +172,5 @@ fig5.show()
 
 fig6 = px.histogram(domain_age)
 fig6.show()
+'''
+

@@ -32,10 +32,9 @@ class SpamhausTld:
             domain.set_subscore("SpamhausTld", score)
             return score
 
-
-
         domain.set_subscore("SpamhausTld", score)
         return result
+
 
 '''
 
