@@ -17,7 +17,7 @@ from classes.AlexaTop import AlexaTop
 from classes.DomainAge import DomainAge
 # TODO: Hadn't added LehighTypoSquat subscore !
 from classes.LehighTypoSquat import LehighTypoSquat
-from classes.AlexaLevenSimilarity import AlexaLevenSimilarity 
+from classes.AlexaLevenSimilarity import AlexaLevenSimilarity
 
 domains = list()
 queried_entry = dict()
@@ -63,97 +63,103 @@ class FinalScore:
         return
 
     def simplecombineScore0(self, current_domain):
-        raw_final_score = list()
-        # if found in malwaredomains list or phishtank or does not resolve give the domain the max score
+        # TODO: Make raw_final_score dict so it is easier to determine which subscore was which score get .values
+        raw_final_score = dict()
+        # if found in malwaredomains list or phishtank give the domain the max score
         if current_domain.subscores['malware_domain']['score'] or current_domain.subscores['phishtank']['score']:
             current_domain.score = 10
+            return
+        # if found in alexatop give it the minimum score
+        if current_domain.subscores['alexatop']['score']:
+            current_domain.score = 0
             return
         # what to do with domains that do not resolve ?
 
         # GETTING DOMAINTOOLREGISTRAR SCORES
         # print("domaintools", current_domain.simplescores['domaintoolsregistrars'])
-        x = current_domain.simplescores['domaintoolsregistrars']
-        for i in range(9):
-            if x < self.__domain_tools[0]:
-                raw_final_score.append(i)
-                break
-            if self.isbetween(x, self.__domain_tools[i], self.__domain_tools[i + 1]):
-                raw_final_score.append(i + 1)
-                break
-
-        if x > self.__domain_tools[9]:
-            raw_final_score.append(10)
-
-        # GETTING KNUJON SCORES
-        x = current_domain.simplescores['knujon']
-        for i in range(9):
-            if x < self.__knujon[0]:
-                raw_final_score.append(i)
-                break
-            if self.isbetween(x, self.__knujon[i], self.__knujon[i + 1]):
-                raw_final_score.append(i + 1)
-                break
-
-        if x > self.__knujon[9]:
-            raw_final_score.append(10)
-
-        # GETTING DOMAIN NAME ENTROPY SCORES
-        x = current_domain.simplescores['DomainNameEntropy']
-        for i in range(9):
-            if x < self.__entropy[0]:
-                raw_final_score.append(i)
-                break
-            if self.isbetween(x, self.__entropy[i], self.__entropy[i + 1]):
-                raw_final_score.append(i + 1)
-                break
-
-        if x > self.__entropy[9]:
-            raw_final_score.append(10)
-
+        a = current_domain.simplescores['domaintoolsregistrars']
+        b = current_domain.simplescores['knujon']
+        c = current_domain.simplescores['DomainNameEntropy']
         # GETTING REGISTRAR PRICE SCORES
-        x = current_domain.simplescores['registrar_prices']
+        d = current_domain.simplescores['registrar_prices']
+        e = current_domain.simplescores['SpamhausTld']
+        f = current_domain.simplescores['domain_age']
         for i in range(9):
-            if x < self.__regprice[0]:
-                raw_final_score.append(i)
-                break
-            if self.isbetween(x, self.__regprice[i], self.__regprice[i + 1]):
-                raw_final_score.append(i + 1)
-                break
+            if a < self.__domain_tools[0]:
+                # raw_final_score.append(i)
+                raw_final_score['domaintoolsregistrars'] = i
+            if self.isbetween(a, self.__domain_tools[i], self.__domain_tools[i + 1]):
+                # raw_final_score.append(i + 1)
+                raw_final_score['domaintoolsregistrars'] = i + 1
+            if b < self.__knujon[0]:
+                # raw_final_score.append(i)
+                raw_final_score['knujon'] = i
+            if self.isbetween(b, self.__knujon[i], self.__knujon[i + 1]):
+                # raw_final_score.append(i + 1)
+                raw_final_score['knujon'] = i + 1
+            if c < self.__entropy[0]:
+                # raw_final_score.append(i)
+                raw_final_score['DomainNameEntropy'] = i
 
-        if x > self.__regprice[9]:
-            raw_final_score.append(10)
+            if self.isbetween(c, self.__entropy[i], self.__entropy[i + 1]):
+                # raw_final_score.append(i + 1)
+                raw_final_score['DomainNameEntropy'] = i + 1
 
-        # GETTING SPAMHAUS TLD SCORES
-        x = current_domain.simplescores['SpamhausTld']
-        for i in range(9):
-            if x < self.__spamtld[0]:
-                raw_final_score.append(i)
-                break
-            if self.isbetween(x, self.__spamtld[i], self.__spamtld[i + 1]):
-                raw_final_score.append(i + 1)
-                break
+            if d < self.__regprice[0]:
+                # raw_final_score.append(i)
+                raw_final_score['registrar_prices'] = i
 
-        if x > self.__spamtld[9]:
-            raw_final_score.append(10)
+            if self.isbetween(d, self.__regprice[i], self.__regprice[i + 1]):
+                # raw_final_score.append(i + 1)
+                raw_final_score['registrar_prices'] = i + 1
 
-        # GETTING DOMAIN AGE SCORES
-        x = current_domain.simplescores['domain_age']
-        for i in range(9):
-            if x < self.__domain_age[0]:
-                raw_final_score.append(i)
-                break
-            if self.isbetween(x, self.__domain_age[i], self.__domain_age[i + 1]):
-                raw_final_score.append(i + 1)
-                break
+            if e < self.__spamtld[0]:
+                # raw_final_score.append(i)
+                raw_final_score['SpamhausTld'] = i
+            if self.isbetween(e, self.__spamtld[i], self.__spamtld[i + 1]):
+                # raw_final_score.append(i + 1)
+                raw_final_score['SpamhausTld'] = i + 1
 
-        if x > self.__domain_age[9]:
-            raw_final_score.append(10)
+            if f < self.__domain_age[0]:
+                # raw_final_score.append(i)
+                raw_final_score['domain_age'] = i
+            if self.isbetween(f, self.__domain_age[i], self.__domain_age[i + 1]):
+                # raw_final_score.append(i + 1)
+                raw_final_score['domain_age'] = i + 1
 
+
+        if a > self.__domain_tools[9]:
+            # raw_final_score.append(10)
+            raw_final_score['domaintoolsregistrars'] = 10
+
+        if b > self.__knujon[9]:
+            # raw_final_score.append(10)
+            raw_final_score['knujon'] = 10
+
+        if c > self.__entropy[9]:
+            # raw_final_score.append(10)
+            raw_final_score['DomainNameEntropy'] = 10
+
+        if d > self.__regprice[0]:
+            # raw_final_score.append(10)
+            raw_final_score['registrar_prices'] = 10
+
+        if e > self.__regprice[0]:
+            # raw_final_score.append(10)
+            raw_final_score['SpamhausTld'] = 10
+
+
+        if f > self.__domain_age[9]:
+            # raw_final_score.append(10)
+            raw_final_score['domain_age'] = 10
+
+
+        avg_raw_final = sum(raw_final_score.values()) / len(raw_final_score)
         print("\ncurrent domain: ", current_domain.domain)
         print("\ntotal raw score: ", raw_final_score)
-        print("\navg score: ", sum(raw_final_score) / len(raw_final_score))
+        print("\navg score: ", avg_raw_final)
 
-        return sum(raw_final_score) / len(raw_final_score)
+        return avg_raw_final
 
     def isbetween(self, x, x_min, x_max):
         return x_min <= x <= x_max
@@ -166,7 +172,7 @@ class FinalScore:
             data = json.loads(f.read())
 
         malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
-        #zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
+        # zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
         phishtank = Phishtank("../mal_domains/verified_online.csv")
         domaintools_reg = DomainToolsRegistrars("../datasets/domaintools_registrars.csv")
         knujon = KnujOn("../datasets/KnujOn.html")
@@ -181,8 +187,7 @@ class FinalScore:
         alexatop = AlexaTop("../datasets/alexa_top_2k.csv")
         domain_age = DomainAge()
         lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
-        alexaLSim = AlexaLevenSimilarity() 
-
+        alexaLSim = AlexaLevenSimilarity()
 
         i = 0
 
@@ -218,11 +223,9 @@ class FinalScore:
             current_domain.set_simplescore('AlexaLevSim_score', alexaLSim.score(current_domain)[0])
             current_domain.set_simplescore('AlexaLevSim_domain', alexaLSim.score(current_domain)[1])
             current_domain.set_simplescore('DomainName', current_domain.domain)
-            
-
 
             avg_score = self.simplecombineScore0(current_domain)
-            current_domain.set_simplescore('final_score', avg_score)
+            current_domain.set_simplescore('final_score', str(avg_score))
             print(current_domain.simplescores)
             # return
 
@@ -238,7 +241,7 @@ path = 'C:/Users/rbd218/PycharmProjects/nod/scripts/domainscores1027_norm.json'
 s = FinalScore(path)
 # s = FinalScore()
 # print(s.type)
-#print(s.combineScore())
+# print(s.combineScore())
 s.getScore0()
 
 # TODO: should make the raw_final_score list a dict() to see better which feature is producing which value
