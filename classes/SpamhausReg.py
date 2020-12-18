@@ -25,4 +25,4 @@ class SpamhausReg:
                                                         "note": self.__spamhaus_reg[reg].get("badnessIndex", 0)})
                     return self.__spamhaus_reg[reg].get("badnessIndex", 0)
         domain.set_subscore("spamhausreg", {"score": False})
-        return None
+        return False

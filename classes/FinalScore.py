@@ -1,4 +1,6 @@
 import json
+import os
+
 from config import ES_SOCKET
 from classes.AlexaTop import AlexaTop
 from classes.Domain import Domain
@@ -66,25 +68,59 @@ class FinalScore:
         # TODO: Make raw_final_score dict so it is easier to determine which subscore was which score get .values
         raw_final_score = dict()
         # if found in malwaredomains list or phishtank give the domain the max score
-        if current_domain.subscores['malware_domain']['score'] or current_domain.subscores['phishtank']['score']:
-            current_domain.score = 10
-            return
+        # TODO: Later I probably want to use set_subscore instead of simplescores and say phishtank or malware
+        # TODO: for why a domain got a domain score of 10
+        if current_domain.simplescores['malware_domain'] or current_domain.simplescores['phishtank']:
+            return 10
+
         # if found in alexatop give it the minimum score
-        if current_domain.subscores['alexatop']['score']:
-            current_domain.score = 0
-            return
-        # what to do with domains that do not resolve ?
+        if current_domain.simplescores['alexatop']:
+            return 0
+
+        if current_domain.simplescores['isBogon']:
+            raw_final_score['isBogon'] = 10
+            return 10
+
+        # TODO: Do we just want to return if it doesn't resolve ?
+        # TODO: why would we want to continue scoring ?
+        resolves = current_domain.simplescores['resolves']
+        alexaLev = current_domain.simplescores['AlexaLevSim_score']
+        raw_final_score['AlexaLevSim_score'] = int(alexaLev * 10)
+
+        # if it is typosquatting lehigh make that part of the score 10
+        # TODO: consider making the final score a 10
+        if current_domain.simplescores['lehigh-typosquat']:
+            raw_final_score['lehigh-typosquat'] = 10
+        # If it is not then don't include it in final score just omit it
+
+        if not resolves:
+            raw_final_score['resolves'] = 6
+            # TODO: might want to change this threshold value .8 ?
+            # TODO: or scale how you want to increate the score instead of just adding 2
+            if alexaLev > .9:
+                # if it resolves and resembles a Alexa top domains this could be a phishing domain
+                # increase score
+                raw_final_score['resolves'] += 2
+            return sum(raw_final_score.values()) / len(raw_final_score)
+
+        # Already had thresholded TTL risk in the class itself
+        raw_final_score['ttlRisk'] = int(current_domain.simplescores['ttlRisk'] * 10)
+        # If it is ever found in the spamhausreg list - set subscore to 10 because this is very rare
+        if current_domain.simplescores['spamhausreg'] is not False:
+            raw_final_score['spamhausreg'] = 10
+
+        raw_final_score['zonefiles_tld'] = int(current_domain.simplescores['zonefiles_tld'] * 10)
 
         # GETTING DOMAINTOOLREGISTRAR SCORES
         # print("domaintools", current_domain.simplescores['domaintoolsregistrars'])
         a = current_domain.simplescores['domaintoolsregistrars']
         b = current_domain.simplescores['knujon']
         c = current_domain.simplescores['DomainNameEntropy']
-        # GETTING REGISTRAR PRICE SCORES
         d = current_domain.simplescores['registrar_prices']
         e = current_domain.simplescores['SpamhausTld']
         f = current_domain.simplescores['domain_age']
-        for i in range(9):
+        scoreRange = 10
+        for i in range(scoreRange - 1):
             if a < self.__domain_tools[0]:
                 # raw_final_score.append(i)
                 raw_final_score['domaintoolsregistrars'] = i
@@ -127,7 +163,6 @@ class FinalScore:
                 # raw_final_score.append(i + 1)
                 raw_final_score['domain_age'] = i + 1
 
-
         if a > self.__domain_tools[9]:
             # raw_final_score.append(10)
             raw_final_score['domaintoolsregistrars'] = 10
@@ -140,19 +175,20 @@ class FinalScore:
             # raw_final_score.append(10)
             raw_final_score['DomainNameEntropy'] = 10
 
-        if d > self.__regprice[0]:
+        if d > self.__regprice[9]:
             # raw_final_score.append(10)
             raw_final_score['registrar_prices'] = 10
 
-        if e > self.__regprice[0]:
+        if e > self.__spamtld[9]:
             # raw_final_score.append(10)
             raw_final_score['SpamhausTld'] = 10
-
 
         if f > self.__domain_age[9]:
             # raw_final_score.append(10)
             raw_final_score['domain_age'] = 10
 
+        # TODO Thurday 12/17: Add 'isNotResolves', 'isBogon', 'ttlRisk', 'spamhausreg', 'zonefiles_tld',
+        #  TODO: 'lehigh-typosquat', 'AlexaLevSim_score', 'AlexaLevSim_domain'
 
         avg_raw_final = sum(raw_final_score.values()) / len(raw_final_score)
         print("\ncurrent domain: ", current_domain.domain)
@@ -192,7 +228,9 @@ class FinalScore:
         i = 0
 
         scored = 0
+        dom_count = 0
         for hit in data:
+            dom_count = dom_count + 1
             # json data is custom python object
             # https://pynative.com/python-convert-json-data-into-custom-python-object/
 
@@ -209,7 +247,7 @@ class FinalScore:
             current_domain.set_simplescore('knujon', knujon.score(current_domain))
             current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
             current_domain.set_simplescore('registrar_prices', registrar_prices.score(current_domain))
-            current_domain.set_simplescore('isNotResolves', resolver.score(current_domain)[0])
+            current_domain.set_simplescore('resolves', resolver.score(current_domain)[0])
             current_domain.set_simplescore('isBogon', resolver.score(current_domain)[1])
             current_domain.set_simplescore('ttlRisk', resolver.score(current_domain)[2])
             current_domain.set_simplescore('spamhausreg', spamhaus_reg.score(current_domain))
@@ -223,13 +261,32 @@ class FinalScore:
             current_domain.set_simplescore('AlexaLevSim_score', alexaLSim.score(current_domain)[0])
             current_domain.set_simplescore('AlexaLevSim_domain', alexaLSim.score(current_domain)[1])
             current_domain.set_simplescore('DomainName', current_domain.domain)
+            current_domain.set_simplescore('Registrar', current_domain.registrar)
 
             avg_score = self.simplecombineScore0(current_domain)
             current_domain.set_simplescore('final_score', str(avg_score))
+
+            # TODO: if we are using the other subscore system with nested json + note
+            # TODO: for now using the simplescore method because it is easier to graph and do analysis
+            # TODO: for final product switch and update set_subscore as same values as simplescore
+            current_domain.set_subscore("final_score",
+                                        {"score": str(avg_score),
+                                         "note": "This is the final score based on average subscores"})
+
             print(current_domain.simplescores)
+            print('------------------------------------------------------------------domain #', dom_count)
+
             # return
 
             documents.append(current_domain.simplescores)
+
+            if dom_count % 50 == 0:
+                file_name = "c_" + str(dom_count) + "final_scores01_elk_data.json"
+                # write the scores from all the datsets into one file of scores
+                with open(file_name, "w") as f:
+                    f.write(json.dumps(documents))
+                    f.flush()
+                    os.fsync(f.fileno())
 
         with open("../script_results/finaldomainscores1118.json", "w") as f:
             f.write(json.dumps(documents))

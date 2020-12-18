@@ -30,7 +30,12 @@ class Registrarprices:
 
         for key in self.avg_prices.keys():
             scaled_prices = dict(ave_price=float(self.avg_prices[key]),
-                                 scaled_price=float(self.avg_prices[key]) / max_price)
+                                 scaled_price= 1 - float(self.avg_prices[key]) / max_price)
+            '''
+            print("\n key", key)
+            print("score 1", float(self.avg_prices[key]) / max_price)
+            print("score 2", 1 - float(self.avg_prices[key]) / max_price)
+            '''
             # Overwriting with new scaled and original price
             self.avg_prices[key] = scaled_prices
 
@@ -56,4 +61,11 @@ class Registrarprices:
 
 # TODO: Coverage using counter to see how many domains scored
 # TODO: We substring the registrar on the domain looking for key from average_prices dict
-# reg = Registrarprices("../TLD_PRICING/TLD_PRICES_AVGBYREG.csv")
+
+''' 
+reg = Registrarprices("../TLD_PRICING/TLD_PRICES_AVGBYREG.csv")
+
+from classes.Domain import Domain
+test_domain = Domain("schoolbulletinboards.net", "GoDaddy.com", 0)
+print("returned score:", reg.score(test_domain))
+'''
