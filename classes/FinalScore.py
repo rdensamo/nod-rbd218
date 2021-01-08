@@ -94,13 +94,14 @@ class FinalScore:
         # If it is not then don't include it in final score just omit it
 
         if not resolves:
+            print("Line 97 domain is not resolving?")
             raw_final_score['resolves'] = 6
             # TODO: might want to change this threshold value .8 ?
-            # TODO: or scale how you want to increate the score instead of just adding 2
+            # TODO: or scale how you want to increase the score instead of just adding 2
             if alexaLev > .9:
                 # if it resolves and resembles a Alexa top domains this could be a phishing domain
                 # increase score
-                raw_final_score['resolves'] += 2
+                raw_final_score['resolves'] = 10
             return sum(raw_final_score.values()) / len(raw_final_score)
 
         # Already had thresholded TTL risk in the class itself
@@ -109,7 +110,7 @@ class FinalScore:
         if current_domain.simplescores['spamhausreg'] is not False:
             raw_final_score['spamhausreg'] = 10
 
-        raw_final_score['zonefiles_tld'] = int(current_domain.simplescores['zonefiles_tld'] * 10)
+        # raw_final_score['zonefiles_tld'] = int(current_domain.simplescores['zonefiles_tld'] * 10)
 
         # GETTING DOMAINTOOLREGISTRAR SCORES
         # print("domaintools", current_domain.simplescores['domaintoolsregistrars'])
@@ -202,7 +203,7 @@ class FinalScore:
 
     def getScore0(self):
         final_score = -1
-
+        #TODO: Change this so it uses path attribute and not hard coded
         with open("../script_results/All_ES_domains_1026.json", "r") as f:
             # parses json string and get dictionary
             data = json.loads(f.read())
@@ -218,9 +219,9 @@ class FinalScore:
         spamhaus_reg = SpamhausReg()
         spamhaus_tld = SpamhausTld("../datasets/spamhaus_tlds.csv")
 
-        # TODO: Score separately on small number of data - slow
-        zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
-        alexatop = AlexaTop("../datasets/alexa_top_2k.csv")
+        # TODO: Consider removing, doesnt produce good scores
+        #zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
+        alexatop = AlexaTop("../datasets/alexa_top_100k.csv")
         domain_age = DomainAge()
         lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
         alexaLSim = AlexaLevenSimilarity()
@@ -253,7 +254,7 @@ class FinalScore:
             current_domain.set_simplescore('spamhausreg', spamhaus_reg.score(current_domain))
             current_domain.set_simplescore('SpamhausTld', spamhaus_tld.score(current_domain))
             # TODO: TOO slow to score right now
-            current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
+            # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
 
             current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
             current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
@@ -280,25 +281,89 @@ class FinalScore:
 
             documents.append(current_domain.simplescores)
 
-            if dom_count % 50 == 0:
-                file_name = "c_" + str(dom_count) + "final_scores01_elk_data.json"
+            if dom_count % 5 == 0:
+                file_name = "c_" + str(dom_count) + "final_scores01_elk_data0108.json"
                 # write the scores from all the datsets into one file of scores
                 with open(file_name, "w") as f:
                     f.write(json.dumps(documents))
                     f.flush()
                     os.fsync(f.fileno())
 
-        with open("../script_results/finaldomainscores1118.json", "w") as f:
+        with open("../script_results/finaldomainscores0108.json", "w") as f:
             f.write(json.dumps(documents))
         f.close()
         return avg_score
 
+    def get_score_single_domain(self, current_domain):
 
+        malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
+        # zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
+        phishtank = Phishtank("../mal_domains/verified_online.csv")
+        domaintools_reg = DomainToolsRegistrars("../datasets/domaintools_registrars.csv")
+        knujon = KnujOn("../datasets/KnujOn.html")
+        entropy = RedCanaryEntropy()
+        registrar_prices = Registrarprices("../TLD_PRICING/TLD_PRICES_AVGBYREG.csv")
+        resolver = Resolver()
+        spamhaus_reg = SpamhausReg()
+        spamhaus_tld = SpamhausTld("../datasets/spamhaus_tlds.csv")
+
+        # TODO: Consider removing, doesnt produce good scores
+        # zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
+        alexatop = AlexaTop("../datasets/alexa_top_100k.csv")
+        domain_age = DomainAge()
+        lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
+        alexaLSim = AlexaLevenSimilarity()
+
+
+        current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
+        # current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
+        current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
+        current_domain.set_simplescore('domaintoolsregistrars', domaintools_reg.score(current_domain))
+        current_domain.set_simplescore('knujon', knujon.score(current_domain))
+        current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
+        current_domain.set_simplescore('registrar_prices', registrar_prices.score(current_domain))
+        current_domain.set_simplescore('resolves', resolver.score(current_domain)[0])
+        current_domain.set_simplescore('isBogon', resolver.score(current_domain)[1])
+        current_domain.set_simplescore('ttlRisk', resolver.score(current_domain)[2])
+        current_domain.set_simplescore('spamhausreg', spamhaus_reg.score(current_domain))
+        current_domain.set_simplescore('SpamhausTld', spamhaus_tld.score(current_domain))
+        # TODO: TOO slow to score right now
+        # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
+
+        current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
+        current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
+        current_domain.set_simplescore('lehigh-typosquat', lehigh_typo.score(current_domain))
+        current_domain.set_simplescore('AlexaLevSim_score', alexaLSim.score(current_domain)[0])
+        current_domain.set_simplescore('AlexaLevSim_domain', alexaLSim.score(current_domain)[1])
+        current_domain.set_simplescore('DomainName', current_domain.domain)
+        current_domain.set_simplescore('Registrar', current_domain.registrar)
+
+        avg_score = self.simplecombineScore0(current_domain)
+        current_domain.set_simplescore('final_score', str(avg_score))
+
+        # TODO: if we are using the other subscore system with nested json + note
+        # TODO: for now using the simplescore method because it is easier to graph and do analysis
+        # TODO: for final product switch and update set_subscore as same values as simplescore
+        current_domain.set_subscore("final_score",
+                                    {"score": str(avg_score),
+                                     "note": "This is the final score based on average subscores"})
+
+
+        return avg_score
+
+# Scoring from JSON File
+'''
 path = 'C:/Users/rbd218/PycharmProjects/nod/scripts/domainscores1027_norm.json'
 s = FinalScore(path)
 # s = FinalScore()
 # print(s.type)
 # print(s.combineScore())
 s.getScore0()
+'''
+# Single domain Scoring Tests
+s = FinalScore()
+test_domain0 = Domain("google.com", "idk", 0)
+print(s.get_score_single_domain(test_domain0))
+
 
 # TODO: should make the raw_final_score list a dict() to see better which feature is producing which value

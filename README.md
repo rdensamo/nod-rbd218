@@ -4,3 +4,11 @@
 3. Source the virtualenv `source venv/bin/activate`
 4. Install the requirements via pip `pip3 install -r requirements.txt`
 5. Run with python3 main.py
+
+#How to run the code:
+Run the NOD scoring on Elk data with FinalScore.py
+
+
+#About the Code:
+
+#Attributes
