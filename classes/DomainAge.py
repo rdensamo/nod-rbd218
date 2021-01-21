@@ -25,12 +25,18 @@ class DomainAge:
         '''
 
         # Otherwise defer to the domain tools research
-        months = domain.age / 2.628e+6
-        offset = bisect_left(DomainAge.intervals_mo, months)
-        score = DomainAge.intervals_mo_lookup[offset]
-        domain.set_subscore("domain_age", {"score": score})
+        if domain.age is not None:
+            months = domain.age / 2.628e+6
+            offset = bisect_left(DomainAge.intervals_mo, months)
+            score = DomainAge.intervals_mo_lookup[offset]
+            domain.set_subscore("domain_age", {"score": score})
         # returns a normalized score for age
-        return score / DomainAge.MAX_AGE_SCORE
+            return score / DomainAge.MAX_AGE_SCORE
+        else :
+            # TODO: remove or print to stderr
+            # print("No domain age for this domain")
+            return .5
+
 
     # TESTING FUNCTION FOR CODE BELOW:
     def testScore(self, bad_doms, good_doms, dom_size=1000):

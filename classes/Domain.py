@@ -7,7 +7,7 @@ class Domain:
     Representation of an individual domain name.
     """
 
-    def __init__(self, query, registrar, age):
+    def __init__(self, query, registrar, age=None):
         self._domain = query
 
         self.tld = None

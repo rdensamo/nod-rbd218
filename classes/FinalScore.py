@@ -1,5 +1,6 @@
 import json
 import os
+from csv import DictReader
 
 from config import ES_SOCKET
 from classes.AlexaTop import AlexaTop
@@ -93,16 +94,18 @@ class FinalScore:
             raw_final_score['lehigh-typosquat'] = 10
         # If it is not then don't include it in final score just omit it
 
-        if not resolves:
-            print("Line 97 domain is not resolving?")
-            raw_final_score['resolves'] = 6
+        # if it does not resolve slightly risky
+        raw_final_score['resolves'] = 6
+
+        if resolves:
+            raw_final_score['resolves'] = 5
             # TODO: might want to change this threshold value .8 ?
             # TODO: or scale how you want to increase the score instead of just adding 2
-            if alexaLev > .9:
+            if alexaLev >= .8:
                 # if it resolves and resembles a Alexa top domains this could be a phishing domain
                 # increase score
                 raw_final_score['resolves'] = 10
-            return sum(raw_final_score.values()) / len(raw_final_score)
+            # return sum(raw_final_score.values()) / len(raw_final_score)
 
         # Already had thresholded TTL risk in the class itself
         raw_final_score['ttlRisk'] = int(current_domain.simplescores['ttlRisk'] * 10)
@@ -192,9 +195,9 @@ class FinalScore:
         #  TODO: 'lehigh-typosquat', 'AlexaLevSim_score', 'AlexaLevSim_domain'
 
         avg_raw_final = sum(raw_final_score.values()) / len(raw_final_score)
-        print("\ncurrent domain: ", current_domain.domain)
-        print("\ntotal raw score: ", raw_final_score)
-        print("\navg score: ", avg_raw_final)
+        # print("\ncurrent domain: ", current_domain.domain)
+        print("total raw score: ", raw_final_score)
+        # print("\navg score: ", avg_raw_final)
 
         return avg_raw_final
 
@@ -203,8 +206,10 @@ class FinalScore:
 
     def getScore0(self):
         final_score = -1
-        #TODO: Change this so it uses path attribute and not hard coded
-        with open("../script_results/All_ES_domains_1026.json", "r") as f:
+        # TODO: Change this so it uses path attribute and not hard coded
+
+        # "../script_results/All_ES_domains_1026.json"
+        with open(self._path, "r") as f:
             # parses json string and get dictionary
             data = json.loads(f.read())
 
@@ -220,7 +225,7 @@ class FinalScore:
         spamhaus_tld = SpamhausTld("../datasets/spamhaus_tlds.csv")
 
         # TODO: Consider removing, doesnt produce good scores
-        #zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
+        # zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
         alexatop = AlexaTop("../datasets/alexa_top_100k.csv")
         domain_age = DomainAge()
         lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
@@ -281,20 +286,20 @@ class FinalScore:
 
             documents.append(current_domain.simplescores)
 
-            if dom_count % 5 == 0:
-                file_name = "c_" + str(dom_count) + "final_scores01_elk_data0108.json"
+            if dom_count % 10 == 0:
+                file_name = "c_" + str(dom_count) + "final_scores01_phish_data0112.json"
                 # write the scores from all the datsets into one file of scores
                 with open(file_name, "w") as f:
                     f.write(json.dumps(documents))
                     f.flush()
                     os.fsync(f.fileno())
 
-        with open("../script_results/finaldomainscores0108.json", "w") as f:
+        with open("../script_results/finaldomainscores0112.json", "w") as f:
             f.write(json.dumps(documents))
         f.close()
         return avg_score
 
-    def get_score_single_domain(self, current_domain):
+    def get_score_single_domain(self, current_domain, is_phish=False):
 
         malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
         # zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
@@ -314,10 +319,12 @@ class FinalScore:
         lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
         alexaLSim = AlexaLevenSimilarity()
 
-
         current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
         # current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
-        current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
+        if not is_phish:
+            current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
+        else:
+            current_domain.set_simplescore('phishtank', False)
         current_domain.set_simplescore('domaintoolsregistrars', domaintools_reg.score(current_domain))
         current_domain.set_simplescore('knujon', knujon.score(current_domain))
         current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
@@ -348,22 +355,52 @@ class FinalScore:
                                     {"score": str(avg_score),
                                      "note": "This is the final score based on average subscores"})
 
-
         return avg_score
 
+
 # Scoring from JSON File
-'''
-path = 'C:/Users/rbd218/PycharmProjects/nod/scripts/domainscores1027_norm.json'
-s = FinalScore(path)
+''' 
+# "../script_results/All_ES_domains_1026.json"
+# elk_path = 'C:/Users/rbd218/PycharmProjects/nod/scripts/domainscores1027_norm.json'
+elk_path = '../scripts/domainscores1027_norm.json'
+s = FinalScore(elk_path)
 # s = FinalScore()
 # print(s.type)
 # print(s.combineScore())
 s.getScore0()
 '''
+
 # Single domain Scoring Tests
+'''
 s = FinalScore()
-test_domain0 = Domain("google.com", "idk", 0)
+test_domain0 = Domain("elccircuit.com", "idk", 0)
 print(s.get_score_single_domain(test_domain0))
+'''
 
+# Scoring Phish and malware domain lists
+s = FinalScore()
+path_alexa20k = '../scripts/who_is_bulk_results_alexa_20k.txt'
+path_maldoms = '../scripts/who_is_bulk_results_mal_all.txt'
+path_phish = '../scripts/who_is_bulk_results_phish_all.txt'
+with open(path_phish, "r", encoding='utf-8') as f:
+    reader = DictReader(f)
+    dom_count = 0
+    for row in reader:
+        dom_count = dom_count + 1
+        # print("dom_count:", dom_count)
+        if dom_count > 20000:
+            break
 
-# TODO: should make the raw_final_score list a dict() to see better which feature is producing which value
+        if row["registrar"] in [None, ""]:
+            break
+
+        # registrar,domain are the columns
+        entry_reg = row["registrar"]
+        entry_dom = row["domain"]
+
+        current_domain = Domain(row['domain'],
+                                row['registrar'])
+        # print("line 396", current_domain.domain)
+        print("Line 406 Domain: ", current_domain.domain, "Score: ", s.get_score_single_domain(current_domain, True), "\n")
+        # TODO: phishtank domains not being scored high enough - maybe can use something from weka random forests
+        # TODO: to figure out how to make our system correctly score high / identify bad domains

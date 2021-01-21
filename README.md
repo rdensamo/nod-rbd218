@@ -7,7 +7,7 @@
 
 #How to run the code:
 Run the NOD scoring on Elk data with FinalScore.py
-
+Multiple ways to run FinalScore.py to test with elk, phish, single domains etc.
 
 #About the Code:
 
