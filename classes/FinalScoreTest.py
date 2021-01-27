@@ -23,6 +23,7 @@ from classes.LehighTypoSquat import LehighTypoSquat
 from classes.AlexaLevenSimilarity import AlexaLevenSimilarity
 import numpy as np
 import matplotlib.pyplot as plt
+
 domains = list()
 queried_entry = dict()
 
@@ -58,9 +59,9 @@ class FinalScore:
             self.__domain_age = [0.028, 0.0525, 0.0825, 0.1125, 0.2375, 0.2875, 0.4325, 0.4725, 0.5475, 0.9375]
 
         # if self._path is None:
-            # print("Scoring Domains from Elasticsearch")
-        #else:
-            # print("Scoring Domains from Flat JSON File")
+        # print("Scoring Domains from Elasticsearch")
+        # else:
+        # print("Scoring Domains from Flat JSON File")
 
     def combineScore(self):
         subscore_weights = dict()
@@ -395,25 +396,22 @@ s = FinalScore()
 path_alexa20k = '../scripts/who_is_bulk_results_alexa_20k.txt'
 path_maldoms = '../scripts/who_is_bulk_results_mal_all.txt'
 path_phish = '../scripts/who_is_bulk_results_phish_all.txt'
-path_elk = '../scripts/csv_All_ES_domains_1026.csv'
+path_elk = '../scripts/all_elasticsearch_domains_1026.csv'
 datasets = list()
-
-
 
 datasets.append(path_maldoms)
 datasets.append(path_phish)
 datasets.append(path_alexa20k)
 datasets.append(path_elk)
 
-
 # TODO: Get the average
 # TODO: plot the scores
-mal_dom_scores = dict()
-phish_dom_scores = dict()
-alexa_dom_scores = dict()
-elk_dom_scores = dict()
+
 domain_scores = dict()
-NUM_DOMAINS = 2
+NUM_DOMAINS = 10
+domain_scoring = dict()
+domain_scoring["domain_from"] = list()
+domain_scoring["domain_score"] = list()
 
 domain_scores["maleware"] = list()
 domain_scores["phishtank"] = list()
@@ -444,19 +442,32 @@ for i in range(len(datasets)):
                                         row['registrar'], float(row["age"]))
             else:
                 current_domain = Domain(row['domain'],
-                                    row['registrar'])
+                                        row['registrar'])
 
             # print("line 396", current_domain.domain)
             domain_score = s.get_score_single_domain(current_domain, True, True, True)
             print("Line 406 Domain: ", current_domain.domain, "Score: ", domain_score)
-            print("datasets", datasets[i].lower().find("All_ES") != -1  , ": ", datasets[i])
+            print("datasets", str(datasets[i]).lower().find("elasticsearch") != -1, ": ", datasets[i])
             # if str(datasets[i]).lower().find("mal") != -1 : mal_dom_scores[current_domain] = domain_score
             # TODO: might want to store the domain names in dict too
             # Source: geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/ -how to build dict of lists
-            if str(datasets[i]).lower().find("mal") != -1:  domain_scores["maleware"].append(domain_score)
-            if str(datasets[i]).lower().find("phish") != -1: domain_scores["phishtank"].append(domain_score)
-            if str(datasets[i].lower().find("alexa")) != -1: domain_scores["alexatop"].append(domain_score)
-            if str(datasets[i].lower().find("es")) != -1: domain_scores["observed"].append(domain_score)
+            if str(datasets[i]).lower().find("mal") != -1:
+                domain_scores["maleware"].append(domain_score)
+                domain_scoring["domain_from"].append("maleware")
+                domain_scoring["domain_score"].append(domain_score)
+            elif str(datasets[i]).lower().find("phish") != -1:
+                domain_scores["phishtank"].append(domain_score)
+                domain_scoring["domain_from"].append("phishtank")
+                domain_scoring["domain_score"].append(domain_score)
+            elif str(datasets[i]).lower().find("elasticsearch") != -1:
+                domain_scores["observed"].append(domain_score)
+                domain_scoring["domain_from"].append("observed")
+                domain_scoring["domain_score"].append(domain_score)
+            elif str(datasets[i]).lower().find("alexa") != -1:
+                domain_scores["alexatop"].append(domain_score)
+                domain_scoring["domain_from"].append("alexatop")
+                domain_scoring["domain_score"].append(domain_score)
+
             # else: print("Error in file naming. Please rename files with mal, phish, alexa or es for elasticsearch domains")
 # print("es",domain_scores["observed_domains"])
 
@@ -476,38 +487,41 @@ plt.hist(z, color="red")
 plt.show()
 '''
 
-
 # TODO: should use plotly and pandas
 # pd.DataFrame.from_dict(data)
 # print("mal_domains", mal_dom_scores.values())
 
 # Source : https://plotly.com/python/histograms/
 import pandas as pd
+
 # combine into one dataframe of mal, alexa, phish and ES
 print("\ndomain scores : ", domain_scores)
+print("\ndomain scoring : ", domain_scoring)
 
+#domain_scoring = dict()
 
-domain_scoring = dict()
-
-domain_scoring["domain_type"] = list(domain_scores.keys())
+#domain_scoring["domain_type"] = list(domain_scores.keys())
 '''
 domain_scoring["maleware"] = list(domain_scores["maleware"])
 domain_scoring["phishtank"] = list(domain_scores["phishtank"])
 domain_scoring["alexatop"] = list(domain_scores["alexatop"])
 domain_scoring["elasticsearch"] = list(domain_scores["elasticsearch"])
 '''
-domain_scoring["domain_score"] = list(domain_scores.values())
-print("\ndomain scores : " ,domain_scores)
-print("\ndomain scoring : " ,domain_scoring)
+#domain_scoring["domain_score"] = list(domain_scores.values())
+#print("\ndomain scores : ", domain_scores)
+#print("\ndomain scoring : ", domain_scoring)
 
-df = pd.DataFrame(domain_scores, columns = ['domain_score','domain_from'])
-print("\n df ",df)
+df = pd.DataFrame(domain_scoring, columns=['domain_from', 'domain_score'])
+print("\n df ", df)
+# Note: Need to import plotly too not just plotly.express
+import plotly
 import plotly.express as px
-'''
-df = px.data.tips()
-fig = px.histogram(df, x="total_bill", color="sex")
+fig = px.histogram(df, x="domain_score", color="domain_from")
 fig.show()
-'''
+
+# html file
+plotly.offline.plot(fig, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/MalPhishAlexaObs_10_hist.html')
+
 
 # TODO: phishtank domains not being scored high enough - maybe can use something from weka random forests
 # TODO: to figure out how to make our system correctly score high / identify bad domains
