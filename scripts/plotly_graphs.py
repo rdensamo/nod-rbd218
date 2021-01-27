@@ -125,8 +125,9 @@ from plotly.offline import plot
 
 # all_num_data = pd.concat([nod_data.domaintools], [nod_data.knujon])
 AlexaLevScore = pd.concat([nod_data.AlexaLevSim_score])
-
-fig1 = px.histogram(AlexaLevScore)
+entropy = pd.concat([nod_data.DomainNameEntropy])
+fig1 = px.histogram(entropy, AlexaLevScore)
+#fig1 = px.histogram(AlexaLevScore)
 fig1.show()
 
 '''

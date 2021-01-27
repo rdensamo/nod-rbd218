@@ -1,4 +1,4 @@
-registrar,domain
+registrar,domain,age
 False,www.dofus.mom
 GoDaddy.com,beau-mondes.com
 RU-CENTER-RU,zoosummit.ru

@@ -299,7 +299,7 @@ class FinalScore:
         f.close()
         return avg_score
 
-    def get_score_single_domain(self, current_domain, is_phish=False):
+    def get_score_single_domain(self, current_domain, check_phish=False, check_mal=False, check_alexa=False):
 
         malware_domains = MalwareDomains("../mal_domains/justdomains.txt")
         # zonefile_domains = ZonefileDomains('../datasets/zonefile_domains_full.txt')
@@ -321,10 +321,24 @@ class FinalScore:
 
         current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
         # current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
-        if not is_phish:
+
+        if not check_phish:
             current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
         else:
             current_domain.set_simplescore('phishtank', False)
+
+        if not check_alexa:
+            current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
+        else:
+            current_domain.set_simplescore('alexatop', False)
+
+        if not check_mal:
+            current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
+        else:
+            current_domain.set_simplescore('malware_domain', False)
+
+
+
         current_domain.set_simplescore('domaintoolsregistrars', domaintools_reg.score(current_domain))
         current_domain.set_simplescore('knujon', knujon.score(current_domain))
         current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
@@ -337,7 +351,7 @@ class FinalScore:
         # TODO: TOO slow to score right now
         # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
 
-        current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
+
         current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
         current_domain.set_simplescore('lehigh-typosquat', lehigh_typo.score(current_domain))
         current_domain.set_simplescore('AlexaLevSim_score', alexaLSim.score(current_domain)[0])
@@ -382,7 +396,7 @@ s = FinalScore()
 path_alexa20k = '../scripts/who_is_bulk_results_alexa_20k.txt'
 path_maldoms = '../scripts/who_is_bulk_results_mal_all.txt'
 path_phish = '../scripts/who_is_bulk_results_phish_all.txt'
-with open(path_phish, "r", encoding='utf-8') as f:
+with open(path_alexa20k, "r", encoding='utf-8') as f:
     reader = DictReader(f)
     dom_count = 0
     for row in reader:
@@ -401,6 +415,6 @@ with open(path_phish, "r", encoding='utf-8') as f:
         current_domain = Domain(row['domain'],
                                 row['registrar'])
         # print("line 396", current_domain.domain)
-        print("Line 406 Domain: ", current_domain.domain, "Score: ", s.get_score_single_domain(current_domain, True), "\n")
+        print("Line 406 Domain: ", current_domain.domain, "Score: ", s.get_score_single_domain(current_domain, True, True, True), "\n")
         # TODO: phishtank domains not being scored high enough - maybe can use something from weka random forests
         # TODO: to figure out how to make our system correctly score high / identify bad domains
