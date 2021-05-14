@@ -1,3 +1,7 @@
+
+
+# TODO: Update this final with tested scoring system from FinalScoreTest.py
+
 import json
 import os
 from csv import DictReader

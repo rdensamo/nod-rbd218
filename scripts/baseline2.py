@@ -1,5 +1,9 @@
 import os
 
+import sys
+import os.path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search, Q
 import json
@@ -123,3 +127,4 @@ for hit in data:
 with open("../script_results/domainscores1207_norm.json", "w") as f:
     f.write(json.dumps(documents))
 # f.close()
+

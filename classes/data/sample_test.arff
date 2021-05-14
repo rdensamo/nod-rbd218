@@ -1,0 +1,18 @@
+@relation Glass-weka.filters.unsupervised.attribute.SetMissingValue-Rlast
+
+@attribute D string
+@attribute RI numeric
+@attribute RI numeric
+@attribute Na numeric
+@attribute Mg numeric
+@attribute Al numeric
+@attribute Si numeric
+@attribute K numeric
+@attribute Ca numeric
+@attribute Ba numeric
+@attribute Fe numeric
+@attribute Type {'maleware','alexatop','phishtank'}
+
+@data
+"example1.com", 5.555555556,0.097315436,0.272452069,0.046304598,0,0.6,0.058385093,0.023376623,0.583333333,?
+"example2.com", 6.777777778,0.097315436,0.272452069,0.549909224,0,0.3,0.060869565,0.023376623,0.875,?

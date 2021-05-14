@@ -198,7 +198,7 @@ class FinalScore:
 
         avg_raw_final = sum(raw_final_score.values()) / len(raw_final_score)
         # print("\ncurrent domain: ", current_domain.domain)
-        print("total raw score: ", raw_final_score)
+        # print("total raw score: ", raw_final_score)
         # print("\navg score: ", avg_raw_final)
 
         return avg_raw_final
@@ -408,15 +408,31 @@ datasets.append(path_elk)
 # TODO: plot the scores
 
 domain_scores = dict()
-NUM_DOMAINS = 10
+NUM_DOMAINS = 500
 domain_scoring = dict()
 domain_scoring["domain_from"] = list()
 domain_scoring["domain_score"] = list()
-
-domain_scores["maleware"] = list()
-domain_scores["phishtank"] = list()
-domain_scores["alexatop"] = list()
-domain_scores["observed"] = list()
+domain_scoring["domain_name"] = list()
+# domain_scoring["domain_subscores"] = list()
+# Store subscores to plot them by color [alexa, phish and malware] to figure out
+# best subscores and change weighted averages appropriately
+domain_scoring["domaintoolsregistrars"] = list()
+domain_scoring["knujon"] = list()
+domain_scoring["DomainNameEntropy"] = list()
+domain_scoring["registrar_prices"] = list()
+domain_scoring["isBogon"] = list()
+domain_scoring["ttlRisk"] = list()
+domain_scoring["SpamhausTld"] = list()
+domain_scoring["domain_age"] = list()
+domain_scoring["AlexaLevSim_score"] = list()
+documents = list()
+# TODO : Include and change boolean values like "resolves" to 0 and 1 to graph them as well
+domain_scoring["resolves"] = list()
+# TODO: not really using domain_scores anymore, variable may be redundant
+# domain0_scores["maleware"] = list()
+# domain_scores["phishtank"] = list()
+# domain_scores["alexatop"] = list()
+# domain_scores["observed"] = list()
 # print("list ", domain_scores)
 for i in range(len(datasets)):
     path = datasets[i]
@@ -431,98 +447,145 @@ for i in range(len(datasets)):
             if dom_count > NUM_DOMAINS:
                 break
 
-            if row["registrar"] in [None, ""]:
-                break
-
             # registrar, domain are the columns
             # entry_reg = row["registrar"]
             # entry_dom = row["domain"]
-            if row["age"] is not None:
+            if row["age"] and row["registrar"] is not None:
                 current_domain = Domain(row['domain'],
                                         row['registrar'], float(row["age"]))
-            else:
+            elif row["registrar"] is not None:
                 current_domain = Domain(row['domain'],
                                         row['registrar'])
+            else:
+                print("line 448", current_domain, " row[domain]: ", row['domain'])
+                current_domain = Domain(row["domain"])
 
-            # print("line 396", current_domain.domain)
             domain_score = s.get_score_single_domain(current_domain, True, True, True)
-            print("Line 406 Domain: ", current_domain.domain, "Score: ", domain_score)
-            print("datasets", str(datasets[i]).lower().find("elasticsearch") != -1, ": ", datasets[i])
+            print("Line 450 Domain: ", current_domain.domain, "Score: ", domain_score)
+            print("---line 448", current_domain.simplescores)
+            # print("datasets", str(datasets[i]).lower().find("elasticsearch") != -1, ": ", datasets[i])
             # if str(datasets[i]).lower().find("mal") != -1 : mal_dom_scores[current_domain] = domain_score
             # TODO: might want to store the domain names in dict too
             # Source: geeksforgeeks.org/python-ways-to-create-a-dictionary-of-lists/ -how to build dict of lists
             if str(datasets[i]).lower().find("mal") != -1:
-                domain_scores["maleware"].append(domain_score)
+                # domain_scores["maleware"].append(domain_score)
                 domain_scoring["domain_from"].append("maleware")
-                domain_scoring["domain_score"].append(domain_score)
+                # domain_scoring["domain_score"].append(domain_score)
+                # domain_scoring["domain_name"].append(current_domain.domain)
             elif str(datasets[i]).lower().find("phish") != -1:
-                domain_scores["phishtank"].append(domain_score)
+                # domain_scores["phishtank"].append(domain_score)
                 domain_scoring["domain_from"].append("phishtank")
-                domain_scoring["domain_score"].append(domain_score)
+                # domain_scoring["domain_score"].append(domain_score)
+                # domain_scoring["domain_name"].append(current_domain.domain)
             elif str(datasets[i]).lower().find("elasticsearch") != -1:
-                domain_scores["observed"].append(domain_score)
+                # domain_scores["observed"].append(domain_score)
                 domain_scoring["domain_from"].append("observed")
-                domain_scoring["domain_score"].append(domain_score)
+                # domain_scoring["domain_score"].append(domain_score)
+                # domain_scoring["domain_name"].append(current_domain.domain)
             elif str(datasets[i]).lower().find("alexa") != -1:
-                domain_scores["alexatop"].append(domain_score)
+                # domain_scores["alexatop"].append(domain_score)
                 domain_scoring["domain_from"].append("alexatop")
-                domain_scoring["domain_score"].append(domain_score)
+            domain_scoring["domain_score"].append(domain_score)
+            domain_scoring["domain_name"].append(current_domain.domain)
+
+            domain_scoring["domaintoolsregistrars"].append(current_domain.simplescores["domaintoolsregistrars"])
+            domain_scoring["knujon"].append(current_domain.simplescores["knujon"])
+            domain_scoring["DomainNameEntropy"].append(current_domain.simplescores["DomainNameEntropy"])
+            domain_scoring["registrar_prices"].append(current_domain.simplescores["registrar_prices"])
+            domain_scoring["ttlRisk"].append(current_domain.simplescores["ttlRisk"])
+            domain_scoring["SpamhausTld"].append(current_domain.simplescores["SpamhausTld"])
+            domain_scoring["domain_age"].append(current_domain.simplescores["domain_age"])
+            domain_scoring["AlexaLevSim_score"].append(current_domain.simplescores["AlexaLevSim_score"])
+            if current_domain.simplescores["resolves"] == True:
+                domain_scoring["resolves"] = 1
+            else:
+                domain_scoring["resolves"] = 0
+
+        documents.append(current_domain.simplescores)
+
+# THIS ONE MAY BE MISSING THE PHISH, MAL, AND ALEXA LABELS I NEED for weka testing
+with open("../script_results/documents_domainscores0212_FinalTest_NOLABEL.json", "w") as f:
+    f.write(json.dumps(documents))
+
+with open("../script_results/domain_scoring_domainscores0212_FinalTest_LABELm.json", "w") as f:
+    f.write(json.dumps(domain_scoring))
+
+        # print("line 499 domain_scoring: ", domain_scoring)
 
             # else: print("Error in file naming. Please rename files with mal, phish, alexa or es for elasticsearch domains")
 # print("es",domain_scores["observed_domains"])
 
-'''
-Nvm Use plotly instead - has better visualizations for analysis 
-w = np.array(np.array(list(elk_dom_scores.values())).astype(float))
-x = np.array(np.array(list(mal_dom_scores.values())).astype(float))
-z = np.array(np.array(list(alexa_dom_scores.values())).astype(float))
-y = np.array(np.array(list(phish_dom_scores.values())).astype(float))
-plt.xlabel('Domain Score', fontsize=10)
-plt.ylabel('Frequency', fontsize=10)
-plt.title('Domain score for Alexa, Malware and Elastic Search Domains', fontsize=10)
-plt.hist(w, color="red")
-plt.hist(x, color="red")
-plt.hist(y, color="green")
-plt.hist(z, color="red")
-plt.show()
-'''
 
 # TODO: should use plotly and pandas
 # pd.DataFrame.from_dict(data)
 # print("mal_domains", mal_dom_scores.values())
 
-# Source : https://plotly.com/python/histograms/
+
 import pandas as pd
 
-# combine into one dataframe of mal, alexa, phish and ES
-print("\ndomain scores : ", domain_scores)
 print("\ndomain scoring : ", domain_scoring)
 
-#domain_scoring = dict()
+df = pd.DataFrame(domain_scoring,
+                  columns=['domain_from', 'domain_score', 'domain_name', 'domaintoolsregistrars', 'knujon',
+                           'DomainNameEntropy', 'registrar_prices', 'ttlRisk', 'SpamhausTld', 'domain_age',
+                           'AlexaLevSim_score', 'resolves'])
 
-#domain_scoring["domain_type"] = list(domain_scores.keys())
-'''
-domain_scoring["maleware"] = list(domain_scores["maleware"])
-domain_scoring["phishtank"] = list(domain_scores["phishtank"])
-domain_scoring["alexatop"] = list(domain_scores["alexatop"])
-domain_scoring["elasticsearch"] = list(domain_scores["elasticsearch"])
-'''
-#domain_scoring["domain_score"] = list(domain_scores.values())
-#print("\ndomain scores : ", domain_scores)
-#print("\ndomain scoring : ", domain_scoring)
-
-df = pd.DataFrame(domain_scoring, columns=['domain_from', 'domain_score'])
 print("\n df ", df)
 # Note: Need to import plotly too not just plotly.express
 import plotly
 import plotly.express as px
+
 fig = px.histogram(df, x="domain_score", color="domain_from")
+
 fig.show()
 
 # html file
-plotly.offline.plot(fig, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/MalPhishAlexaObs_10_hist.html')
-
-
+plotly.offline.plot(fig,
+                    filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_MalPhishAlexaObs_hist_fixed_observed.html')
 # TODO: phishtank domains not being scored high enough - maybe can use something from weka random forests
 # TODO: to figure out how to make our system correctly score high / identify bad domains
-# TODO - no score distinction between Alexatop , phish and mal graph them to see
+# TODO - no score distinction between Alexatop, phish and mal graph them to se
+# TODO: after plotting 500 domains each, find a way to improve the scoring system
+
+
+fig1 = px.histogram(df, x="domaintoolsregistrars", color="domain_from")
+fig1.show()
+plotly.offline.plot(fig1, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_domaintoolsregistrars.html')
+
+fig2 = px.histogram(df, x="knujon", color="domain_from")
+fig2.show()
+plotly.offline.plot(fig2, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_knujon.html')
+
+fig3 = px.histogram(df, x="DomainNameEntropy", color="domain_from")
+fig3.show()
+plotly.offline.plot(fig3, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_DomainNameEntropy.html')
+
+fig4 = px.histogram(df, x="registrar_prices", color="domain_from")
+fig4.show()
+plotly.offline.plot(fig4, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_registrar_prices.html')
+
+fig5 = px.histogram(df, x="ttlRisk", color="domain_from")
+fig5.show()
+plotly.offline.plot(fig5, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_ttlRisk.html')
+
+fig6 = px.histogram(df, x="SpamhausTld", color="domain_from")
+fig6.show()
+plotly.offline.plot(fig6, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_SpamhausTld.html')
+
+fig7 = px.histogram(df, x="domain_age", color="domain_from")
+fig7.show()
+plotly.offline.plot(fig7, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_domain_age.html')
+
+fig8 = px.histogram(df, x="AlexaLevSim_score", color="domain_from")
+fig8.show()
+plotly.offline.plot(fig8, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_AlexaLevSim_score.html')
+
+fig9 = px.histogram(df, x="resolves", color="domain_from")
+fig9.show()
+plotly.offline.plot(fig9, filename='C:/Users/rbd218/PycharmProjects/nod/classes/Graphs/Feb11_500_resolves.html')
+
+# Sources
+# https://plotly.com/python/histograms/
+# https://medium.com/plotly/introducing-plotly-express-808df010143d
+# https://www.geeksforgeeks.org/how-to-convert-dictionary-to-pandas-dataframe/
+# https://stackoverflow.com/questions/59815797/plotly-how-to-save-plotly-express-plot-into-a-html-or-static-image-file

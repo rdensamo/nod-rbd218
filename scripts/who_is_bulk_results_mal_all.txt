@@ -26856,4 +26856,22 @@ Tucows Domains Inc.,401group.com
 OwnRegistrar,etoroinvestmentltd.com
 Internet Domain Service BS Corp.,xn--localbitcins-vcd.com
 NAMECHEAP INC,siambiznews.com
-GoDaddy.com,lp.searchmulty.com
+GoDaddy.com,lp.searchmulty.comFalse,amazon.co.uk.security-check.ga
+False,autosegurancabrasil.com
+False,dadossolicitado-antendimento.sad879.mobi
+False,hitnrun.com.my
+False,maruthorvattomsrianjaneyatemple.org
+REG-TZNIC,paypalsecure-2016.sucurecode524154241.arita.ac.tz
+ENOM,tei.portal.crockerandwestridge.com
+False,tonyyeo.com
+False,update-apple.com.betawihosting.net
+False,usaa.com-sec-inet-auth-logon-ent-logon-logon-redirectjsp.chrischadwick.com.au
+Media Elite Holding Limited [Tag = REGISTERMATRIXCH],windrushvalleyjoinery.co.uk
+Media Elite Holding Limited [Tag = REGISTERMATRIXCH],yhiltd.co.uk
+Name.com,dicrophani.com
+False,airtyrant.com
+FastDomain Inc.,dionneg.com
+False,vipprojects.cn
+False,hhj3.cn
+False,hryspap.cn
+Xiamen 35.Com Technology Co.,iebar.t2t2.com

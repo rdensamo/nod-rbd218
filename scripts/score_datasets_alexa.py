@@ -6,6 +6,12 @@ from elasticsearch_dsl import Search, Q
 import json
 import threading
 import time
+
+import sys
+import os.path
+# https://stackoverflow.com/questions/21005822/what-does-os-path-abspathos-path-joinos-path-dirname-file-os-path-pardir
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 '''
 from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars

@@ -6,6 +6,7 @@ from elasticsearch_dsl import Search, Q
 import json
 import threading
 import time
+
 '''
 from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars
@@ -26,6 +27,10 @@ from classes.DomainAge import DomainAge
 from classes.LehighTypoSquat import LehighTypoSquat
 '''
 
+import sys
+import os.path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars
 from classes.KnujOn import KnujOn
@@ -37,12 +42,12 @@ from classes.Registrarprices import Registrarprices
 from classes.Resolver import Resolver
 from classes.SpamhausReg import SpamhausReg
 from classes.SpamhausTld import SpamhausTld
-from classes.TldScoring import TldScoring                     # **  newly added domains
+from classes.TldScoring import TldScoring  # **  newly added domains
 from classes.AlexaTop import AlexaTop
-from classes.DomainAge import DomainAge                       # *** newly added domains
+from classes.DomainAge import DomainAge  # *** newly added domains
 # TODO: Hadn't added LehighTypoSquat subscore !
 from classes.LehighTypoSquat import LehighTypoSquat
-from classes.AlexaLevenSimilarity import AlexaLevenSimilarity # *** newly added domains
+from classes.AlexaLevenSimilarity import AlexaLevenSimilarity  # *** newly added domains
 
 documents = list()
 
@@ -105,7 +110,6 @@ def parseRegDomFile(file_paths):
                 # current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
                 current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
 
-
                 current_domain.set_simplescore('domaintoolsregistrars', domaintools_reg.score(current_domain))
                 current_domain.set_simplescore('knujon', knujon.score(current_domain))
                 current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
@@ -151,12 +155,10 @@ path_alexa1m = '../scripts_results/who_is_bulk_results_alexa1m.txt'
 
 many_files = list()
 
-
 path_alexa20k = 'who_is_bulk_results_alexa_20k.txt'
 path_maldoms = 'who_is_bulk_results_mal_all.txt'
 path_phish = 'who_is_bulk_results_phish_all.txt'
 
-
 many_files.append(path_maldoms)
 parseRegDomFile(many_files)
 
@@ -166,7 +168,6 @@ many_files.append(path_alexa20k)
 many_files.append(path_maldoms)
 parseRegDomFile(many_files)
 '''
-
 
 '''
 many_files.append(path_phish)
@@ -183,4 +184,3 @@ parseRegDomFile(many_files)
 many_files.clear()
 threading.Thread(target=loop1_10).start()
 '''
-

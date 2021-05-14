@@ -1,6 +1,11 @@
 import os
 from csv import DictReader
 
+import sys
+import os.path
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
+
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search, Q
 import json

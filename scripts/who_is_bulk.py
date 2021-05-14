@@ -8,6 +8,8 @@ path_zone = '../datasets/zonefile_domains_full.txt'
 path_alexa2k = '../datasets/alexa_top_2k.csv'
 path_alexa1m = '../datasets/alexa_top_1m.csv'
 
+path_dnsbl = '../datasets/dnsbl.csv'
+
 
 def getPhishRegs():
     print("\nwho is for phish domain registrars\n")
@@ -91,7 +93,25 @@ def getAlexaRegs():
     file.close()
 
 
+def getDNSBL():
+    print("\nwho is for DNSBL\n")
+    with open(path_dnsbl, "r", encoding='utf-8') as f:
+        for domain_name in f:
+            file = open('who_is_bulk_results_dnsbl.txt', 'a')
+            try:
+                res = whois.whois(domain_name.strip('\n'))
+                reg = res.registrar.split(',')[0]
+                file.write(reg + "," + domain_name)
+                print(reg)
+            except:
+                file.write("False" + "," + domain_name)
+                print("couldn't get registrar for " + domain_name)
+    file.close()
+
+
+# getDNSBL()
 # getPhishRegs()
-# getMalRegs()
+getMalRegs()
 # getZoneRegs()
-getAlexaRegs()
+# getAlexaRegs()
+# path_dnsbl

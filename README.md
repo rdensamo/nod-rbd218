@@ -9,6 +9,46 @@
 Run the NOD scoring on Elk data with FinalScore.py
 Multiple ways to run FinalScore.py to test with elk, phish, single domains etc.
 
+
+To generate the training and testing labeled data run 
+score_datasets_alexa.py for scored alexa top domains
+score_datasets_mal.py for scored malware domains 
+score_datasets_phish.py for scored phishtank domains 
+then will need to combine and shuffle these scores to generate 
+
+To run the code for weka decision tree : python wekaDecisionTree.py 
 #About the Code:
 
 #Attributes
+Class Name            Subscore Name         Subscore Type Subscore Description                                                                                                                                     Notes                                                                                                                               Flag?
+AlexaTop              alexatop              bool          True if the domain appears in the Alexa top 1m list.                                                                                                                                                                                                                                         yes
+DomainAge             age                   float         A value based on domaintools.com research that indicates how suspicius a domain's age is in 3 month increments.                                          Max is 3.85  the score method returns a normalized value but it uses te literal score when sent to a domain object  higher is worse
+DomainToolsRegistrars domaintoolsregistrars float         Small set of scores for 20 worst-offender registrars provided by domaintools.com                                                                         Range is 6.01-11.86, registrars that are not in this list are assigned 0.6.  higher is worse
+KnujOn                knujon                int           Integer value representing general registrar badness provided by knujon project.                                                                         lower is worse  default value is 0.6 but should be a larger int
+LehighTypoSquat       lehigh-typosquat      bool          True if the domain contains the word "lehigh"                                                                                                                                                                                                                                                yes
+MalwareDomains        malware_domain        bool          True if domain appears in malwaredomains list                                                                                                                                                                                                                                                yes
+Phishtank             phishtank             bool          True if domain appears in phishtank list                                                                                                                                                                                                                                                     yes
+RedCanaryEntropy      DomainNameEntropy     float         Computed entropy score for domain names                                                                                                                  Score method return value is different from what is added to domain objects.   lower is worse
+Registrarprices       registrar_prices      float         Pulled from lookup table of popular registrar price information.                                                                                         registrars that are not in this list are assigned 0.6 lower is worse?
+Resolver              resolves              bool          True if the domain resolves                                                                                                                              Score not set if domain doesn't resolve.  0-6  higher is worse                                                                      yes
+Resolver              ttl                   int           Determines riskiness of TTL based on lookup
+Resolver              bogon                 bool          True if the domain is assigned a record which points to a private or unallocated IP address range.                                                       Score not set if domain doesn't resolve.                                                                                            yes
+SpamhausReg           spamhausreg           float         Small set of scores for 10 worst-offender registrars provided by spamhaus                                                                                higher is worse
+SpamhausTld           SpamhausTld           float         badness score for each top level domain provided by spamhaus                                                                                             higher is worse
+TldScoring            ZoneFileBrandTld      bool, float   0-1 if the domain tld is found in zonefiles true if the domain is a brand tld false if neither
+ZonefileDomains       zonefile              bool                                                                                                                                                                   Not used?                                                                                                                           yes
+                      lehigh-typosquat      bool          Returns true if scored domain contains 'lehigh' or a possible typo
+                      AlexaLevSim_score     float         Determines riskiness based on Damerau-Levenshtein edit distance between the domain being scored and the most similar highest scoring AlexaTop 1M domain.
+                      AlexaLevSim_domain    string        The most similar AlexaTop 1M domain based of the Damerau-Levenshtein edit distance
+****
+
+
+References / Tools : 
+https://www.convertcsv.com/json-to-csv.htm
+https://www.convertcsv.com/csv-to-flat-file.htm
+https://machinelearningmastery.com/load-csv-machine-learning-data-weka/ 
+
+Until we have the template - this will not work additional
+modifications need to be made from this arff conversion to 
+work with weka for training / testing 
+https://ikuz.eu/csv2arff/
