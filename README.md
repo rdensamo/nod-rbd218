@@ -5,7 +5,30 @@
 4. Install the requirements via pip `pip3 install -r requirements.txt`
 5. Run with python3 main.py
 
-#How to run the code:
+
+# Requirements for Python Weka Wrapper for Windows 
+(1) Download javabridge from : https://www.lfd.uci.edu/~gohlke/pythonlibs/#javabridge (Windows Only)
+(2) pip install C:\javabridge-1.0.19-cp38-cp38-win_amd64.whl (Windows Only)
+(3) pip install python-weka-wrapper3 
+
+Note : have to pip to download and pip install this separately, 
+will not work to do this from the requirements.txt file (so removed it)
+Please do this portion - necessary to get wekaDecisionTree.py to work
+
+
+The general direction for different systems can be found here: 
+http://fracpete.github.io/python-weka-wrapper3/install.html
+
+# Requirements for python Weka Wrapper for Linux : 
+(1)
+
+# How to run the code:
+# (a) Before generating attribute sub-scores for malware, phishtank, alexatop domains
+# TODO: make it so you can run score_datasets.py with argument phish, alexa, or mal
+
+# (b) Generating attribute sub-scores malware, phishtank and alexatop domains 
+
+# (c) Scoring Elk Domains 
 Run the NOD scoring on Elk data with FinalScore.py
 Multiple ways to run FinalScore.py to test with elk, phish, single domains etc.
 
@@ -52,3 +75,5 @@ Until we have the template - this will not work additional
 modifications need to be made from this arff conversion to 
 work with weka for training / testing 
 https://ikuz.eu/csv2arff/
+
+# could generate table with https://www.tablesgenerator.com/text_tables

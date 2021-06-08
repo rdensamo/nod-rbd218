@@ -1,9 +1,18 @@
+import os
 from csv import DictReader
 
 from elasticsearch import Elasticsearch
 from elasticsearch_dsl import Search, Q
 import json
-'''
+import threading
+import time
+
+import sys
+import os.path
+
+# https://stackoverflow.com/questions/21005822/what-does-os-path-abspathos-path-joinos-path-dirname-file-os-path-pardir
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 from classes.Domain import Domain
 from classes.DomainToolsRegistrars import DomainToolsRegistrars
 from classes.KnujOn import KnujOn
@@ -15,28 +24,9 @@ from classes.Registrarprices import Registrarprices
 from classes.Resolver import Resolver
 from classes.SpamhausReg import SpamhausReg
 from classes.SpamhausTld import SpamhausTld
-from classes.TldScoring import TldScoring
-
+# from classes.TldScoring import TldScoring                     # **  newly added domains
 from classes.AlexaTop import AlexaTop
 from classes.DomainAge import DomainAge
-# TODO: Hadn't added LehighTypoSquat subscore !
-from classes.LehighTypoSquat import LehighTypoSquat
-'''
-
-from classes.Domain import Domain
-from classes.DomainToolsRegistrars import DomainToolsRegistrars
-from classes.KnujOn import KnujOn
-from classes.MalwareDomains import MalwareDomains
-# from classes.ZonefileDomains import ZonefileDomains
-from classes.Phishtank import Phishtank
-from classes.RedCanaryEntropy import RedCanaryEntropy
-from classes.Registrarprices import Registrarprices
-from classes.Resolver import Resolver
-from classes.SpamhausReg import SpamhausReg
-from classes.SpamhausTld import SpamhausTld
-from classes.TldScoring import TldScoring  # ** newly added domains
-from classes.AlexaTop import AlexaTop
-from classes.DomainAge import DomainAge # *** newly added domains
 # TODO: Hadn't added LehighTypoSquat subscore !
 from classes.LehighTypoSquat import LehighTypoSquat
 from classes.AlexaLevenSimilarity import AlexaLevenSimilarity
@@ -91,41 +81,48 @@ def parseRegDomFile(file_paths):
                 spamhaus_tld = SpamhausTld("../datasets/spamhaus_tlds.csv")
 
                 # TODO: Score separately on small number of data - slow
-                # zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
-
+                #               # zonefiles_tld = TldScoring("../datasets/ZoneFilesTLDs.html")
                 alexatop = AlexaTop("../datasets/alexa_top_2k.csv")
-                # TODO: Do not have domain age information
-                # domain_age = DomainAge()
+                domain_age = DomainAge()
                 lehigh_typo = LehighTypoSquat("../datasets/lehigh-typostrings.txt")
+                alexaLSim = AlexaLevenSimilarity()
 
-                # LABEL FOR THE DATA "LABELED DATA"
+                current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
                 current_domain.set_simplescore('malware_domain', malware_domains.score(current_domain))
                 # current_domain.set_simplescore('zonefile_domain', zonefile_domains.score(current_domain))
                 current_domain.set_simplescore('phishtank', phishtank.score(current_domain))
-                current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
-                # TODO : Do we check if any are in the zonefile list of bad domains ?
-                current_domain.set_simplescore('domaintools', domaintools_reg.score(current_domain))
+
+                current_domain.set_simplescore('domaintoolsregistrars', domaintools_reg.score(current_domain))
                 current_domain.set_simplescore('knujon', knujon.score(current_domain))
-                current_domain.set_simplescore('entropy', entropy.score(current_domain))
+                current_domain.set_simplescore('DomainNameEntropy', entropy.score(current_domain))
                 current_domain.set_simplescore('registrar_prices', registrar_prices.score(current_domain))
-                current_domain.set_simplescore('resolver', resolver.score(current_domain))
-                current_domain.set_simplescore('spamhaus_reg', spamhaus_reg.score(current_domain))
-                current_domain.set_simplescore('spamhaus_tld', spamhaus_tld.score(current_domain))
+                current_domain.set_simplescore('isNotResolves', resolver.score(current_domain)[0])
+                current_domain.set_simplescore('isBogon', resolver.score(current_domain)[1])
+                current_domain.set_simplescore('ttlRisk', resolver.score(current_domain)[2])
+                current_domain.set_simplescore('spamhausreg', spamhaus_reg.score(current_domain))
+                current_domain.set_simplescore('SpamhausTld', spamhaus_tld.score(current_domain))
                 # TODO: TOO slow to score right now
-                # current_domain.set_simplescore('zoneTldScoring', TldScoring.score(current_domain))
-
-                current_domain.set_simplescore('alexatop', alexatop.score(current_domain))
-                # TODO: do not have age information right now for these domains
+                # current_domain.set_simplescore('zonefiles_tld', zonefiles_tld.score(current_domain))
                 # current_domain.set_simplescore('domain_age', DomainAge.score(current_domain))
-                current_domain.set_simplescore('lehigh_typo', lehigh_typo.score(current_domain))
-
-                dom_attribute = current_domain.subscores.keys()
+                current_domain.set_simplescore('lehigh-typosquat', lehigh_typo.score(current_domain))
+                current_domain.set_simplescore('AlexaLevSim_score', alexaLSim.score(current_domain)[0])
+                current_domain.set_simplescore('AlexaLevSim_domain', alexaLSim.score(current_domain)[1])
                 current_domain.set_simplescore('DomainName', current_domain.domain)
+
                 print(current_domain.simplescores)
                 documents.append(current_domain.simplescores)
+                if dom_count % 100 == 0:
+                    file_name = "c_" + str(dom_count) + "_scored_datasets_1211_20k_alexa.json"
+                    # write the scores from all the datsets into one file of scores
+                    with open(file_name, "w") as f:
+                        f.write(json.dumps(documents))
+                        f.flush()
+                        os.fsync(f.fileno())
 
-    # write the scores from all the datsets into one file of scores
-    with open("scored_datasets_1128_60k.json", "w") as f:
+                #    break
+
+    # write the scores from all the datasets into one file of scores
+    with open("scored_datasets_1211_20k_alexa.json", "w") as f:
         f.write(json.dumps(documents))
     f.close()
 
@@ -140,21 +137,32 @@ path_alexa1m = '../scripts_results/who_is_bulk_results_alexa1m.txt'
 
 many_files = list()
 
-# path1 = 'who_is_bulk_results_phish_small_test_file.txt'
-# path2 = 'who_is_bulk_results_alexa_small_test_file.txt'
-# path3 = 'who_is_bulk_results_mal.txt'
-# path4 = 'who_is_bulk_results_zone.txt'
-
-# path_phish = 'who_is_bulk_results_phish_all.txt'
-# path_maldoms = 'who_is_bulk_results_mal_all.txt'
-# path_alexa2k = 'who_is_bulk_results_alexa_all.txt'
-# path_alexa1m = 'who_is_bulk_results_alexa_all_1m.txt'
-
 path_alexa20k = 'who_is_bulk_results_alexa_20k.txt'
 path_maldoms = 'who_is_bulk_results_mal_all.txt'
 path_phish = 'who_is_bulk_results_phish_all.txt'
 
+many_files.append(path_alexa20k)
+parseRegDomFile(many_files)
+
+'''
 many_files.append(path_phish)
 many_files.append(path_alexa20k)
 many_files.append(path_maldoms)
 parseRegDomFile(many_files)
+'''
+
+'''
+many_files.append(path_phish)
+threading.Thread(target=loop1_10).start()
+many_files.clear()
+
+many_files.append(path_alexa20k)
+threading.Thread(target=loop1_10).start()
+many_files.clear()
+
+many_files.append(path_maldoms)
+threading.Thread(target=loop1_10).start()
+parseRegDomFile(many_files)
+many_files.clear()
+threading.Thread(target=loop1_10).start()
+'''

@@ -1,6 +1,11 @@
 from csv import DictReader
 from urllib import parse
 
+import sys
+import os.path
+
+sys.path.append(os.path.join(os.path.dirname(__file__), '..'))
+
 
 class Phishtank:
     def __init__(self, path):
@@ -60,8 +65,8 @@ class Phishtank:
         return result
 
 
-'''
 path = "../mal_domains/verified_online.csv"
 phishtank = Phishtank(path)
 phishtank.write_phish_domains(path)
-'''
+
+print("working")
