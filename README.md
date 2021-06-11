@@ -10,8 +10,7 @@
 (1) Download javabridge from : https://www.lfd.uci.edu/~gohlke/pythonlibs/#javabridge (Windows Only)
 (2) pip install C:\javabridge-1.0.19-cp38-cp38-win_amd64.whl (Windows Only)
 (3) pip install python-weka-wrapper3==0.2.0 
-![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
-
+![alt text](https://gogs.cc.lehigh.edu/infosec/nod/src/working/Images/Windows-Python-Weka.png?raw=true)
 
 Note : have to pip to download and pip install this separately, 
 will not work to do this from the requirements.txt file (so removed it)
