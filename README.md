@@ -9,7 +9,9 @@
 # Requirements for Python Weka Wrapper for Windows 
 (1) Download javabridge from : https://www.lfd.uci.edu/~gohlke/pythonlibs/#javabridge (Windows Only)
 (2) pip install C:\javabridge-1.0.19-cp38-cp38-win_amd64.whl (Windows Only)
-(3) pip install python-weka-wrapper3 
+(3) pip install python-weka-wrapper3==0.2.0 
+![alt text](https://github.com/[username]/[reponame]/blob/[branch]/image.jpg?raw=true)
+
 
 Note : have to pip to download and pip install this separately, 
 will not work to do this from the requirements.txt file (so removed it)
@@ -19,7 +21,7 @@ Please do this portion - necessary to get wekaDecisionTree.py to work
 The general direction for different systems can be found here: 
 http://fracpete.github.io/python-weka-wrapper3/install.html
 
-# Requirements for python Weka Wrapper for Linux : 
+# Requirements for python Weka Wrapper for Linux : (Should this be direction?)
 (1)
 
 # How to run the code:
@@ -40,7 +42,21 @@ score_datasets_phish.py for scored phishtank domains
 then will need to combine and shuffle these scores to generate 
 
 To run the code for weka decision tree : python wekaDecisionTree.py 
-#About the Code:
+#About the Code: 
+
+#About the Data : 
+The data is stored under classes/data in this repository 
+(1) The CSV file: 
+(2) The ARFF file: (explain the arff file and the creation process )
+@ATTRIBUTE attribute_0 REAL
+@ATTRIBUTE attribute_1 REAL
+@ATTRIBUTE attribute_2 REAL
+@ATTRIBUTE attribute_3 REAL
+@ATTRIBUTE attribute_4 REAL
+@ATTRIBUTE attribute_5 REAL
+@ATTRIBUTE attribute_6 REAL
+@ATTRIBUTE attribute_7 {alexatop,malware,phishtank}
+
 
 #Attributes
 Class Name            Subscore Name         Subscore Type Subscore Description                                                                                                                                     Notes                                                                                                                               Flag?
@@ -64,6 +80,16 @@ ZonefileDomains       zonefile              bool                                
                       AlexaLevSim_score     float         Determines riskiness based on Damerau-Levenshtein edit distance between the domain being scored and the most similar highest scoring AlexaTop 1M domain.
                       AlexaLevSim_domain    string        The most similar AlexaTop 1M domain based of the Damerau-Levenshtein edit distance
 ****
+
+
+# Pending Tasks : 
+(1) Need to create a template to convert csv to arff file, currently using a csv to arff converter and manually modifying the file to work with weka  
+    - Source : https://jinja.palletsprojects.com/en/2.11.x/
+(2) Need to correspond with domain name and row in arff file because domain-name and other non numerical attributes were
+removed. This needs to be done so we know which domains produced the bad scores 
+
+(3) Need to factor in the categorical and boolean attributes not used in wekaDecisionTree.py prediction result
+
 
 
 References / Tools : 

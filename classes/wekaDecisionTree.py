@@ -24,7 +24,7 @@ jvm.start(packages=True)
 # load ARFF file
 helper.print_title("Loading ARFF file Train")
 loader = Loader(classname="weka.core.converters.ArffLoader")
-print("line 27")
+
 data = loader.load_file(helper.get_data_dir() + os.sep + "train.arff")
 
 # Sets what column is the label attribute
