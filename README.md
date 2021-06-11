@@ -28,7 +28,7 @@ http://fracpete.github.io/python-weka-wrapper3/install.html
 
 # (b) Generating attribute sub-scores malware, phishtank and alexatop domains 
 
-# (c) Scoring Elk Domains 
+# (c) Scoring Elk Domains  
 Run the NOD scoring on Elk data with FinalScore.py
 Multiple ways to run FinalScore.py to test with elk, phish, single domains etc.
 
